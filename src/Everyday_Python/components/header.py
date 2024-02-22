@@ -1,5 +1,5 @@
 ##© 2024 Tushar Aggarwal. All rights reserved.(https://tushar-aggarwal.com)
-##All-About-Langchain
+##Everyday_Python
 #######################################################################################################
 #Importing dependecies
 #######################################################################################################
@@ -20,23 +20,20 @@ import os
 #######################################################################################################
 #Importing from SRC
 #######################################################################################################
-from src.all_about_langchain.components.header import *
-from src.all_about_langchain.components.body import *
-from src.all_about_langchain.components.navigation import *
-from src.all_about_langchain.components.siderbar import *
-from src.all_about_langchain.components.metrics import *
-from src.all_about_langchain.components.charts import *
-from src.all_about_langchain.components.test import *
-
-
-
-
+from src.Everyday_Python.components.header import *
+from src.Everyday_Python.components.body import *
+from src.Everyday_Python.components.navigation import *
+from src.Everyday_Python.components.siderbar import *
+from src.Everyday_Python.components.metrics import *
+from src.Everyday_Python.components.charts import *
+from src.Everyday_Python.components.test import *
 
 #######################################################################################################
-#Header of all_about_llms by github.com/tushar2704
+#Header of Everyday_Python by github.com/tushar2704
 #######################################################################################################
+
 def main_title():
-    st.set_page_config(page_title="All About LLMs",
+    st.set_page_config(page_title="Everday Python Sheets",
                    page_icon=":🤝:",
                     layout='wide')
     # ---- HIDE STREAMLIT STYLE ----
@@ -72,7 +69,7 @@ def page_header(header):
     #         """
             
     # st.markdown(custom_css, unsafe_allow_html=True)
-    st.title("🌐🤝All About LLMs🌐🤝")
+    st.title("🌐🤝Everyday Python Sheets🌐🤝")
     st.markdown('''
             <style>
                 div.block-container{padding-top:0px;}

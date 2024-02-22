@@ -1,5 +1,5 @@
 ##© 2024 Tushar Aggarwal. All rights reserved.(https://tushar-aggarwal.com)
-##All-About-Langchain
+##Everyday_Python
 #######################################################################################################
 #Importing dependecies
 #######################################################################################################
@@ -20,23 +20,17 @@ import os
 #######################################################################################################
 #Importing from SRC
 #######################################################################################################
-from src.all_about_langchain.components.header import *
-from src.all_about_langchain.components.body import *
-from src.all_about_langchain.components.navigation import *
-from src.all_about_langchain.components.siderbar import *
-from src.all_about_langchain.components.metrics import *
-from src.all_about_langchain.components.charts import *
-from src.all_about_langchain.components.test import *
+from src.Everyday_Python.components.header import *
+from src.Everyday_Python.components.body import *
+from src.Everyday_Python.components.navigation import *
+from src.Everyday_Python.components.siderbar import *
+from src.Everyday_Python.components.metrics import *
+from src.Everyday_Python.components.charts import *
+from src.Everyday_Python.components.test import *
 
 #######################################################################################################
-#Charts of all_about_llms by github.com/tushar2704
+#Header of Everyday_Python by github.com/tushar2704
 #######################################################################################################
-
-
-
-
-
-
 
 
 
