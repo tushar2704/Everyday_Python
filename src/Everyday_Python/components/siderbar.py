@@ -89,7 +89,14 @@ def sidebar_main():
     
    
     
-        
+def sidebar():
+    # page1()
+    with st.sidebar:
+        st.page_link("Home.py", label="Home", icon="🏠")
+        st.page_link("pages/page1.py", label="Python", icon="🐍")
+        # st.page_link("src/Everyday_Python/pages/page2.py", label="Page 2", icon="🐍", disabled=True)
+        st.page_link("http://www.tushar-aggarwal.com", label="Portfolio", icon="🌎")
+    
     
 
 
