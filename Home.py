@@ -50,10 +50,15 @@ page_header('''
             ''')
 
 
-page1_path = r'D:\Everyday_Python\src\Everyday_Python\pages\page1.py'
-
-#Pages
-
+#Sidebar Pages
+with st.sidebar:
+    st.page_link("Home.py", label="Home", icon="🏠")
+    st.page_link("pages/page1.py", label="Python", icon="🐍")
+    st.page_link("pages/page2.py", label="Page 2", icon="🐍")
+    st.page_link("pages/page3.py", label="Page 2", icon="🐍")
+    st.page_link("pages/page4.py", label="Page 2", icon="🐍")
+    st.page_link("pages/page5.py", label="Page 2", icon="🐍")
+    st.page_link("http://www.tushar-aggarwal.com", label="Portfolio", icon="🌎")
 
 
 
