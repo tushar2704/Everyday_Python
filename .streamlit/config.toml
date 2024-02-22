@@ -1,0 +1,26 @@
+[browser]
+gatherUsageStats = false
+[logger]
+level = "info"
+messageFormat = "%(asctime)s %(message)s"
+[client]
+caching = true
+displayEnabled = true
+showErrorDetails = false
+toolbarMode = "auto"
+showSidebarNavigation = false
+[runner]
+magicEnabled = true
+installTracer = false
+fixMatplotlib = true
+fastReruns = true
+enforceSerializableSessionState = false
+enumCoercion = "nameOnly"
+[server]
+folderWatchBlacklist = []
+fileWatcherType = "auto"
+cookieSecret = ""
+headless = false
+runOnSave = true
+[theme]
+textColor = "#042940"
