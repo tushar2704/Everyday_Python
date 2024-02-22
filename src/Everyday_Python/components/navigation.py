@@ -1,5 +1,5 @@
 ##© 2024 Tushar Aggarwal. All rights reserved.(https://tushar-aggarwal.com)
-##All-About-Langchain
+##Everyday_Python
 #######################################################################################################
 #Importing dependecies
 #######################################################################################################
@@ -20,21 +20,20 @@ import os
 #######################################################################################################
 #Importing from SRC
 #######################################################################################################
-from src.all_about_langchain.components.header import *
-from src.all_about_langchain.components.body import *
-from src.all_about_langchain.components.navigation import *
-from src.all_about_langchain.components.siderbar import *
-from src.all_about_langchain.components.metrics import *
-from src.all_about_langchain.components.charts import *
-from src.all_about_langchain.components.test import *
-
+from src.Everyday_Python.components.header import *
+from src.Everyday_Python.components.body import *
+from src.Everyday_Python.components.navigation import *
+from src.Everyday_Python.components.siderbar import *
+from src.Everyday_Python.components.metrics import *
+from src.Everyday_Python.components.charts import *
+from src.Everyday_Python.components.test import *
 
 #######################################################################################################
-#Navigation of all_about_llms by github.com/tushar2704
+#Navigation of Everyday_Python by github.com/tushar2704
 #######################################################################################################
 
 def custom_style():
-    css_file_path = os.path.join('src', 'all_about_llms', 'style', 'custom_styles.css')
+    css_file_path = os.path.join('src', 'Everyday_Python', 'style', 'custom_styles.css')
     with open(css_file_path) as f:
         css = f.read()
     st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
@@ -96,7 +95,7 @@ def footer():
     </style>
 
     <div class="footer">
-        <p style="font-size: 15px">© 2023 Tushar Aggarwal. All rights reserved.</p>
+        <p style="font-size: 15px">© 2024 Tushar Aggarwal. All rights reserved.</p>
         <p style="font-size: 15px">Developed and maintained with ❤️ by <a href="https://www.tushar-aggarwal.com/">Tushar Aggarwal</a></p>
         <a href="https://github.com/tushar2704"><img class="image2" src="https://cdn-icons-png.flaticon.com/512/25/25231.png"  width="70" height="70"></a>
 
