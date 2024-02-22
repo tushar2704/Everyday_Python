@@ -4,15 +4,11 @@ gatherUsageStats = false
 level = "info"
 messageFormat = "%(asctime)s %(message)s"
 [client]
-caching = true
-displayEnabled = true
 showErrorDetails = false
 toolbarMode = "auto"
 showSidebarNavigation = false
 [runner]
 magicEnabled = true
-installTracer = false
-fixMatplotlib = true
 fastReruns = true
 enforceSerializableSessionState = false
 enumCoercion = "nameOnly"
