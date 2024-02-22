@@ -27,44 +27,14 @@ from src.Everyday_Python.components.siderbar import *
 from src.Everyday_Python.components.metrics import *
 from src.Everyday_Python.components.charts import *
 from src.Everyday_Python.components.test import *
-from src.Everyday_Python.pages.page1 import *
-from src.Everyday_Python.pages.page2 import *
-from src.Everyday_Python.pages.page3 import *
-from src.Everyday_Python.pages.page4 import *
-from src.Everyday_Python.pages.page5 import *
 
 #######################################################################################################
-#Header of Everyday_Python by github.com/tushar2704
-#######################################################################################################
-
-main_title()
-
-#######################################################################################################
-#Page Config of Everyday_Python by github.com/tushar2704
-#######################################################################################################
-custom_style()
-#######################################################################################################
-#Body of Everyday_Python by github.com/tushar2704
-#######################################################################################################
-page_header('''
-            ''')
-
-
-    
-
-#Pages
-
-page1()
-
-
-
-
-
-#######################################################################################################
-#End of Everyday_Python by github.com/tushar2704
+#Pages(1) of Everyday_Python by github.com/tushar2704
 #######################################################################################################
 
 
+def page1():
+    st.header("20% of Python that addresses 80% of the programming needs")
 
 
 
@@ -73,7 +43,65 @@ page1()
 
 
 
-footer()
-#######################################################################################################
-#End of Everyday_Python by github.com/tushar2704
-#######################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
