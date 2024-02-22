@@ -60,7 +60,7 @@ with st.sidebar:
     st.page_link("pages/page5.py", label="Pro Tips", icon="🐍")
     st.page_link("http://www.tushar-aggarwal.com", label="Tushar Aggarwal", icon="🌎")
 
-
+ 
 
 
 #######################################################################################################
