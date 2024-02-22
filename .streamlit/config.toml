@@ -22,3 +22,5 @@ fileWatcherType = "auto"
 cookieSecret = ""
 headless = false
 runOnSave = true
+[theme]
+textColor = "#042940"
