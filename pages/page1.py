@@ -20,13 +20,28 @@ import os
 #######################################################################################################
 #Importing from SRC
 #######################################################################################################
-# # from src.Everyday_Python.components.header import *
-# from src.Everyday_Python.components.body import *
-# from src.Everyday_Python.components.navigation import *
-# from src.Everyday_Python.components.siderbar import *
-# from src.Everyday_Python.components.metrics import *
-# from src.Everyday_Python.components.charts import *
-# from src.Everyday_Python.components.test import *
+from src.Everyday_Python.components.header import *
+from src.Everyday_Python.components.body import *
+from src.Everyday_Python.components.navigation import *
+from src.Everyday_Python.components.siderbar import *
+from src.Everyday_Python.components.metrics import *
+from src.Everyday_Python.components.charts import *
+from src.Everyday_Python.components.test import *
+#######################################################################################################
+#Header of Everyday_Python by github.com/tushar2704
+#######################################################################################################
+
+# main_title()
+
+#######################################################################################################
+#Page Config of Everyday_Python by github.com/tushar2704
+#######################################################################################################
+custom_style()
+#######################################################################################################
+#Body of Everyday_Python by github.com/tushar2704
+#######################################################################################################
+page_header('''
+            ''')
 
 #######################################################################################################
 #Pages(1) of Everyday_Python by github.com/tushar2704
