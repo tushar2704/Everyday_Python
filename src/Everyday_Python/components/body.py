@@ -35,7 +35,7 @@ from src.Everyday_Python.components.test import *
 
 main_topics=["File Handling","Working With Simple HTTP APIs","Working With Lists","Working With Dictionaries",
              "Working With The Operating System","Working With CLI — STDIN, STDOUT, STDERR","Working With Mathematical Operations and Permutations",
-             "","","",
+             "Working With Databases","","",
              "","","",
              "","","",]
 
@@ -60,8 +60,8 @@ sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading
              "Redirecting STDOUT","Redirecting STDERR","Prompting for Passwords",
              "Command Line Arguments","Using Argparse for Complex CLI Interactions","Basic Arithmetic Operations",
              "Working with Complex Numbers","Mathematical Functions","Generating Permutations",
-             "Generating Combinations","","",
-             "","","",
+             "Generating Combinations","Random Number Generation","Working with Fractions",
+             "Statistical Functions","Trigonometric Functions","Handling Infinity and NaN",
              "","","",
              "","","",
              "","","",
