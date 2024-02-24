@@ -39,7 +39,7 @@ main_topics=["File Handling","Working With Simple HTTP APIs","Working With Lists
              "Working With Networks, Sockets, and Network Interfaces","Working With Pandas Library (Dataframes)","Working With Numpy Library (Arrays)",
              "Working With Matplotlib Library (Data Visualization)","Working With Scikit-Learn Library (Machine Learning)","Working With Plotly Library (Interactive Data Visualization)",
              "Working With Dates and Times","","",
-             "","","",
+             "Working With More Advanced List Comprehensions andLambda Functions","","",
              "","","",
              ]
 
@@ -93,10 +93,10 @@ sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading
              "Creating a Scatter Plot","Creating a Bar Chart","Creating a Pie Chart",
              "Creating a Histogram","Creating Box Plots","Creating Heatmaps",
              "Creating 3D Surface Plots","Creating Subplots","Creating Interactive Time Series",
-             "","","",
-             "","","",
-             "","","",
-             "","","",
+             "Getting the Current Date and Time","Creating Specific Date and Time","Formatting Dates and Times",
+             "Parsing Dates and Times from Strings","Working with Time Deltas","Comparing Dates and Times",
+             "Extracting Components from a Date/Time","Working with Time Zones","Getting the Weekday",
+             "Working with Unix Timestamps","","",
              "","","",
              "","","",
              "","","",]
