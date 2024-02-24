@@ -36,7 +36,7 @@ from src.Everyday_Python.components.test import *
 main_topics=["File Handling","Working With Simple HTTP APIs","Working With Lists","Working With Dictionaries",
              "Working With The Operating System","Working With CLI — STDIN, STDOUT, STDERR","Working With Mathematical Operations and Permutations",
              "Working With Databases","Working With Async IO (Asyncrounous Programming)","",
-             "Working With Networks, Sockets, and Network Interfaces","","",
+             "Working With Networks, Sockets, and Network Interfaces","Working With Pandas Library (Dataframes)","",
              "","","",]
 
 sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading Lines into a List",
@@ -69,10 +69,10 @@ sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading
              "Awaiting Multiple Coroutines","Creating Tasks","Asynchronous Iteration",
              "Using Asynchronous Context Managers","Handling Exceptions in Asynchronous Code","Asynchronous Generators",
              "Using Semaphores","Event Loops","",
-             "","","",
-             "","","",
-             "","","",
-             "","","",
+             "Creating a Socket","Connecting to a Remote Server","Sending Data",
+             "Receiving Data","Closing a Socket","Creating a Listening Socket",
+             "Accepting Connections","Non-blocking Socket Operations","Working with UDP Sockets",
+             "Enumerating Network Interfaces","","",
              "","","",
              "","","",
              "","","",]
