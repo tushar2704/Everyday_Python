@@ -110,7 +110,7 @@ sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading
              "Class Decorator","Decorator with Arguments","Method Decorator",
              "Stacking Decorators","Decorator with Optional Arguments","Class Method Decorator",
              "Decorator for Static Method","","",
-             "","","",
+             "Setting Up a GraphQL Client","Executing a Simple Query","",
              "","","",
              "","","",
              "","","",
