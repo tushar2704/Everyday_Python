@@ -29,5 +29,65 @@ from src.Everyday_Python.components.charts import *
 from src.Everyday_Python.components.test import *
 
 #######################################################################################################
-#Header of Everyday_Python by github.com/tushar2704
+#Body of Everyday_Python by github.com/tushar2704
 #######################################################################################################
+
+
+main_topics=["File Handling","Working With Simple HTTP APIs","Working With Lists","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",]
+
+sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading Lines into a List",
+             "Iterating Over Each Line in a File","Checking If a File Exists","Writing Lists to a File",
+             "Using With Blocks for Multiple Files","Deleting a File","Reading and Writing Binary Files",
+             "Basic GET Request","GET Request with Query Parameters","Handling HTTP Errors",
+             "Setting Timeout for Requests","Using Headers in Requests","POST Request with JSON Payload",
+             "Handling Response Encoding","Using Sessions with Requests","Handling Redirects",
+             "Streaming Large Responses","Creating a List","Appending to a List",
+             "","","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",
+             "","","",]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
