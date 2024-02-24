@@ -35,7 +35,7 @@ from src.Everyday_Python.components.test import *
 
 main_topics=["File Handling","Working With Simple HTTP APIs","Working With Lists","Working With Dictionaries",
              "Working With The Operating System","Working With CLI — STDIN, STDOUT, STDERR","Working With Mathematical Operations and Permutations",
-             "Working With Databases","","",
+             "Working With Databases","Working With Async IO (Asyncrounous Programming)","",
              "","","",
              "","","",]
 
@@ -62,10 +62,10 @@ sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading
              "Working with Complex Numbers","Mathematical Functions","Generating Permutations",
              "Generating Combinations","Random Number Generation","Working with Fractions",
              "Statistical Functions","Trigonometric Functions","Handling Infinity and NaN",
-             "","","",
-             "","","",
-             "","","",
-             "","","",
+             "Establishing a Connection","Creating a Cursor","Executing a Query",
+             "Fetching Query Results","Inserting Records","Updating Records",
+             "Deleting Records","Creating a Table","Dropping a Table",
+             "Using Transactions","","",
              "","","",
              "","","",
              "","","",
