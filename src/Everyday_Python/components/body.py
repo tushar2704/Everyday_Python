@@ -33,7 +33,7 @@ from src.Everyday_Python.components.test import *
 #######################################################################################################
 
 
-main_topics=["File Handling","Working With Simple HTTP APIs","Working With Lists","",
+main_topics=["File Handling","Working With Simple HTTP APIs","Working With Lists","Working With Dictionaries",
              "","","",
              "","","",
              "","","",
@@ -46,9 +46,9 @@ sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading
              "Setting Timeout for Requests","Using Headers in Requests","POST Request with JSON Payload",
              "Handling Response Encoding","Using Sessions with Requests","Handling Redirects",
              "Streaming Large Responses","Creating a List","Appending to a List",
-             "","","",
-             "","","",
-             "","","",
+             "Inserting into a List","Removing from a List","Popping an Element from a List",
+             "Finding the Index of an Element","List Slicing","List Comprehension",
+             "Sorting a List","Reversing a List","",
              "","","",
              "","","",
              "","","",
