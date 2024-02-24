@@ -35,8 +35,8 @@ from src.Everyday_Python.components.test import *
 
 main_topics=["File Handling","Working With Simple HTTP APIs","Working With Lists","Working With Dictionaries",
              "Working With The Operating System","Working With CLI — STDIN, STDOUT, STDERR","Working With Mathematical Operations and Permutations",
-             "Working With Databases","Working With Async IO (Asyncrounous Programming)","",
-             "Working With Networks, Sockets, and Network Interfaces","Working With Pandas Library (Dataframes)","Working With Numpy Library (Arrays)",
+             "Working With Databases","Working With Async IO (Asyncrounous Programming)","Working With Networks, Sockets, and Network Interfaces",
+             "Working With Pandas Library (Dataframes)","Working With Numpy Library (Arrays)",
              "Working With Matplotlib Library (Data Visualization)","Working With Scikit-Learn Library (Machine Learning)","Working With Plotly Library (Interactive Data Visualization)",
              "Working With Dates and Times",
              "Working With More Advanced List Comprehensions andLambda Functions","Working With Object Oriented Programming","Working With Decorators",
@@ -149,7 +149,7 @@ sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading
 
 
 
-def func():
+def file_handling():
     pass
 
 
@@ -157,56 +157,48 @@ def func():
 
 
 
-def func():
+def http_apis():
     pass
 
 
 
 
-def func():
-    pass
-
-
-
-
-
-def func():
+def lists():
     pass
 
 
 
 
 
-def func():
+def dict():
     pass
 
 
 
 
 
-def func():
+def os():
     pass
 
 
 
 
 
-def func():
+def cli():
     pass
 
 
 
 
 
-def func():
+def math():
     pass
 
 
 
 
 
-
-def func():
+def databases():
     pass
 
 
@@ -214,21 +206,7 @@ def func():
 
 
 
-def func():
-    pass
-
-
-
-
-
-def func():
-    pass
-
-
-
-
-
-def func():
+def async_():
     pass
 
 
@@ -236,21 +214,43 @@ def func():
 
 
 
-def func():
+def network():
     pass
 
 
 
 
 
-def func():
+def df_():
     pass
 
 
 
 
 
-def func():
+def numpy_():
+    pass
+
+
+
+
+
+
+def plots():
+    pass
+
+
+
+
+
+def scikit_():
+    pass
+
+
+
+
+
+def plotly_():
     pass
 
 
