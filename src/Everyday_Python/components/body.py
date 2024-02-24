@@ -34,7 +34,7 @@ from src.Everyday_Python.components.test import *
 
 
 main_topics=["File Handling","Working With Simple HTTP APIs","Working With Lists","Working With Dictionaries",
-             "","","",
+             "Working With The Operating System","","",
              "","","",
              "","","",
              "","","",]
@@ -48,11 +48,11 @@ sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading
              "Streaming Large Responses","Creating a List","Appending to a List",
              "Inserting into a List","Removing from a List","Popping an Element from a List",
              "Finding the Index of an Element","List Slicing","List Comprehension",
-             "Sorting a List","Reversing a List","",
-             "","","",
-             "","","",
-             "","","",
-             "","","",
+             "Sorting a List","Reversing a List","Creating a Dictionary",
+             "Adding or Updating Entries","Removing an Entry","Checking for Key Existence",
+             "Iterating Over Keys","Iterating Over Values","Iterating Over Items",
+             "Dictionary Comprehension","Merging Dictionaries","Getting a Value with Default",
+             "Navigating File Paths","","",
              "","","",
              "","","",
              "","","",
