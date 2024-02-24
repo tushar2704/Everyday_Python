@@ -34,7 +34,7 @@ from src.Everyday_Python.components.test import *
 
 
 main_topics=["File Handling","Working With Simple HTTP APIs","Working With Lists","Working With Dictionaries",
-             "Working With The Operating System","","",
+             "Working With The Operating System","Working With CLI — STDIN, STDOUT, STDERR","",
              "","","",
              "","","",
              "","","",]
@@ -52,10 +52,10 @@ sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading
              "Adding or Updating Entries","Removing an Entry","Checking for Key Existence",
              "Iterating Over Keys","Iterating Over Values","Iterating Over Items",
              "Dictionary Comprehension","Merging Dictionaries","Getting a Value with Default",
-             "Navigating File Paths","","",
-             "","","",
-             "","","",
-             "","","",
+             "Navigating File Paths","Listing Directory Contents","Creating Directories",
+             "Removing Files and Directories","Executing Shell Commands","Working with Environment Variables",
+             "Changing the Current Working Directory","Path Existence and Type","Working with Temporary Files",
+             "Getting System Information","Reading User Input","",
              "","","",
              "","","",
              "","","",
