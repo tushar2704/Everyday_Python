@@ -35,15 +35,13 @@ from src.Everyday_Python.components.test import *
 
 main_topics=["File Handling","Working With Simple HTTP APIs","Working With Lists","Working With Dictionaries",
              "Working With The Operating System","Working With CLI — STDIN, STDOUT, STDERR","Working With Mathematical Operations and Permutations",
-             "Working With Databases","Working With Async IO (Asyncrounous Programming)","",
-             "Working With Networks, Sockets, and Network Interfaces","Working With Pandas Library (Dataframes)","Working With Numpy Library (Arrays)",
+             "Working With Databases","Working With Async IO (Asyncrounous Programming)","Working With Networks, Sockets, and Network Interfaces",
+             "Working With Pandas Library (Dataframes)","Working With Numpy Library (Arrays)",
              "Working With Matplotlib Library (Data Visualization)","Working With Scikit-Learn Library (Machine Learning)","Working With Plotly Library (Interactive Data Visualization)",
              "Working With Dates and Times",
              "Working With More Advanced List Comprehensions andLambda Functions","Working With Object Oriented Programming","Working With Decorators",
              "Working With GraphQL","Working With Regular Expressions","Working With Strings",
-             "Working With Web Scraping","Working With pip (Package Management)","Working With Common Built-in Functions and Packages",
-             "","","",
-             "","","",
+             "Working With Web Scraping","Working With pip (Package Management)","Working With Common Built-in Functions and Packages"
              ]
 
 sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading Lines into a List",
@@ -137,16 +135,200 @@ sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading
              "Process-based Parallelism","Parser for Command-line Options, Arguments,and Sub-commands","Logging Facility",
              "Unit Testing Framework","Object-oriented Filesystem Paths","Higher-order Functions and Operations onCallable Objects",
              "Container Data Types","Functions Creating Iterators for Efficient Looping","Secure Hash and Message Digest Algorithms",
-             "","","",
-             "","","",
-             "","","",
-             "","","",
-             "","","",
-             "","","",]
+             "CSV File Reading and Writing","The ElementTree XML API","DB-API 2.0 Interface for SQLite Databases",
+             "GUI Toolkit","Python Object Serialization","Core Tools for Working with Streams",
+             "Time Access and Conversions","General Calendar-related Functions","A Synchronized Queue Class",
+             "High-level File Operations","Unix Style Pathname Pattern Expansion","Generate Temporary Files and Directories",
+             "Support for Bzip2 Compression","Support for Gzip Compression","TLS/SSL Wrapper for Socket Objects",
+             "IMAP4 Protocol Client","SMTP Protocol Client","Managing Email Messages",
+             "base64","Helpers for Computing Deltas","Multilingual Internationalization Services",
+             "Internationalization Services","Generate Secure Random Numbers for ManagingSecrets","UUID Objects According to RFC 4122",
+             "HyperText Markup Language Support","FTP Protocol Client","Read and Write Tar Archive Files",
+             "1","2","3",
+             "4","5"]
+
+
+
+def file_handling():
+    pass
 
 
 
 
+
+
+def http_apis():
+    pass
+
+
+
+
+def lists():
+    pass
+
+
+
+
+
+def dict():
+    pass
+
+
+
+
+
+def os():
+    pass
+
+
+
+
+
+def cli():
+    pass
+
+
+
+
+
+def math():
+    pass
+
+
+
+
+
+def databases():
+    pass
+
+
+
+
+
+
+def async_():
+    pass
+
+
+
+
+
+
+def network():
+    pass
+
+
+
+
+
+def df_():
+    pass
+
+
+
+
+
+def numpy_():
+    pass
+
+
+
+
+
+
+def plots():
+    pass
+
+
+
+
+
+def scikit_():
+    pass
+
+
+
+
+
+def plotly_():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
 
 
 
