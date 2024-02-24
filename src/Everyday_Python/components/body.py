@@ -41,8 +41,7 @@ main_topics=["File Handling","Working With Simple HTTP APIs","Working With Lists
              "Working With Dates and Times",
              "Working With More Advanced List Comprehensions andLambda Functions","Working With Object Oriented Programming","Working With Decorators",
              "Working With GraphQL","Working With Regular Expressions","Working With Strings",
-             "Working With Web Scraping","Working With pip (Package Management)","Working With Common Built-in Functions and Packages",
-             
+             "Working With Web Scraping","Working With pip (Package Management)","Working With Common Built-in Functions and Packages"
              ]
 
 sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading Lines into a List",
@@ -150,7 +149,186 @@ sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading
 
 
 
+def func():
+    pass
 
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+
+
+def func():
+    pass
+
+
+
+
+
+def func():
+    pass
 
 
 
