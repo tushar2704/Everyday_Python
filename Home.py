@@ -52,13 +52,14 @@ page_header('''
 
 #Sidebar Pages
 with st.sidebar:
+    
     st.page_link("Home.py", label="Home", icon="🏠")
-    st.page_link("pages/page1.py", label="Python", icon="🐍")
+    
     st.page_link("pages/page2.py", label="Everyday Cheat Sheets", icon="🐍")
     st.page_link("pages/page3.py", label="Data Structures", icon="🐍")
-    st.page_link("pages/page4.py", label="Chatbot", icon="🐍")
+    
     st.page_link("pages/page5.py", label="Pro Tips", icon="🐍")
-    st.page_link("http://www.tushar-aggarwal.com", label="Tushar Aggarwal", icon="🌎")
+    
 
  
 
