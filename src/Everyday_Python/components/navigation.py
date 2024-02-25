@@ -98,7 +98,7 @@ def footer():
         <p style="font-size: 15px">© 2024 Tushar Aggarwal. All rights reserved.</p>
         <p style="font-size: 15px">Developed and maintained with ❤️ by <a href="https://www.tushar-aggarwal.com/">Tushar Aggarwal</a></p>
         <a href="https://github.com/tushar2704"><img class="image2" src="https://cdn-icons-png.flaticon.com/512/25/25231.png"  width="70" height="70"></a>
-
+        <a href="https://www.buymeacoffee.com/TAggData"><img class="image2" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"  width="170" height="70"></a>
         
     </div>
     '''

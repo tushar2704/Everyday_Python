@@ -39,28 +39,28 @@ def img_to_bytes(img_path):
 
 
 #Left Panel Navigation
-def left_main_panel():
+def logo():
     custom_css = f"""
     <style>
-        .sidebar .stImage {{
+        .img1{{
             display: block;
+            position: top;
             margin: 0;
-            padding: 0;
+            padding-left: 10px;
+            padding-top:0px;
+            width: 150px;
+            height: auto;
         }}
-        .st-emotion-cache-10oheav {{padding: 0.1rem 0.2rem;}}
-        img{{
-            vertical-align: middle;
-            margin-right: 70px;
-            float:right;
-        }}
+        
+        
     </style>
     """
 
       # Example usage in the Streamlit sidebar
     st.sidebar.markdown(custom_css, unsafe_allow_html=True)
-    # st.sidebar.markdown(f'''[<img src='data:image/png;base64,{img_to_bytes("src/QueryMaster/images/data unboxed.png")}' class='img-fluid' width=100 height=100>](https://Tushar-Aggarwal.com/)''', unsafe_allow_html=True)
+    st.sidebar.markdown(f'''[<img class="img1" src='data:image/png;base64,{img_to_bytes("src/Everyday_Python/everyday_python.png")}'>](https://Tushar-Aggarwal.com/)''', unsafe_allow_html=True)
     
-    st.sidebar.markdown(f"##### <span style='margin-left: 45px;'>[Tushar-Aggarwal.com](https://tushar-aggarwal.com/)</span>", unsafe_allow_html=True)
+    # st.sidebar.markdown(f"##### <span style='margin-left: 45px;'>[Tushar-Aggarwal.com](https://tushar-aggarwal.com/)</span>", unsafe_allow_html=True)
 
     
     

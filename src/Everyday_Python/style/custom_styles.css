@@ -15,12 +15,20 @@
 /* Change the sidebar color*/
 [data-testid=stSidebar] {
     background-image: linear-gradient(180deg, #fbfdde ,#3772A2);
+    
   }
 
-
+.st-emotion-cache-16txtl3 {
+    padding: 0rem 0.2rem;
+}
   
-  
 
+[data-testid=stSidebarContent]{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: overlay;
+}
   
 
 
