@@ -31,7 +31,7 @@ from src.Everyday_Python.components.test import *
 #Header of Everyday_Python by github.com/tushar2704
 #######################################################################################################
 
-# main_title()
+main_title()
 
 #######################################################################################################
 #Page Config of Everyday_Python by github.com/tushar2704
@@ -62,3 +62,6 @@ def page1():
 
 
 page1()
+
+
+file_handling()

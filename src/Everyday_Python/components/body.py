@@ -150,7 +150,121 @@ sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading
 
 
 def file_handling():
-    pass
+    st.header("File Handling")
+    
+    # Create a two-column layout
+    col1, col2 = st.columns([0.5, 0.5], gap="small")
+    
+    with col1:
+        st.subheader("Reading a File")
+        
+        st.markdown(
+            """
+            ##### To read the entire content of a file:
+            """
+        )
+        st.code(
+            """
+            with open('Tushar.txt', 'r') as file:
+                content = file.read()
+                print(content)
+           
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("Writing to a File")
+        
+        st.markdown(
+            """
+            ##### To write text to a file, overwriting existing content:
+            """
+        )
+        st.code(
+            """
+            with open('Tushar.txt', 'w') as file:
+                content= file.write("www.tushar-aggarwal.com")
+                print(content)
+           
+            """
+        )
+        
+        
+        
+        
+        st.subheader("Appending to a File")
+        
+        st.markdown(
+            """
+            ##### To add text to the end of an existing file:
+            """
+        )
+        st.code(
+            """
+            with open('Tushar.txt', 'a') as file:
+                content = file.write("\n https://www.linkedin.com/in/tusharaggarwalinseec/")
+                print(content)
+           
+            """
+        )
+        
+        
+        st.subheader("Reading Lines into a List")
+        
+        st.markdown(
+            """
+            ##### To read a file line by line into a list:
+            """
+        )
+        st.code(
+            """
+            with open('Tushar.txt', 'r') as file:
+                content = file.readlines()
+                print(content)
+           
+            """
+        )
+        
+        
+        
+        st.subheader("Iterating Over Each Line in a File")
+        
+        st.markdown(
+            """
+            ##### To process each line in a file:
+            """
+        )
+        st.code(
+            """
+            with open('Tushar.txt', 'a') as file:
+                for line in file:
+                    print(line.strip())
+           
+            """
+        )
+            
+        
+    with col2:
+        st.subheader("Magic Commands")
+        
+        st.markdown(
+            """
+            **Magic Commands** allow you to display variables or literals in your app automatically.
+            """
+        )
+        st.code(
+            """
+            "Hello, World!"  # Writes Hello, World!
+            write="Did you know I have more then 101 Supreme apps like this?"
+            write
+            """
+        )
+        write="Did you know I have more then 101 Supreme apps like this?"
+        if st.toggle("Show `Magic Commands` sample output"):
+            st.write(write)
 
 
 
