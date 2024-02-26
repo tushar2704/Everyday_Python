@@ -288,54 +288,59 @@ def file_handling():
         
         
         
-        st.subheader("Appending to a File")
+        st.subheader("Using With Blocks for Multiple Files")
         
         st.markdown(
             """
-            ##### To add text to the end of an existing file:
+            ##### To work with multiple files simultaneously using `with` blocks:
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'a') as file:
-                content = file.write("\n https://www.linkedin.com/in/tusharaggarwalinseec/")
-                print(content)
-           
+            with open("source.txt","r") as source,
+                open("destination.txt","w") as destination
+                
+                content = source.read()
+                destination.write(content)
             """
         )
         
         
-        st.subheader("Reading Lines into a List")
+        st.subheader("Deleting a File")
         
         st.markdown(
             """
-            ##### To read a file line by line into a list:
+            ##### To safely delete a file if it exists:
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'r') as file:
-                content = file.readlines()
-                print(content)
-           
+            import os
+            if os.path.exists("Tushar.txt"):
+                os.remove("Tushar.txt")
+                print("File deleted.")
+            else:
+                print("File does not exist.")
             """
         )
         
         
         
-        st.subheader("Iterating Over Each Line in a File")
+        st.subheader("Reading and Writing Binary Files")
         
         st.markdown(
             """
-            ##### To process each line in a file:
+            ##### To read from and write to a file in binary mode (useful for images, videos,etc.):
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'a') as file:
-                for line in file:
-                    print(line.strip())
-           
+            # Reading a binary file
+            with open('image.jpg','rb') as file:
+                content = file.read()
+            #Writing to a binary file
+            with open('copy.jpg','wb') as file:
+                file.write(content)
             """
         )
 
