@@ -248,23 +248,96 @@ def file_handling():
             
         
     with col2:
-        st.subheader("Magic Commands")
+        st.subheader("Checking If a File Exists")
         
         st.markdown(
             """
-            **Magic Commands** allow you to display variables or literals in your app automatically.
+            ##### To check if a file exists before performing file operations:
             """
         )
         st.code(
             """
-            "Hello, World!"  # Writes Hello, World!
-            write="Did you know I have more then 101 Supreme apps like this?"
-            write
+            import os
+            if os.path.exists("Tushar.txt"):
+                print("File exists.")
+            else:
+                print("File does not exists.")
             """
         )
-        write="Did you know I have more then 101 Supreme apps like this?"
-        if st.toggle("Show `Magic Commands` sample output"):
-            st.write(write)
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("Writing Lists to a File")
+        
+        st.markdown(
+            """
+            ##### To write each element of a list to a new line in a file:
+            """
+        )
+        st.code(
+            """
+            lines = ['First line', 'Second line', 'Third line']
+            with open("Tushar.txt","w") as file:
+                for line in lines:
+                    file.write(f'{file}\n')           
+            """
+        )
+        
+        
+        
+        
+        st.subheader("Appending to a File")
+        
+        st.markdown(
+            """
+            ##### To add text to the end of an existing file:
+            """
+        )
+        st.code(
+            """
+            with open('Tushar.txt', 'a') as file:
+                content = file.write("\n https://www.linkedin.com/in/tusharaggarwalinseec/")
+                print(content)
+           
+            """
+        )
+        
+        
+        st.subheader("Reading Lines into a List")
+        
+        st.markdown(
+            """
+            ##### To read a file line by line into a list:
+            """
+        )
+        st.code(
+            """
+            with open('Tushar.txt', 'r') as file:
+                content = file.readlines()
+                print(content)
+           
+            """
+        )
+        
+        
+        
+        st.subheader("Iterating Over Each Line in a File")
+        
+        st.markdown(
+            """
+            ##### To process each line in a file:
+            """
+        )
+        st.code(
+            """
+            with open('Tushar.txt', 'a') as file:
+                for line in file:
+                    print(line.strip())
+           
+            """
+        )
 
 
 
