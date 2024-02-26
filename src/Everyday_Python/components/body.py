@@ -186,7 +186,7 @@ def file_handling():
         st.code(
             """
             with open('Tushar.txt', 'w') as file:
-                content.write("www.tushar-aggarwal.com")
+                content= file.write("www.tushar-aggarwal.com")
                 print(content)
            
             """
@@ -205,8 +205,43 @@ def file_handling():
         st.code(
             """
             with open('Tushar.txt', 'a') as file:
-                content.write("\n https://www.linkedin.com/in/tusharaggarwalinseec/")
+                content = file.write("\n https://www.linkedin.com/in/tusharaggarwalinseec/")
                 print(content)
+           
+            """
+        )
+        
+        
+        st.subheader("Reading Lines into a List")
+        
+        st.markdown(
+            """
+            ##### To read a file line by line into a list:
+            """
+        )
+        st.code(
+            """
+            with open('Tushar.txt', 'r') as file:
+                content = file.readlines()
+                print(content)
+           
+            """
+        )
+        
+        
+        
+        st.subheader("Iterating Over Each Line in a File")
+        
+        st.markdown(
+            """
+            ##### To process each line in a file:
+            """
+        )
+        st.code(
+            """
+            with open('Tushar.txt', 'a') as file:
+                for line in file:
+                    print(line.strip())
            
             """
         )
