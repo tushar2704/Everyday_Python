@@ -150,7 +150,51 @@ sub_stopics=["Reading a File","Writing to a File","Appending to a File","Reading
 
 
 def file_handling():
-    pass
+    st.subheader("File Handling")
+    
+    # Create a two-column layout
+    col1, col2 = st.columns([0.5, 0.5], gap="small")
+    
+    with col1:
+        st.subheader("Reading a File")
+        
+        st.markdown(
+            """
+            To read the entire content of a file:
+            """
+        )
+        st.code(
+            """
+            st.write("Did you know I have more then 101 Supreme apps like this?")
+            st.write(df)
+            st.write(fig)
+            """
+        )
+        
+        if st.toggle("Show `st.write` sample output"):
+            st.write("Did you know I have more then 101 Supreme apps like this?")
+        if st.toggle("`st.write`'s documentation"):
+            st.help(st.write)
+            
+        
+    with col2:
+        st.subheader("Magic Commands")
+        
+        st.markdown(
+            """
+            **Magic Commands** allow you to display variables or literals in your app automatically.
+            """
+        )
+        st.code(
+            """
+            "Hello, World!"  # Writes Hello, World!
+            write="Did you know I have more then 101 Supreme apps like this?"
+            write
+            """
+        )
+        write="Did you know I have more then 101 Supreme apps like this?"
+        if st.toggle("Show `Magic Commands` sample output"):
+            st.write(write)
 
 
 
