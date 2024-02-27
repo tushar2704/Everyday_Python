@@ -65,3 +65,7 @@ page1()
 
 
 file_handling()
+
+st.divider()
+
+http_apis()
