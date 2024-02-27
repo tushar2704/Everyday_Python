@@ -350,7 +350,7 @@ def file_handling():
 
 
 def http_apis():
-    st.header("File Handling")
+    st.header("Working With Simple HTTP APIs")
     
     # Create a two-column layout
     col1, col2 = st.columns([0.5, 0.5], gap="small")
