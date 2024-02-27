@@ -248,23 +248,101 @@ def file_handling():
             
         
     with col2:
-        st.subheader("Magic Commands")
+        st.subheader("Checking If a File Exists")
         
         st.markdown(
             """
-            **Magic Commands** allow you to display variables or literals in your app automatically.
+            ##### To check if a file exists before performing file operations:
             """
         )
         st.code(
             """
-            "Hello, World!"  # Writes Hello, World!
-            write="Did you know I have more then 101 Supreme apps like this?"
-            write
+            import os
+            if os.path.exists("Tushar.txt"):
+                print("File exists.")
+            else:
+                print("File does not exists.")
             """
         )
-        write="Did you know I have more then 101 Supreme apps like this?"
-        if st.toggle("Show `Magic Commands` sample output"):
-            st.write(write)
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("Writing Lists to a File")
+        
+        st.markdown(
+            """
+            ##### To write each element of a list to a new line in a file:
+            """
+        )
+        st.code(
+            """
+            lines = ['First line', 'Second line', 'Third line']
+            with open("Tushar.txt","w") as file:
+                for line in lines:
+                    file.write(f'{file}\n')           
+            """
+        )
+        
+        
+        
+        
+        st.subheader("Using With Blocks for Multiple Files")
+        
+        st.markdown(
+            """
+            ##### To work with multiple files simultaneously using `with` blocks:
+            """
+        )
+        st.code(
+            """
+            with open("source.txt","r") as source,
+                open("destination.txt","w") as destination
+                
+                content = source.read()
+                destination.write(content)
+            """
+        )
+        
+        
+        st.subheader("Deleting a File")
+        
+        st.markdown(
+            """
+            ##### To safely delete a file if it exists:
+            """
+        )
+        st.code(
+            """
+            import os
+            if os.path.exists("Tushar.txt"):
+                os.remove("Tushar.txt")
+                print("File deleted.")
+            else:
+                print("File does not exist.")
+            """
+        )
+        
+        
+        
+        st.subheader("Reading and Writing Binary Files")
+        
+        st.markdown(
+            """
+            ##### To read from and write to a file in binary mode (useful for images, videos,etc.):
+            """
+        )
+        st.code(
+            """
+            # Reading a binary file
+            with open('image.jpg','rb') as file:
+                content = file.read()
+            #Writing to a binary file
+            with open('copy.jpg','wb') as file:
+                file.write(content)
+            """
+        )
 
 
 
