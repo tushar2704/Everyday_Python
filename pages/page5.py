@@ -61,3 +61,7 @@ def page1():
 
 
 page1()
+
+
+
+footer()
