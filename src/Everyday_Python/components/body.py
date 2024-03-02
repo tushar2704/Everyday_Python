@@ -536,21 +536,19 @@ def http_apis():
         
         
         
-        st.subheader("Reading and Writing Binary Files")
+        st.subheader("Streaming Large Responses")
         
         st.markdown(
             """
-            ##### To read from and write to a file in binary mode (useful for images, videos,etc.):
+            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
             """
         )
         st.code(
             """
-            # Reading a binary file
-            with open('image.jpg','rb') as file:
-                content = file.read()
-            #Writing to a binary file
-            with open('copy.jpg','wb') as file:
-                file.write(content)
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
+            for chunk in response.iter_content(chunk_size=1024):
+                process_chunk(chunk) #replace 'process' with your own function
             """
         )
 
