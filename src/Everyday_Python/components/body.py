@@ -352,23 +352,23 @@ def file_handling():
 def http_apis():
     st.header("Working With Simple HTTP APIs")
     
-    # Create a two-column layout
+    
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Reading a File")
+        st.subheader("Basic GET Request")
         
         st.markdown(
             """
-            ##### To read the entire content of a file:
+            ##### To fetch data from an API endpoint using a GET request:
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'r') as file:
-                content = file.read()
-                print(content)
-           
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            data = response.json() # Convert the response to JSON
+            print(data)
             """
         )
         
