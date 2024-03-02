@@ -376,38 +376,43 @@ def http_apis():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Writing to a File")
+        st.subheader("GET Request with Query Parameters")
         
         st.markdown(
             """
-            ##### To write text to a file, overwriting existing content:
+            ##### To send a GET request with query parameters:
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'w') as file:
-                content= file.write("www.tushar-aggarwal.com")
-                print(content)
-           
+            import requests
+            params = {'page': 2}
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
+            data = response.json()
+            print(data)
             """
         )
         
         
         
         
-        st.subheader("Appending to a File")
+        st.subheader("Handling HTTP Errors")
         
         st.markdown(
             """
-            ##### To add text to the end of an existing file:
+            ##### To handle possible HTTP errors gracefully:
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'a') as file:
-                content = file.write("\n https://www.linkedin.com/in/tusharaggarwalinseec/")
-                print(content)
-           
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            try:
+                response.raise_for_status()
+                data = response.json()
+                print(data)
+            except requests.exceptions.HTTPError as err:
+                print(f'HTTP Error:{err}')
             """
         )
         
