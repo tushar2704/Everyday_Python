@@ -969,7 +969,7 @@ def dict():
 
 
 
-def os():
+def os_():
     st.header("Working With Simple HTTP APIs")
     
     
