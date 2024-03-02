@@ -500,39 +500,37 @@ def http_apis():
         
         
         
-        st.subheader("Using With Blocks for Multiple Files")
+        st.subheader("Using Sessions with Requests")
         
         st.markdown(
             """
-            ##### To work with multiple files simultaneously using `with` blocks:
+            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
             """
         )
         st.code(
             """
-            with open("source.txt","r") as source,
-                open("destination.txt","w") as destination
+            import requests
+            with requests.Session() as session:
+                session.headers.update({'Authorization': 'YOUR_API_KEY'})
+                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
+                print(response.json())
                 
-                content = source.read()
-                destination.write(content)
             """
         )
         
         
-        st.subheader("Deleting a File")
+        st.subheader("Handling Redirects")
         
         st.markdown(
             """
-            ##### To safely delete a file if it exists:
+            ##### To handle or disable redirects in requests:
             """
         )
         st.code(
             """
-            import os
-            if os.path.exists("Tushar.txt"):
-                os.remove("Tushar.txt")
-                print("File deleted.")
-            else:
-                print("File does not exist.")
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
+            print(response.status_code)
             """
         )
         
