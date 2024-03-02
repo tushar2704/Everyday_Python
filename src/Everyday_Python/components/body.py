@@ -459,20 +459,20 @@ def http_apis():
             
         
     with col2:
-        st.subheader("Checking If a File Exists")
+        st.subheader("POST Request with JSON Payload")
         
         st.markdown(
             """
-            ##### To check if a file exists before performing file operations:
+            ##### To send data to an API endpoint using a POST request with a JSON payload:
             """
         )
         st.code(
             """
-            import os
-            if os.path.exists("Tushar.txt"):
-                print("File exists.")
-            else:
-                print("File does not exists.")
+            import requests
+            payload = {'key1': 'value1', 'key2': 'value2'}
+            headers = {'Content-type': 'application/json'}
+            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
+            print(response.json())
             """
         )
         
@@ -480,19 +480,20 @@ def http_apis():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Writing Lists to a File")
+        st.subheader("Handling Response Encoding")
         
         st.markdown(
             """
-            ##### To write each element of a list to a new line in a file:
+            ##### To handle the response encoding properly:
             """
         )
         st.code(
             """
-            lines = ['First line', 'Second line', 'Third line']
-            with open("Tushar.txt","w") as file:
-                for line in lines:
-                    file.write(f'{file}\n')           
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            response.encoding = 'utf-8'
+            data = response.text
+            print(data)          
             """
         )
         
