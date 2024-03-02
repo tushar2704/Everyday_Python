@@ -417,37 +417,43 @@ def http_apis():
         )
         
         
-        st.subheader("Reading Lines into a List")
+        st.subheader("Setting Timeout for Requests")
         
         st.markdown(
             """
-            ##### To read a file line by line into a list:
+            ##### To set a timeout for API requests to avoid hanging indefinitely:
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'r') as file:
-                content = file.readlines()
-                print(content)
-           
+            import requests
+            try:
+                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
+                data = response.json()
+                print(data)
+            except requests.exceptions.Timeout:
+                print('The request timed out, Please try again')
             """
         )
         
         
         
-        st.subheader("Iterating Over Each Line in a File")
+        st.subheader("Using Headers in Requests")
         
         st.markdown(
             """
-            ##### To process each line in a file:
+            ##### To include headers in your request (e.g., for authorization):
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'a') as file:
-                for line in file:
-                    print(line.strip())
-           
+            import requests
+            headers = {
+                'Authorization': 'YOUR_API_KEY'
+            }
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
+            data = response.json()
+            print(data)
             """
         )
             
