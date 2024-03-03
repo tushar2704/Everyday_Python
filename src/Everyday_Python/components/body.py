@@ -1689,25 +1689,26 @@ def databases():
 
 
 def async_():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With Async IO (Asyncrounous Programming)")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Defining an Asynchronous Function")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To declare an async function:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import asyncio
+            async def fetch_data():
+                print("Fetching data...")
+                await asyncio.sleep(2)  # Simulate an I/O operation
+                print("Data retrieved.")
             """
         )
         
@@ -1715,84 +1716,79 @@ def async_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Running an Asynchronous Function")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To invoke an asynchronous function and await them:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            async def main():
+                await fetch_data()
+            asyncio.run(main())
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Awaiting Multiple Coroutines")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To invoke multiple async functions and await all:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            async def main():
+                task1 = fetch_data()
+                task2 = fetch_data()
+                await asyncio.gather(task1, task2)
+            asyncio.run(main())
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Creating Tasks")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To dispatch tasks:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            async def main():
+                task1 = asyncio.create_task(fetch_data())
+                task2 = asyncio.create_task(fetch_data())
+                await task1
+                await task2
+            asyncio.run(main())
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Asynchronous Iteration")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To traverse through asynchronously, allowing time for other functions in between:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            async def fetch_item(item):
+                await asyncio.sleep(1)  # Simulate an I/O operation
+                print(f"Fetched {item}")
+            async def main():
+                items = ['potion', 'scroll', 'wand']
+                for item in items:
+                    await fetch_item(item)
+            asyncio.run(main())
             """
         )
             
