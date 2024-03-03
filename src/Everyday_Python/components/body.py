@@ -1592,20 +1592,17 @@ def databases():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Updating Records")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To alter the records:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            cursor.execute("UPDATE your_table SET column1 = %s WHERE column2 = %s", ('new_value', 'condition_value'))
+            connection.commit()
             """
         )
         
@@ -1613,75 +1610,76 @@ def databases():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Deleting Records")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To delete records from the table:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            cursor.execute("DELETE FROM your_table WHERE condition_column = %s", ('condition_value',))
+            connection.commit()          
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Creating a Table")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To create a new table, defining its structure:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            cursor.execute("
+                        CREATE TABLE your_new_table (
+                            id SERIAL PRIMARY KEY,
+                            column1 VARCHAR(255),
+                            column2 INTEGER
+                        )
+                    ")
+            connection.commit()
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Dropping a Table")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To drop a table:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            cursor.execute("DROP TABLE if exists your_table")
+            connection.commit()
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Using Transactions")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To use transactions for atomicity:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            try:
+                cursor.execute("your first transactional query")
+                cursor.execute("your second transactional query")
+                connection.commit()  # Commit if all is well
+            except Exception as e:
+                connection.rollback()  # Rollback in case of any issue
+                print(f"An error occurred: {e}")
             """
         )
 
