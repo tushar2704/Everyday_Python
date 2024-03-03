@@ -1913,7 +1913,7 @@ def async_():
 
 
 def network():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With Networks, Sockets, and Network Interfaces")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
