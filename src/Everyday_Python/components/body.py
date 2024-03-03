@@ -1120,25 +1120,23 @@ def os_():
 
 
 def cli():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With CLI — STDIN, STDOUT, STDERR")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Reading User Input")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### Getting input from STDIN:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            user_input = input("Impart your wisdom: ")
+            print(f"You shared: {user_input}")
             """
         )
         
@@ -1146,84 +1144,66 @@ def cli():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Printing to STDOUT")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To print messages to the console:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            print("Behold, the message of the ancients!")
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Formatted Printing")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To weave variables into your messages with grace and precision:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            name = "Merlin"
+            age = 300
+            print(f"{name}, of {age} years, speaks of forgotten lore.")
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Reading Lines from STDIN")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### Trim whitespaces line by line from STDIN:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            import sys
+            for line in sys.stdin:
+                print(f"Echo from the void: {line.strip()}")
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Writing to STDERR")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To send message to STDERR:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import sys
+            sys.stderr.write("Beware! The path is fraught with peril.\n")
             """
         )
             
