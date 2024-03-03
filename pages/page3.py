@@ -44,14 +44,14 @@ page_header('''
 
 
 #Sidebar Pages
-with st.sidebar:
-    logo()
-    st.page_link("Home.py", label="Back to Home", icon="🏠")
+# with st.sidebar:
+#     logo()
+#     st.page_link("Home.py", label="Back to Home", icon="🏠")
     
 
-    st.page_link("pages/page2.py", label="Everyday Cheat Sheets", icon="🐍")
+#     st.page_link("pages/page2.py", label="Everyday Cheat Sheets", icon="🐍")
     
-    st.page_link("pages/page5.py", label="Pro Tips", icon="🐍")
+#     st.page_link("pages/page5.py", label="Pro Tips", icon="🐍")
     
 
 

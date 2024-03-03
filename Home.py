@@ -49,16 +49,80 @@ page_header('''
 #Sidebar Pages
 with st.sidebar:
     logo()
-    st.page_link("Home.py", label="Home", icon="🏠")
+    st.page_link("Home.py", label="Everyday Cheat Sheets", icon="🐍")
     
-    st.page_link("pages/page2.py", label="Everyday Cheat Sheets", icon="🐍")
-    st.page_link("pages/page3.py", label="Data Structures", icon="🐍")
+    # st.page_link("pages/page2.py", label="Everyday Cheat Sheets", icon="🐍")
+    # st.page_link("pages/page3.py", label="Data Structures", icon="🐍")
     
     st.page_link("pages/page5.py", label="Pro Tips", icon="🐍")
     
 
  
+#######################
+#Body
+sheet1,sheet2,sheet3,sheet4,sheet5,sheet6,sheet7,sheet8,sheet9,sheet10,sheet11,sheet12,sheet13,sheet14,sheet15=st.tabs(
+    ["Files Handling","HTTP APIs","Lists","Dictionary","OS",
+     "CLI","Math","Databases","AsyncIO","Network","DataFrame","NumPy","Plots","Scikit-learn","Plotly"]
+    )
 
+
+with sheet1:
+    file_handling()
+
+
+with sheet2:
+    http_apis()
+
+
+with sheet3:
+    lists()
+
+
+with sheet4:
+    dict()
+
+
+with sheet5:
+    os_()
+
+
+with sheet6:
+    cli()
+
+
+with sheet7:
+    math()
+
+
+with sheet8:
+    databases()
+
+
+with sheet9:
+    async_()
+
+
+with sheet10:
+    network()
+
+
+with sheet11:
+    df_()
+
+
+with sheet12:
+    numpy_()
+
+
+with sheet13:
+    plots()
+
+
+with sheet14:
+    scikit_()
+
+with sheet15:
+    plotly_()
 
 #######################################################################################################
 #End of Everyday_Python by github.com/tushar2704
