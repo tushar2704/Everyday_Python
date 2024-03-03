@@ -1306,25 +1306,27 @@ def cli():
 
 
 def math():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With Mathematical Operations and Permutations")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Basic Arithmetic Operations")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To perform basic arithmetic:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            sum = 7 + 3  # Addition
+            difference = 7 - 3  # Subtraction
+            product = 7 * 3  # Multiplication
+            quotient = 7 / 3  # Division
+            remainder = 7 % 3  # Modulus (Remainder)
+            power = 7 ** 3  # Exponentiation
             """
         )
         
@@ -1332,84 +1334,73 @@ def math():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Working with Complex Numbers")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To work with complex numbers:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            z = complex(2, 3)  # Create a complex number 2 + 3j
+            real_part = z.real  # Retrieve the real part
+            imaginary_part = z.imag  # Retrieve the imaginary part
+            conjugate = z.conjugate()  # Get the conjugate
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Mathematical Functions")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### Common math functions:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            import math
+            root = math.sqrt(16)  # Square root
+            logarithm = math.log(100, 10)  # Logarithm base 10 of 100
+            sine = math.sin(math.pi / 2)  # Sine of 90 degrees (in radians)
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Generating Permutations")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### Easy way to generate permutations from a given set:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            from itertools import permutations
+            paths = permutations([1, 2, 3])  # Generate all permutations of the list [1, 2, 3]
+            for path in paths:
+                print(path)
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Generating Combinations")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### Easy way to generate combinations:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            from itertools import combinations
+            combos = combinations([1, 2, 3, 4], 2)  # Generate all 2-element combinations
+            for combo in combos:
+                print(combo)
             """
         )
             
