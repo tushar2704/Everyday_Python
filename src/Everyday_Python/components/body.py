@@ -599,43 +599,34 @@ def lists():
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("Inserting into a List")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To insert an element at a specific position in the list:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            # Insert 'AGGARWAL' at index #1 in the list
+            my_list.insert(1, 'AGGARWAL')
+            print(my_list)
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("Removing from a List")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To remove an element by value from the list:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            # Remove 'apps' from the list
+            my_list.remove('apps')
+            print(my_list)
             """
         )
         
