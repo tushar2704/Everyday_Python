@@ -703,36 +703,35 @@ def lists():
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("Sorting a List")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To sort a list in ascending order (in-place):
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            # Sort elements in ascending order
+            my_list.sort()
+            print(my_list)
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("Reversing a List")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To reverse the elements of a list in-place:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            # Reverse elements 
+            my_list.reverse()
+            print(my_list)
             """
         )
 
