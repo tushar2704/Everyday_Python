@@ -1496,26 +1496,32 @@ def math():
 
 
 
+
+
+
 def databases():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With Databases")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Establishing a Connection")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To create a connection to a Postgres Database:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import psycopg2
+            connection = psycopg2.connect(
+                dbname='your_database',
+                user='your_username',
+                password='your_password',
+                host='your_host'
+            )
             """
         )
         
@@ -1523,84 +1529,64 @@ def databases():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Creating a Cursor")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To create a database cursor, enabling the traversal and manipulation of records:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            cursor = connection.cursor()
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Executing a Query")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### Selecting data from Database:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            cursor.execute("SELECT * FROM your_table")
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Fetching Query Results")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### Fetching data with a cursor:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            records = cursor.fetchall()
+            for record in records:
+                print(record)
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Inserting Records")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To insert data into tables in a database:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            cursor.execute("INSERT INTO your_table (column1, column2) VALUES (%s, %s)", ('value1', 'value2'))
+            connection.commit()  # Seal the transaction
             """
         )
             
