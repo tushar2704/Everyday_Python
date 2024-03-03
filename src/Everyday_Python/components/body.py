@@ -1017,20 +1017,20 @@ def os_():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Working with Environment Variables")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To read and inscribe upon the ethereal environment variables:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            import os
+            # Read the 'PATH' variable
+            path = os.environ.get('PATH')
+            # Create a new environment variable
+            os.environ['MAGIC'] = 'Arcane'
             """
         )
         
@@ -1038,75 +1038,80 @@ def os_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Changing the Current Working Directory")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To shift your presence to another directory within the filesystem:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            import os
+            # Traverse to the 'arcane_library' directory
+            os.chdir('arcane_library')         
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Path Existence and Type")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To discern the existence of paths and their nature — be they file or directory:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            import os
+            # Check if a path exists
+            exists = os.path.exists('mysterious_ruins')
+            # Ascertain if the path is a directory
+            is_directory = os.path.isdir('mysterious_ruins')
+            # Determine if the path is a file
+            is_file = os.path.isfile('ancient_manuscript.txt')
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Working with Temporary Files")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To summon temporary files and directories, fleeting and ephemeral:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            import tempfile
+            # Create a temporary file
+            temp_file = tempfile.NamedTemporaryFile(delete=False)
+            print(temp_file.name)
+            # Erect a temporary directory
+            temp_dir = tempfile.TemporaryDirectory()
+            print(temp_dir.name)
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Getting System Information")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To unveil information about the host system, its name, and the enchantments it supports:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            import os
+            import platform
+            # Discover the operating system
+            os_name = os.name  # 'posix', 'nt', 'java'
+            # Unearth detailed system information
+            system_info = platform.system()  # 'Linux', 'Windows', 'Darwin'
             """
         )
 
