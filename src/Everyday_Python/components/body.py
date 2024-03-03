@@ -1406,20 +1406,17 @@ def math():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Random Number Generation")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To get a random number:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            import random
+            num = random.randint(1, 100)  # Generate a random integer between 1 and 100
             """
         )
         
@@ -1427,75 +1424,71 @@ def math():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Working with Fractions")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### When you need to work with fractions:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            from fractions import Fraction
+            f = Fraction(3, 4)  # Create a fraction 3/4
+            print(f + 1)  # Add a fraction and an integer          
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Statistical Functions")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To get Average, Median, and Standard Deviation:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            import statistics
+            data = [1, 2, 3, 4, 5]
+            mean = statistics.mean(data)  # Average
+            median = statistics.median(data)  # Median
+            stdev = statistics.stdev(data)  # Standard Deviation
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Trigonometric Functions")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To work with trigonometry:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            import math
+            angle_rad = math.radians(60)  # Convert 60 degrees to radians
+            cosine = math.cos(angle_rad)  # Cosine of the angle
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Handling Infinity and NaN")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To work with Infinity and NaN:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            import math
+            infinity = math.inf  # Representing infinity
+            not_a_number = math.nan  # Representing a non-number (NaN)
             """
         )
 
