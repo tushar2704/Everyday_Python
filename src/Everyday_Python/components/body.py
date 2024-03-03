@@ -1209,20 +1209,21 @@ def cli():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Redirecting STDOUT")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To redirect the STDOUT:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            import sys
+            original_stdout = sys.stdout  # Preserve the original STDOUT
+            with open('mystic_log.txt', 'w') as f:
+                sys.stdout = f  # Redirect STDOUT to a file
+                print("This message is inscribed within the mystic_log.txt.")
+            sys.stdout = original_stdout  # Restore STDOUT to its original glory
             """
         )
         
@@ -1230,75 +1231,73 @@ def cli():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Redirecting STDERR")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### Redirecting STDERR:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            import sys
+            with open('warnings.txt', 'w') as f:
+                sys.stderr = f  # Redirect STDERR
+                print("This warning is sealed within warnings.txt.", file=sys.stderr)         
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Prompting for Passwords")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To prompt for passwords:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            import getpass
+            secret_spell = getpass.getpass("Whisper the secret spell: ")
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Command Line Arguments")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### Working with and parsing command line arguments:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            import sys
+            # The script's name is the first argument, followed by those passed by the invoker
+            script, first_arg, second_arg = sys.argv
+            print(f"Invoked with the sacred tokens: {first_arg} and {second_arg}")
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Using Argparse for Complex CLI Interactions")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### Adding descriptions and options/arguments:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            import argparse
+            parser = argparse.ArgumentParser(description="Invoke the ancient scripts.")
+            parser.add_argument('spell', help="The spell to cast")
+            parser.add_argument('--power', type=int, help="The power level of the spell")
+            args = parser.parse_args()
+            print(f"Casting {args.spell} with power {args.power}")
             """
         )
 
