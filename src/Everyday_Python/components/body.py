@@ -556,25 +556,24 @@ def http_apis():
 
 
 def lists():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With Lists")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("Creating a List")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To conjure a list into being:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            # Initialize an list
+            my_list = ['tushar', 'aggarwal', 'inseec']
+            print(my_list)
             """
         )
         
@@ -582,103 +581,86 @@ def lists():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("Appending to a List")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To append a new element to the end of a list:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            # Append an element
+            my_list.append('supreme', 'apps')
+            print(my_list)
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("Inserting into a List")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To insert an element at a specific position in the list:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            # Insert 'AGGARWAL' at index #1 in the list
+            my_list.insert(1, 'AGGARWAL')
+            print(my_list)
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("Removing from a List")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To remove an element by value from the list:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            # Remove 'apps' from the list
+            my_list.remove('apps')
+            print(my_list)
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("Popping an Element from a List")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To remove and return an element at a given index (default is the last item):
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            # Pop an element
+            my_list.pop()
+            print(my_list)
             """
         )
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("Finding the Index of an Element")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To find the index of the first occurrence of an element:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            # Find the index
+            my_list.index('aggarwal')
+            print(my_list)
             """
         )
         
@@ -686,75 +668,70 @@ def lists():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("List Slicing")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To slice a list, obtaining a sub-list:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            # Get elements from index 1 to 3
+            indexed = my_list[1:3]
+            print(indexed)          
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("List Comprehension")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To create a new list by applying an expression to each element of an existingone:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
+            # Create a new list with lengths of each element
+            new_list = [len(item) for item in my_list]
+            print(new_list)
                 
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("Sorting a List")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To sort a list in ascending order (in-place):
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            # Sort elements in ascending order
+            my_list.sort()
+            print(my_list)
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("Reversing a List")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To reverse the elements of a list in-place:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            # Reverse elements 
+            my_list.reverse()
+            print(my_list)
             """
         )
 
