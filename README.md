@@ -10,6 +10,7 @@
 
 Welcome to **Everyday Python Sheets** – your go-to resource for everyday Python cheat sheets, pro tips, interview questions, Python one-liners, and Python data structures. Whether you're a beginner looking to learn Python or an experienced developer seeking quick reference materials, this Streamlit application has got you covered.
 
+
 ## Features
 
 - **Cheat Sheets**: Explore concise and handy Python cheat sheets covering various topics, from basic syntax to advanced concepts.
