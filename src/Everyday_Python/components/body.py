@@ -740,25 +740,23 @@ def lists():
 
 
 def dict():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With Dictionaries")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1) Creating a Dictionary")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To forge a new dictionary:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            # A tome of elements and their symbols
+            elements = {'Hydrogen': 'H', 'Helium': 'He', 'Lithium': 'Li'}
             """
         )
         
@@ -766,103 +764,79 @@ def dict():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Adding or Updating Entries")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To add a new entry or update an existing one:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            elements['Carbon'] = 'C'  # Adds 'Carbon' or updates its value to 'C'
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Removing an Entry")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To banish an entry from the dictionary:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            del elements['Lithium']  # Removes the key 'Lithium' and its value
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Checking for Key Existence")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To check if a key resides within the dictionary:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            if 'Helium' in elements:
+                print('Helium is present')
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Iterating Over Keys")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To iterate over the keys in the dictionary:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            for element in elements:
+                print(element)  # Prints each key
             """
         )
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Iterating Over Values")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To traverse through the values in the dictionary:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            for symbol in elements.values():
+                print(symbol)  # Prints each value
             """
         )
         
@@ -870,75 +844,66 @@ def dict():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Iterating Over Items")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To journey through both keys and values together:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            for element, symbol in elements.items():
+                print(f'{element}: {symbol}')        
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Dictionary Comprehension")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To conjure a new dictionary through an incantation over an iterable:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            # Squares of numbers from 0 to 4
+            squares = {x: x**2 for x in range(5)}
+            print(squares)
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Merging Dictionaries")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To merge two or more dictionaries, forming a new alliance of their entries:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            alchemists = {'Paracelsus': 'Mercury'}
+            philosophers = {'Plato': 'Aether'}
+            merged = {**alchemists, **philosophers}
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Getting a Value with Default")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To retrieve a value safely, providing a default for absent keys:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            element = elements.get('Neon', 'Unknown')  # Returns 'Unknown' if 'Neon' is not found
             """
         )
 
@@ -5314,7 +5279,7 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### Print the systems’s hostname:
+            ##### 1) Print the systems’s hostname:
             """
         )
         st.code(
@@ -5330,7 +5295,7 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### Decode string written in Hex:
+            ##### 2) Decode string written in Hex:
             """
         )
         st.code(
@@ -5343,7 +5308,7 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### Read Lines from a File:
+            ##### 3) Read Lines from a File:
             """
         )
         st.code(
@@ -5357,7 +5322,7 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### Count Lines in a File:
+            ##### 4) Count Lines in a File:
             """
         )
         st.code(
@@ -5370,7 +5335,7 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### Extract Digits from a String:
+            ##### 5) Extract Digits from a String:
             """
         )
         st.code(
@@ -5381,19 +5346,15 @@ def one_liner_60():
         
         
         
-        st.subheader("Basic GET Request")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### 6) List Comprehension with Conditional:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            filtered_list = [x for x in my_list if x > 0]
             """
         )
         
@@ -5401,101 +5362,146 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### 7) Remove Duplicates from a List:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            unique_list = list(set(original_list))
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### 8) Calculate Average of a List:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            average = sum(my_list) / len(my_list) if len(my_list) > 0 else 0
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### 9) Generate Fibonacci Sequence:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            fibonacci = lambda n: n if n <= 1 else fibonacci(n-1) + fibonacci(n-2)
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### 10) Conditional Value Assignment:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            result = x if condition else y
             """
         )
         
         
-        st.subheader("Basic GET Request")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### 11) One-Liner For Loop:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            squares = [x**2 for x in range(10)]
+            """
+        )
+        
+        squares = [x**2 for x in range(10)]
+        if st.toggle("Show sample output",):
+            st.write(squares)
+        
+        
+        
+        st.markdown(
+            """
+            ##### 12) Handle Zero Division Error:
+            """
+        )
+        st.code(
+            """
+            result = numerator / denominator if denominator != 0 else 0
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 13) One-Liner Try-Except Block:
+            """
+        )
+        st.code(
+            """
+            result = try_block() if success else except_block()
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 14) Object Initialization with Default Values:
+            """
+        )
+        st.code(
+            """
+            my_object = MyClass(**kwargs) if kwargs else MyClass()
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 15) Fetch HTML Content with Requests:
+            """
+        )
+        st.code(
+            """
+            import requests; html_content = requests.get('https://example.com').text
+            """
+        )
+        
+        
+       
+        
+        st.markdown(
+            """
+            ##### 16) Pandas DataFrame Initialization:
+            """
+        )
+        st.code(
+            """
+            import pandas as pd; df = pd.DataFrame(data, columns=['col1', 'col2'])
             """
         )
         
@@ -5503,101 +5509,68 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### 17. Filter DataFrame Rows with Pandas:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            filtered_df = df[df['column'] > value]
             """
         )
         
         
         
-        
-        st.subheader("Handling HTTP Errors")
-        
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### 18. Generating a list of leap years using list comprehension:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            leap_years = [year for year in range(2000, 2051) if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)]
             """
         )
         
-        
-        st.subheader("Setting Timeout for Requests")
+    
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### 19. Retrieve Public IP Address:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            public_ip = requests.get('https://api64.ipify.org?format=json').json()['ip']
             """
         )
         
-        
-        
-        st.subheader("Using Headers in Requests")
+    
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### 20. Create Basic Tkinter Window:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import tkinter.messagebox as mb; mb.showinfo('Title', 'Message')
             """
         )
         
         
-        st.subheader("Basic GET Request")
-        
+       
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### 21. Display Message Box with Tkinter:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import tkinter.messagebox as mb; mb.showinfo('Title', 'Message')
             """
         )
         
@@ -5605,101 +5578,73 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### 22. Multithreading with threading Module:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            import threading; threading.Thread(target=my_function).start()
             """
         )
         
         
         
-        
-        st.subheader("Handling HTTP Errors")
+    
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### 23. Hashing with hashlib:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            import hashlib; hashed_password = hashlib.sha256(password.encode()).hexdigest()
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### 24. Check if all elements in a list are equal:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            are_equal = all(x == [1, 1, 1, 1])
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
-        
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### 25. Find the second largest number in a list:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            second_largest = sorted([3, 1, 4, 1, 5, 9])[-2]
             """
         )
         
         
-        st.subheader("Basic GET Request")
+        
+       
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### 26. Check if a number is prime:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            is_prime = all(7 % i != 0 for i in range(2, 7))
             """
         )
         
@@ -5707,206 +5652,73 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### 27. Find the most common element in a list:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            most_common = max(set([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]), key=[1, 2, 2, 3, 3, 3, 4, 4, 4, 4].count)
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### 28. Find the most common word in a list:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            most_common_word = max(words, key=words.count)
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### 29. Filter a list of numbers to get only even numbers:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### 30. Merge two dictionaries:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
-            """
-        )
-        
-        
-        
-        st.subheader("Basic GET Request")
-        
-        st.markdown(
-            """
-            ##### To fetch data from an API endpoint using a GET request:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
-            """
-        )
-        
-        # if st.toggle("Show `st.write` sample output"):
-        #     st.write("Did you know I have more then 101 Supreme apps like this?")
-        
-        
-        st.subheader("GET Request with Query Parameters")
-        
-        st.markdown(
-            """
-            ##### To send a GET request with query parameters:
-            """
-        )
-        st.code(
-            """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
-            """
-        )
-        
-        
-        
-        
-        st.subheader("Handling HTTP Errors")
-        
-        st.markdown(
-            """
-            ##### To handle possible HTTP errors gracefully:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
-            """
-        )
-        
-        
-        st.subheader("Setting Timeout for Requests")
-        
-        st.markdown(
-            """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
-            """
-        )
-        st.code(
-            """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
-            """
-        )
-        
-        
-        
-        st.subheader("Using Headers in Requests")
-        
-        st.markdown(
-            """
-            ##### To include headers in your request (e.g., for authorization):
-            """
-        )
-        st.code(
-            """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            merged_dict = {**dict1, **dict2}
             """
         )
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### 31. Find the index of the first occurrence of an item in a list:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            index = next((i for i, v in enumerate(my_list) if v == 1), None)
             """
         )
         
@@ -5914,94 +5726,76 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+       
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### 32. Remove vowels from a string:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            without_vowels = ''.join(char for char in my_string if char.lower() not in 'aeiou')       
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+       
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### 33. Transpose a matrix using zip:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            transposed = list(zip(*matrix))
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### 34. Check if a key exists in a dictionary:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            is_present = 'key' in {'key': 'value'}
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### 35. Check if a number is odd:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            is_odd = num % 2 != 0
             """
         )
         
         
         
-        st.subheader("POST Request with JSON Payload")
+        
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### 36. Check if a number is even:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            is_even = num % 2 == 0
             """
         )
         
@@ -6009,94 +5803,75 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### 37. Check if a number is a perfect square:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            is_perfect_square = lambda n: n**0.5 == int(n**0.5)          
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
-        
+    
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### 38. Check if a number is a power of two:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            is_power_of_two = lambda n: (n & (n - 1)) == 0 and n != 0
             """
         )
         
         
-        st.subheader("Handling Redirects")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### 39. Check if a year is a leap year:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            is_leap_year = lambda year: (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### 40. Extracting domain from an email address using regex:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            import re
+            domain = re.search(r'@(\w+\.\w+)', 'user@example.com').group(1)
             """
         )
         
         
         
-        st.subheader("POST Request with JSON Payload")
+        
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### 41. Leveraging the zip() function for parallel iteration:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            pairs = list(zip([1, 2, 3], ['a', 'b', 'c']))
             """
         )
         
@@ -6104,94 +5879,74 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### 42. The any() and all() functions for boolean checks:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            has_positive = any(x > 0 for x in [1, -2, 3, -4])
+            all_positive = all(x > 0 for x in [1, 2, 3, 4])        
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### 43. Removing duplicates from a list while preserving order:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            unique_list = list(dict.fromkeys([1, 2, 2, 3, 4]))
             """
         )
         
         
-        st.subheader("Handling Redirects")
+       
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### 44. Removing whitespace from the beginning and end of a string:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            trimmed_str = '  hello world  '.strip()
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### 45. Parsing and extracting information from a string using regular expressions:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            import re
+            extracted_digits = re.findall(r'\d+', 'abc123def456')
             """
         )
         
         
-        
-        st.subheader("POST Request with JSON Payload")
+       
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### 46. Swapping case in a string using a list comprehension:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            swapped_case = ''.join([char.upper() if char.islower() else char.lower() for char in 'Hello World'])
             """
         )
         
@@ -6199,95 +5954,74 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### 47. Checking if a number is prime using all() and range:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            is_prime = lambda num: num > 1 and all(num % i != 0 for i in range(2, int(num**0.5) + 1))       
             """
         )
         
         
-        
-        
-        st.subheader("Using Sessions with Requests")
-        
+       
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### 48. Finding the longest word in a sentence using max() and split:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            longest_word = max("Hello World example sentence".split(), key=len)
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### 49. Converting a binary string to an integer:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            binary_to_int = int('1101', 2)
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### 50. Filtering out non-positive numbers from a list:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            positive_numbers = list(filter(lambda x: x > 0, [-2, 0, 3, -1, 5]))
             """
         )
         
         
         
         
-        st.subheader("POST Request with JSON Payload")
+        
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### 51. Extract all email addresses from text:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            emails = re.findall(r"\b[\w.+-]+@[\w-]+\.[\w.-]+\b", text)
             """
         )
         
@@ -6295,94 +6029,76 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### 52.Validate a phone number format:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            pattern = re.compile(r"^\+?[\d\s]{7,}$")
+            phone = pattern.match(phone_number)         
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### 53. Download a file from a URL:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            urllib.request.urlretrieve("https://example.com/file.zip", "downloaded_file.zip")
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### 54. Check website status efficiently:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            response = requests.get("https://example.com").status_code
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+    
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### 55. List files in a directory:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            files = [f for f in os.listdir("path/to/dir") if os.path.isfile(os.path.join("path/to/dir", f))]
             """
         )
         
         
         
-        st.subheader("POST Request with JSON Payload")
+        
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### 56. Cache function results for efficiency:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            @cache def expensive_calculation(): ...
             """
         )
         
@@ -6390,173 +6106,66 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### 57. Safely open and close a file:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            with open("file.txt", "r") as f: data = f.readlines()          
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
-        
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### 58. Lock a resource to prevent concurrency issues:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            with threading.Lock(): shared_data += 1
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### 59. Use Selenium to interact with webpages:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            driver.find_element_by_id("button").click()
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### 60. Get system information like CPU usage:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            os.cpu_count(), psutil.cpu_percent()
             """
         )
         
         
+    
         
         
-        st.subheader("POST Request with JSON Payload")
-        
-        st.markdown(
-            """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
-            """
-        )
-        st.code(
-            """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
-            """
-        )
-        
-        # if st.toggle("Show `st.write` sample output"):
-        #     st.write("Did you know I have more then 101 Supreme apps like this?")
-        
-        
-        st.subheader("Handling Response Encoding")
-        
-        st.markdown(
-            """
-            ##### To handle the response encoding properly:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
-            """
-        )
-        
-        
-        
-        
-        st.subheader("Using Sessions with Requests")
-        
-        st.markdown(
-            """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
-            """
-        )
-        st.code(
-            """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
-            """
-        )
-        
-        
-        st.subheader("Handling Redirects")
-        
-        st.markdown(
-            """
-            ##### To handle or disable redirects in requests:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
-            """
-        )
-        
-        
-        
-        st.subheader("Streaming Large Responses")
-        
-        st.markdown(
-            """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
-            """
-        )
     
 
 
