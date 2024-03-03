@@ -668,40 +668,36 @@ def lists():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("List Slicing")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To slice a list, obtaining a sub-list:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            # Get elements from index 1 to 3
+            indexed = my_list[1:3]
+            print(indexed)          
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("List Comprehension")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To create a new list by applying an expression to each element of an existingone:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
+            # Create a new list with lengths of each element
+            new_list = [len(item) for item in my_list]
+            print(new_list)
                 
             """
         )
