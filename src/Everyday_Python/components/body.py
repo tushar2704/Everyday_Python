@@ -5314,7 +5314,7 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### Print the systems’s hostname:
+            ##### 1) Print the systems’s hostname:
             """
         )
         st.code(
@@ -5330,7 +5330,7 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### Decode string written in Hex:
+            ##### 2) Decode string written in Hex:
             """
         )
         st.code(
@@ -5343,7 +5343,7 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### Read Lines from a File:
+            ##### 3) Read Lines from a File:
             """
         )
         st.code(
@@ -5357,7 +5357,7 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### Count Lines in a File:
+            ##### 4) Count Lines in a File:
             """
         )
         st.code(
@@ -5370,7 +5370,7 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### Extract Digits from a String:
+            ##### 5) Extract Digits from a String:
             """
         )
         st.code(
@@ -5381,19 +5381,15 @@ def one_liner_60():
         
         
         
-        st.subheader("Basic GET Request")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### 6) List Comprehension with Conditional:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            filtered_list = [x for x in my_list if x > 0]
             """
         )
         
@@ -5401,101 +5397,71 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### 7) Remove Duplicates from a List:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            unique_list = list(set(original_list))
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### 8) Calculate Average of a List:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            average = sum(my_list) / len(my_list) if len(my_list) > 0 else 0
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### 9) Generate Fibonacci Sequence:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            fibonacci = lambda n: n if n <= 1 else fibonacci(n-1) + fibonacci(n-2)
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### 10) Conditional Value Assignment:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            result = x if condition else y
             """
         )
         
         
-        st.subheader("Basic GET Request")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### 11) One-Liner For Loop:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            squares = [x**2 for x in range(10)]
             """
         )
         
@@ -5503,101 +5469,74 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### 12) Handle Zero Division Error:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            result = numerator / denominator if denominator != 0 else 0
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### 13) One-Liner Try-Except Block:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            result = try_block() if success else except_block()
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### 14) Object Initialization with Default Values:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            my_object = MyClass(**kwargs) if kwargs else MyClass()
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### 15) Fetch HTML Content with Requests:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import requests; html_content = requests.get('https://example.com').text
             """
         )
         
         
-        st.subheader("Basic GET Request")
+       
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### 16) Pandas DataFrame Initialization:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import pandas as pd; df = pd.DataFrame(data, columns=['col1', 'col2'])
             """
         )
         
@@ -5605,84 +5544,55 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### 17. Filter DataFrame Rows with Pandas:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            filtered_df = df[df['column'] > value]
             """
         )
         
         
         
-        
-        st.subheader("Handling HTTP Errors")
-        
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### 18. Generating a list of leap years using list comprehension:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            leap_years = [year for year in range(2000, 2051) if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)]
             """
         )
         
-        
-        st.subheader("Setting Timeout for Requests")
+    
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### 19. Retrieve Public IP Address:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            public_ip = requests.get('https://api64.ipify.org?format=json').json()['ip']
             """
         )
         
-        
-        
-        st.subheader("Using Headers in Requests")
+    
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### 20. Create Basic Tkinter Window:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import tkinter.messagebox as mb; mb.showinfo('Title', 'Message')
             """
         )
         
