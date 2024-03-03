@@ -912,25 +912,28 @@ def dict():
 
 
 def os_():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With The Operating System")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Navigating File Paths")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To craft and dissect paths, ensuring compatibility across realms (operating systems):
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import os
+            # Craft a path compatible with the underlying OS
+            path = os.path.join('mystic', 'forest', 'artifact.txt')
+            # Retrieve the tome's directory
+            directory = os.path.dirname(path)
+            # Unveil the artifact's name
+            artifact_name = os.path.basename(path)
             """
         )
         
@@ -938,84 +941,77 @@ def os_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Listing Directory Contents")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To reveal all entities within a mystical directory:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            import os
+            contents = os.listdir('enchanted_grove')
+            print(contents)
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Creating Directories")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To conjure new directories within the fabric of the filesystem:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            import os
+            # create a single directory
+            os.mkdir('alchemy_lab')
+            # create a hierarchy of directories
+            os.makedirs('alchemy_lab/potions/elixirs')
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Removing Files and Directories")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To erase files or directories, banishing their essence:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            import os
+            # remove a file
+            os.remove('unnecessary_scroll.txt')
+            # remove an empty directory
+            os.rmdir('abandoned_hut')
+            # remove a directory and its contents
+            import shutil
+            shutil.rmtree('cursed_cavern')
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Executing Shell Commands")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To invoke the shell’s ancient powers directly from Python:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import subprocess
+            # Invoke the 'echo' incantation
+            result = subprocess.run(['echo', 'Revealing the arcane'], capture_output=True, text=True)
+            print(result.stdout)
             """
         )
             
