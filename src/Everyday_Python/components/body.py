@@ -1794,20 +1794,23 @@ def async_():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Using Asynchronous Context Managers")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To ensure resources are managed within the bounds of an asynchronous function:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            async def async_context_manager():
+                print("Entering context")
+                await asyncio.sleep(1)
+                print("Exiting context")
+            async def main():
+                async with async_context_manager():
+                    print("Within context")
+            asyncio.run(main())
             """
         )
         
@@ -1815,75 +1818,92 @@ def async_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Handling Exceptions in Asynchronous Code")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To gracefully catch and manage the errors with async functions:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            async def risky_spell():
+                await asyncio.sleep(1)
+                raise ValueError("The spell backfired!")
+            async def main():
+                try:
+                    await risky_spell()
+                except ValueError as e:
+                    print(f"Caught an error: {e}")
+            asyncio.run(main())          
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Asynchronous Generators")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To create async generators, each arriving in its own time:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            async def fetch_items():
+                items = ['crystal', 'amulet', 'dagger']
+                for item in items:
+                    await asyncio.sleep(1)
+                    yield item
+            async def main():
+                async for item in fetch_items():
+                    print(f"Found {item}")
+            asyncio.run(main())
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Using Semaphores")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To limit the number of concurrent tasks:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            async def guarded_spell(semaphore, item):
+                async with semaphore:
+                    print(f"Processing {item}")
+                    await asyncio.sleep(1)
+            async def main():
+                semaphore = asyncio.Semaphore(2)  # Allow 2 concurrent tasks
+                await asyncio.gather(*(guarded_spell(semaphore, i) for i in range(5)))
+            asyncio.run(main())
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Event Loops")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To directly engage with the asynchronous loop, customizing the flow of execution:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            async def perform_spell():
+                print("Casting spell...")
+                await asyncio.sleep(1)
+                print("Spell cast.")
+            loop = asyncio.get_event_loop()
+            try:
+                loop.run_until_complete(perform_spell())
+            finally:
+                loop.close()
             """
         )
 
