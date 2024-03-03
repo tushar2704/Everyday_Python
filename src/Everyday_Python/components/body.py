@@ -5748,16 +5748,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### 31. Find the index of the first occurrence of an item in a list:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            index = next((i for i, v in enumerate(my_list) if v == 1), None)
             """
         )
         
@@ -5769,16 +5765,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### 32. Remove vowels from a string:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            without_vowels = ''.join(char for char in my_string if char.lower() not in 'aeiou')       
             """
         )
         
@@ -5789,17 +5781,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### 33. Transpose a matrix using zip:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            transposed = list(zip(*matrix))
             """
         )
         
@@ -5808,14 +5795,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### 34. Check if a key exists in a dictionary:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            is_present = 'key' in {'key': 'value'}
             """
         )
         
@@ -5825,15 +5810,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### 35. Check if a number is odd:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            is_odd = num % 2 != 0
             """
         )
         
@@ -5843,16 +5825,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### 36. Check if a number is even:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            is_even = num % 2 == 0
             """
         )
         
@@ -5864,16 +5842,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### 37. Check if a number is a perfect square:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            is_perfect_square = lambda n: n**0.5 == int(n**0.5)          
             """
         )
         
@@ -5883,17 +5857,12 @@ def one_liner_60():
     
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### 38. Check if a number is a power of two:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            is_power_of_two = lambda n: (n & (n - 1)) == 0 and n != 0
             """
         )
         
@@ -5901,14 +5870,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### 39. Check if a year is a leap year:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            is_leap_year = lambda year: (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
             """
         )
         
@@ -5918,15 +5885,13 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### 40. Extracting domain from an email address using regex:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            import re
+            domain = re.search(r'@(\w+\.\w+)', 'user@example.com').group(1)
             """
         )
         
