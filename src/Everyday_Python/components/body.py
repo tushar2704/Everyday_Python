@@ -5901,16 +5901,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### 41. Leveraging the zip() function for parallel iteration:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            pairs = list(zip([1, 2, 3], ['a', 'b', 'c']))
             """
         )
         
@@ -5921,16 +5917,13 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### 42. The any() and all() functions for boolean checks:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            has_positive = any(x > 0 for x in [1, -2, 3, -4])
+            all_positive = all(x > 0 for x in [1, 2, 3, 4])        
             """
         )
         
@@ -5940,17 +5933,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### 43. Removing duplicates from a list while preserving order:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            unique_list = list(dict.fromkeys([1, 2, 2, 3, 4]))
             """
         )
         
@@ -5959,14 +5947,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### 44. Removing whitespace from the beginning and end of a string:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            trimmed_str = '  hello world  '.strip()
             """
         )
         
@@ -5975,15 +5961,13 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### 45. Parsing and extracting information from a string using regular expressions:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            import re
+            extracted_digits = re.findall(r'\d+', 'abc123def456')
             """
         )
         
@@ -5992,16 +5976,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### 46. Swapping case in a string using a list comprehension:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            swapped_case = ''.join([char.upper() if char.islower() else char.lower() for char in 'Hello World'])
             """
         )
         
@@ -6013,16 +5993,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### 47. Checking if a number is prime using all() and range:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            is_prime = lambda num: num > 1 and all(num % i != 0 for i in range(2, int(num**0.5) + 1))       
             """
         )
         
@@ -6030,17 +6006,12 @@ def one_liner_60():
        
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### 48. Finding the longest word in a sentence using max() and split:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            longest_word = max("Hello World example sentence".split(), key=len)
             """
         )
         
@@ -6049,14 +6020,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### 49. Converting a binary string to an integer:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            binary_to_int = int('1101', 2)
             """
         )
         
@@ -6066,15 +6035,12 @@ def one_liner_60():
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### 50. Filtering out non-positive numbers from a list:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            positive_numbers = list(filter(lambda x: x > 0, [-2, 0, 3, -1, 5]))
             """
         )
         
