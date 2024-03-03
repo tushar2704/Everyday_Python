@@ -632,41 +632,35 @@ def lists():
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("Popping an Element from a List")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To remove and return an element at a given index (default is the last item):
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            # Pop an element
+            my_list.pop()
+            print(my_list)
             """
         )
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("Finding the Index of an Element")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To find the index of the first occurrence of an element:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            # Find the index
+            my_list.index('aggarwal')
+            print(my_list)
             """
         )
         
