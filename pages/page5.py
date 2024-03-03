@@ -62,7 +62,7 @@ def page1():
 
 page1()
 
-
+one_liner_60()
 
 footer()
 #write a streamlit function to display "Tushar Aggarwal"
