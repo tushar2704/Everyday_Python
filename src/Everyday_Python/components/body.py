@@ -5304,25 +5304,22 @@ def func():
 
 
 def one_liner_60():
-    st.header("Powerful Python One-Liners forEveryday Coding Tasks")
+    
+    st.header("Powerful Python One-Liners for Everyday Coding Tasks")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### Print the systems’s hostname:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            from socket import gethostname; print gethostname()
             """
         )
         
@@ -5330,84 +5327,55 @@ def one_liner_60():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### Decode string written in Hex:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            python -c "print ''.join(chr(int(''.join(i), 16)) for i in zip(*[iter('\\x01\\x02\\x03\\x04\\x05\\x06\\x07\\x08\\x09\\x0a\\x0b\\x0c\\x0d\\x0e\\x0f\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1a\\x1b\\x1c\\x1d\\x1e\\x1f')] * 16))"
             """
         )
         
         
         
-        
-        st.subheader("Handling HTTP Errors")
-        
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### Read Lines from a File:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            lines = [line.strip() for line in open ('example.txt')]
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### Count Lines in a File:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            line_count = sum(1 for line in open('example.txt'))
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
-        
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### Extract Digits from a String:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            digits = ''.join(filter(str.isdigit, mystring))
             """
         )
         
