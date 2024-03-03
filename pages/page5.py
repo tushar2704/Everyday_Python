@@ -56,13 +56,18 @@ with st.sidebar:
     
 
 
-def page1():
-    st.header("Pro Tips")
+pro1,pro2,pro3=st.tabs(["One Liner PYTHON","Interview Code Snippets","Advanced PYTHON"])
 
-
-page1()
-
-one_liner_60()
+with pro1:
+    one_liner_60()
+    
+with pro2:
+    st.write("Interview Code Snippets upcoming...")
+    
+    
+with pro3:
+    st.write("Advanced PYTHON upcoming...")
+    
 
 footer()
 #write a streamlit function to display "Tushar Aggarwal"
