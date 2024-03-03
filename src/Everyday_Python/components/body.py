@@ -826,20 +826,17 @@ def dict():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Iterating Over Values")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To traverse through the values in the dictionary:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            for symbol in elements.values():
+                print(symbol)  # Prints each value
             """
         )
         
@@ -847,75 +844,66 @@ def dict():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Iterating Over Items")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To journey through both keys and values together:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            for element, symbol in elements.items():
+                print(f'{element}: {symbol}')        
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Dictionary Comprehension")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To conjure a new dictionary through an incantation over an iterable:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            # Squares of numbers from 0 to 4
+            squares = {x: x**2 for x in range(5)}
+            print(squares)
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Merging Dictionaries")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To merge two or more dictionaries, forming a new alliance of their entries:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            alchemists = {'Paracelsus': 'Mercury'}
+            philosophers = {'Plato': 'Aether'}
+            merged = {**alchemists, **philosophers}
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Getting a Value with Default")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To retrieve a value safely, providing a default for absent keys:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            element = elements.get('Neon', 'Unknown')  # Returns 'Unknown' if 'Neon' is not found
             """
         )
 
