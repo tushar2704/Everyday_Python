@@ -556,25 +556,24 @@ def http_apis():
 
 
 def lists():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With Lists")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("Creating a List")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To conjure a list into being:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            # Initialize an list
+            my_list = ['tushar', 'aggarwal', 'inseec']
+            print(my_list)
             """
         )
         
@@ -582,20 +581,18 @@ def lists():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("Appending to a List")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To append a new element to the end of a list:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            # Append an element
+            my_list.append('supreme', 'apps')
+            print(my_list)
             """
         )
         
