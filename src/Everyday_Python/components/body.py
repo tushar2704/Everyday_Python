@@ -740,25 +740,23 @@ def lists():
 
 
 def dict():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With Dictionaries")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1) Creating a Dictionary")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To forge a new dictionary:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            # A tome of elements and their symbols
+            elements = {'Hydrogen': 'H', 'Helium': 'He', 'Lithium': 'Li'}
             """
         )
         
@@ -766,84 +764,63 @@ def dict():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Adding or Updating Entries")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To add a new entry or update an existing one:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            elements['Carbon'] = 'C'  # Adds 'Carbon' or updates its value to 'C'
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Removing an Entry")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To banish an entry from the dictionary:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            del elements['Lithium']  # Removes the key 'Lithium' and its value
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Checking for Key Existence")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To check if a key resides within the dictionary:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            if 'Helium' in elements:
+                print('Helium is present')
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Iterating Over Keys")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To iterate over the keys in the dictionary:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            for element in elements:
+                print(element)  # Prints each key
             """
         )
             
