@@ -2256,25 +2256,23 @@ def df_():
 
 
 def numpy_():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With Numpy Library (Arrays)")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Creating a NumPy Array")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To create an array:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import numpy as np
+            array = np.array([1, 2, 3, 4, 5])
             """
         )
         
@@ -2282,84 +2280,62 @@ def numpy_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Array of Zeros or Ones")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To create an array filled with zeros:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            zeros = np.zeros((3, 3))  # A 3x3 array of zeros
+            ones = np.ones((2, 4))  # A 2x4 array of ones
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Creating a Range of Numbers")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To create a sequence of numbers:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            range_array = np.arange(10, 50, 5)  # From 10 to 50, step by 5
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Creating a Linearly Spaced Array")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To create a series of values, evenly spaced between two bounds:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            linear_spaced = np.linspace(0, 1, 5)  # 5 values from 0 to 1
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Reshaping an Array")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To transmute the shape of an array, altering its dimensions:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            reshaped = np.arange(9).reshape(3, 3)  # Reshape a 1D array into a 3x3 2D array
             """
         )
             
