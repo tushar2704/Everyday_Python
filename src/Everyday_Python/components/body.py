@@ -3571,8 +3571,1371 @@ def oop():
 
 
 
-def func():
-    st.header("Working With Simple HTTP APIs")
+def deco_():
+    st.header("Working With Decorators")
+    
+    
+    col1, col2 = st.columns([0.5, 0.5], gap="small")
+    
+    with col1:
+        st.subheader("1. Basic Decorator")
+        
+        st.markdown(
+            """
+            ##### To create a simple decorator that wraps a function:
+            """
+        )
+        st.code(
+            """
+            def my_decorator(func):
+                def wrapper():
+                    print("Something is happening before the function is called.")
+                    func()
+                    print("Something is happening after the function is called.")
+                return wrapper
+
+            @my_decorator
+            def say_hello():
+                print("Hello!")
+
+            say_hello()
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("2. Decorator with Arguments")
+        
+        st.markdown(
+            """
+            ##### To pass arguments to the function within a decorator:
+            """
+        )
+        st.code(
+            """
+            def my_decorator(func):
+                def wrapper(*args, **kwargs):
+                    print("Before call")
+                    result = func(*args, **kwargs)
+                    print("After call")
+                    return result
+                return wrapper
+
+            @my_decorator
+            def greet(name):
+                print(f"Hello {name}")
+
+            greet("Alice")
+            """
+        )
+        
+        
+        
+        
+        st.subheader("3. Using functools.wraps")
+        
+        st.markdown(
+            """
+            ##### To preserve the metadata of the original function when decorating:
+            """
+        )
+        st.code(
+            '''
+            from functools import wraps
+
+            def my_decorator(func):
+                @wraps(func)
+                def wrapper(*args, **kwargs):
+                    """Wrapper function"""
+                    return func(*args, **kwargs)
+                return wrapper
+
+            @my_decorator
+            def greet(name):
+                """Greet someone"""
+                print(f"Hello {name}")
+
+            print(greet.__name__)  # Outputs: 'greet'
+            print(greet.__doc__)   # Outputs: 'Greet someone'
+            '''
+        )
+        
+        
+        st.subheader("4. Class Decorator")
+        
+        st.markdown(
+            """
+            ##### To create a decorator using a class:
+            """
+        )
+        st.code(
+            """
+            class MyDecorator:
+                def __init__(self, func):
+                    self.func = func
+            def __call__(self, *args, **kwargs):
+                    print("Before call")
+                    self.func(*args, **kwargs)
+                    print("After call")
+
+            @MyDecorator
+            def greet(name):
+                print(f"Hello {name}")
+
+            greet("Alice")
+            """
+        )
+        
+        
+        
+        st.subheader("5. Decorator with Arguments")
+        
+        st.markdown(
+            """
+            ##### To create a decorator that accepts its own arguments:
+            """
+        )
+        st.code(
+            """
+            def repeat(times):
+                def decorator(func):
+                    @wraps(func)
+                    def wrapper(*args, **kwargs):
+                        for _ in range(times):
+                            func(*args, **kwargs)
+                    return wrapper
+                return decorator
+
+            @repeat(3)
+            def say_hello():
+                print("Hello")
+
+            say_hello()
+            """
+        )
+            
+        
+    with col2:
+        st.subheader("6. Method Decorator")
+        
+        st.markdown(
+            """
+            ##### To apply a decorator to a method within a class:
+            """
+        )
+        st.code(
+            """
+            def method_decorator(func):
+                @wraps(func)
+                def wrapper(self, *args, **kwargs):
+                    print("Method Decorator")
+                    return func(self, *args, **kwargs)
+                return wrapper
+
+            class MyClass:
+                @method_decorator
+                def greet(self, name):
+                    print(f"Hello {name}")
+
+            obj = MyClass()
+            obj.greet("Alice")
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("7. Stacking Decorators")
+        
+        st.markdown(
+            """
+            ##### To apply multiple decorators to a single function:
+            """
+        )
+        st.code(
+            """
+            @my_decorator
+            @repeat(2)
+            def greet(name):
+                print(f"Hello {name}")
+
+            greet("Alice")      
+            """
+        )
+        
+        
+        
+        
+        st.subheader("8. Decorator with Optional Arguments")
+        
+        st.markdown(
+            """
+            ##### Creating a decorator that works with or without arguments:
+            """
+        )
+        st.code(
+            """
+           def smart_decorator(arg=None):
+                def decorator(func):
+                    @wraps(func)
+                    def wrapper(*args, **kwargs):
+                        if arg:
+                            print(f"Argument: {arg}")
+                        return func(*args, **kwargs)
+                    return wrapper
+                if callable(arg):
+                    return decorator(arg)
+                return decorator
+
+            @smart_decorator
+            def no_args():
+                print("No args")
+
+            @smart_decorator("With args")
+            def with_args():
+                print("With args")
+
+            no_args()
+            with_args()
+            """
+        )
+        
+        
+        st.subheader("9. Class Method Decorator")
+        
+        st.markdown(
+            """
+            ##### To decorate a class method:
+            """
+        )
+        st.code(
+            """
+            class MyClass:
+                @classmethod
+                @my_decorator
+                def class_method(cls):
+                    print("Class method called")
+
+            MyClass.class_method()
+            """
+        )
+        
+        
+        
+        st.subheader("10. Decorator for Static Method")
+        
+        st.markdown(
+            """
+            ##### To decorate a static method:
+            """
+        )
+        st.code(
+            """
+            class MyClass:
+                @staticmethod
+                @my_decorator
+                def static_method():
+                    print("Static method called")
+
+            MyClass.static_method()
+            """
+        )
+
+
+
+
+
+
+def graphql():
+    st.header("Working With GraphQL")
+    
+    
+    col1, col2 = st.columns([0.5, 0.5], gap="small")
+    
+    with col1:
+        st.subheader("1. Setting Up a GraphQL Client")
+        
+        st.markdown(
+            """
+            ##### To work with GraphQL:
+            """
+        )
+        st.code(
+            """
+            from gql import gql, Client
+            from gql.transport.requests import RequestsHTTPTransport
+            transport = RequestsHTTPTransport(url='https://your-graphql-endpoint.com/graphql')
+            client = Client(transport=transport, fetch_schema_from_transport=True)
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("2. Executing a Simple Query")
+        
+        st.markdown(
+            """
+            ##### Executing a Query:
+            """
+        )
+        st.code(
+            """
+            query = gql('''
+            {
+            allWizards {
+                id
+                name
+                power
+            }
+            }
+            ''')
+
+            result = client.execute(query)
+            print(result)
+            """
+        )
+        
+        
+        
+        
+        st.subheader("3. Executing a Query with Variables")
+        
+        st.markdown(
+            """
+            ##### Query with Variables:
+            """
+        )
+        st.code(
+            """
+            query = gql('''
+            query GetWizards($element: String!) {
+            wizards(element: $element) {
+                id
+                name
+            }
+            }
+            ''')
+            params = {"element": "Fire"}
+            result = client.execute(query, variable_values=params)
+            print(result)
+            """
+        )
+        
+        
+        st.subheader("4. Mutations")
+        
+        st.markdown(
+            """
+            ##### To create and execute a mutation:
+            """
+        )
+        st.code(
+            """
+            mutation = gql('''
+            mutation CreateWizard($name: String!, $element: String!) {
+            createWizard(name: $name, element: $element) {
+                wizard {
+                id
+                name
+                }
+            }
+            }
+            ''')
+            params = {"name": "Gandalf", "element": "Light"}
+            result = client.execute(mutation, variable_values=params)
+            print(result)
+            """
+        )
+        
+        
+        
+        st.subheader("5. Handling Errors")
+        
+        st.markdown(
+            """
+            ##### Error handling:
+            """
+        )
+        st.code(
+            """
+            from gql import gql, Client
+            from gql.transport.exceptions import TransportQueryError
+            try:
+                result = client.execute(query)
+            except TransportQueryError as e:
+                print(f"GraphQL Query Error: {e}")
+            """
+        )
+            
+        
+    with col2:
+        st.subheader("6. Subscriptions")
+        
+        st.markdown(
+            """
+            ##### Working with Subscriptions:
+            """
+        )
+        st.code(
+            """
+            subscription = gql('''
+            subscription {
+            wizardUpdated {
+                id
+                name
+                power
+            }
+            }
+            ''')
+            for result in client.subscribe(subscription):
+                print(result)
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("7. Fragments")
+        
+        st.markdown(
+            """
+            ##### Working with Fragments:
+            """
+        )
+        st.code(
+            """
+            query = gql('''
+            fragment WizardDetails on Wizard {
+            name
+            power
+            }
+            query {
+            allWizards {
+                ...WizardDetails
+            }
+            }
+            ''')
+            result = client.execute(query)
+            print(result)          
+            """
+        )
+        
+        
+        
+        
+        st.subheader("8. Inline Fragments")
+        
+        st.markdown(
+            """
+            ##### To tailor the response based on the type of the object returned:
+            """
+        )
+        st.code(
+            """
+            query = gql('''
+            {
+            search(text: "magic") {
+                __typename
+                ... on Wizard {
+                name
+                power
+                }
+                ... on Spell {
+                name
+                effect
+                }
+            }
+            }
+            ''')
+            result = client.execute(query)
+            print(result)
+            """
+        )
+        
+        
+        st.subheader("9. Using Directives")
+        
+        st.markdown(
+            """
+            ##### To dynamically include or skip fields in your queries based on conditions:
+            """
+        )
+        st.code(
+            """
+            query = gql('''
+            query GetWizards($withPower: Boolean!) {
+            allWizards {
+                name
+                power @include(if: $withPower)
+            }
+            }
+            ''')
+            params = {"withPower": True}
+            result = client.execute(query, variable_values=params)
+            print(result)
+            """
+        )
+        
+        
+        
+        st.subheader("10. Batching Requests")
+        
+        st.markdown(
+            """
+            ##### To combine multiple operations into a single request, reducing network overhead:
+            """
+        )
+        st.code(
+            """
+            from gql import gql, Client
+            from gql.transport.requests import RequestsHTTPTransport
+
+            transport = RequestsHTTPTransport(url='https://your-graphql-endpoint.com/graphql', use_json=True)
+            client = Client(transport=transport, fetch_schema_from_transport=True)
+
+            query1 = gql('query { wizard(id: "1") { name } }')
+            query2 = gql('query { allSpells { name } }')
+
+            results = client.execute([query1, query2])
+            print(results)
+            """
+        )
+
+
+
+
+
+def re_():
+    st.header("Working With Regular Expressions")
+    
+    
+    col1, col2 = st.columns([0.5, 0.5], gap="small")
+    
+    with col1:
+        st.subheader("1. Basic Pattern Matching")
+        
+        st.markdown(
+            """
+            ##### To find a match for a pattern within a string:
+            """
+        )
+        st.code(
+            """
+            import re
+            text = "Search this string for patterns."
+            match = re.search(r"patterns", text)
+            if match:
+                print("Pattern found!")
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("2. Compiling Regular Expressions")
+        
+        st.markdown(
+            """
+            ##### To compile a regular expression for repeated use:
+            """
+        )
+        st.code(
+            """
+            pattern = re.compile(r"patterns")
+            match = pattern.search(text)
+            """
+        )
+        
+        
+        
+        
+        st.subheader("3. Matching at the Beginning or End")
+        
+        st.markdown(
+            """
+            ##### To check if a string starts or ends with a pattern:
+            """
+        )
+        st.code(
+            """
+            if re.match(r"^Search", text):
+                print("Starts with 'Search'")
+            if re.search(r"patterns.$", text):
+                print("Ends with 'patterns.'")
+            """
+        )
+        
+        
+        st.subheader("4. Finding All Matches")
+        
+        st.markdown(
+            """
+            ##### To find all occurrences of a pattern in a string:
+            """
+        )
+        st.code(
+            """
+            all_matches = re.findall(r"t\w+", text)  # Finds words starting with 't'
+            print(all_matches)
+            """
+        )
+        
+        
+        
+        st.subheader("5. Search and Replace (Substitution)")
+        
+        st.markdown(
+            """
+            ##### To replace occurrences of a pattern within a string:
+            """
+        )
+        st.code(
+            """
+            replaced_text = re.sub(r"string", "sentence", text)
+            print(replaced_text)
+            """
+        )
+            
+        
+    with col2:
+        st.subheader("6. Splitting a String")
+        
+        st.markdown(
+            """
+            ##### To split a string by occurrences of a pattern:
+            """
+        )
+        st.code(
+            """
+            words = re.split(r"\s+", text)  # Split on one or more spaces
+            print(words)
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("7. Escaping Special Characters")
+        
+        st.markdown(
+            """
+            ##### To match special characters literally, escape them:
+            """
+        )
+        st.code(
+            """
+            escaped = re.search(r"\bfor\b", text)  # \b is a word boundary        
+            """
+        )
+        
+        
+        
+        
+        st.subheader("8. Grouping and Capturing")
+        
+        st.markdown(
+            """
+            ##### To group parts of a pattern and extract their values:
+            """
+        )
+        st.code(
+            """
+            match = re.search(r"(\w+) (\w+)", text)
+            if match:
+                print(match.group())  # The whole match
+                print(match.group(1)) # The first group
+                
+            """
+        )
+        
+        
+        st.subheader("9. Non-Capturing Groups")
+        
+        st.markdown(
+            """
+            ##### To define groups without capturing them:
+            """
+        )
+        st.code(
+            """
+            match = re.search(r"(?:\w+) (\w+)", text)
+            if match:
+                print(match.group(1))  # The first (and only) group
+            """
+        )
+        
+        
+        
+        st.subheader("10. Lookahead and Lookbehind Assertions")
+        
+        st.markdown(
+            """
+            ##### To match a pattern based on what comes before or after it without including it in the result:
+            """
+        )
+        st.code(
+            """
+            lookahead = re.search(r"\b\w+(?= string)", text)  # Word before ' string'
+            lookbehind = re.search(r"(?<=Search )\w+", text)  # Word after 'Search '
+            if lookahead:
+                print(lookahead.group())
+            if lookbehind:
+                print(lookbehind.group())
+            """
+        )
+        
+        st.subheader("11. Flags to Modify Pattern Matching Behavior")
+        
+        st.markdown(
+            """
+            ##### To use flags like re.IGNORECASE to change how patterns are matched:
+            """
+        )
+        st.code(
+            """
+            case_insensitive = re.findall(r"search", text, re.IGNORECASE)
+            print(case_insensitive)
+            """
+        )
+        
+        
+        st.subheader("12. Using Named Groups")
+        
+        st.markdown(
+            """
+            ##### To assign names to groups and reference them by name:
+            """
+        )
+        st.code(
+            """
+            match = re.search(r"(?P<first>\w+) (?P<second>\w+)", text)
+            if match:
+                print(match.group('first'))
+                print(match.group('second'))
+            """
+        )
+        
+        st.subheader("13. Matching Across Multiple Lines")
+        
+        st.markdown(
+            """
+            ##### To match patterns over multiple lines using the re.MULTILINE flag:
+            """
+        )
+        st.code(
+            """
+            multi_line_text = "Start\nmiddle end"
+            matches = re.findall(r"^m\w+", multi_line_text, re.MULTILINE)
+            print(matches)
+            """
+        )
+        
+        
+        st.subheader("14. Lazy Quantifiers")
+        
+        st.markdown(
+            """
+            ##### To match as few characters as possible using lazy quantifiers (*?, +?, ??):
+            """
+        )
+        st.code(
+            """
+            html = "<body><h1>Title</h1></body>"
+            match = re.search(r"<.*?>", html)
+            if match:
+                print(match.group())  # Matches '<body>'
+            """
+        )
+        
+        
+        
+        st.subheader("15. Verbose Regular Expressions")
+        
+        st.markdown(
+            """
+            ##### To use re.VERBOSE for more readable regular expressions:
+            """
+        )
+        st.code(
+            """
+            pattern = re.compile(r"
+                \b      # Word boundary
+                \w+     # One or more word characters
+                \s      # Space
+                ", re.VERBOSE)
+            match = pattern.search(text)
+            """
+        )
+
+
+
+
+
+def strings():
+    st.header("Working With Strings")
+    
+    
+    col1, col2 = st.columns([0.5, 0.5], gap="small")
+    
+    with col1:
+        st.subheader("1. Concatenating Strings")
+        
+        st.markdown(
+            """
+            ##### To join strings together:
+            """
+        )
+        st.code(
+            """
+            greeting = "Hello"
+            name = "Alice"
+            message = greeting + ", " + name + "!"
+            print(message)
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("2. String Formatting with str.format")
+        
+        st.markdown(
+            """
+            ##### To insert values into a string template:
+            """
+        )
+        st.code(
+            """
+            message = "{}, {}. Welcome!".format(greeting, name)
+            print(message)
+            """
+        )
+        
+        
+        
+        
+        st.subheader("3. Formatted String Literals (f-strings)")
+        
+        st.markdown(
+            """
+            ##### To embed expressions inside string literals (Python 3.6+):
+            """
+        )
+        st.code(
+            """
+            message = f"{greeting}, {name}. Welcome!"
+            print(message)
+            """
+        )
+        
+        
+        st.subheader("4. String Methods — Case Conversion")
+        
+        st.markdown(
+            """
+            ##### To change the case of a string:
+            """
+        )
+        st.code(
+            """
+            s = "Python"
+            print(s.upper())  # Uppercase
+            print(s.lower())  # Lowercase
+            print(s.title())  # Title Case
+            """
+        )
+        
+        
+        
+        st.subheader("5. String Methods — strip, rstrip, lstrip")
+        
+        st.markdown(
+            """
+            ##### To remove whitespace or specific characters from the ends of a string:
+            """
+        )
+        st.code(
+            """
+            s = "   trim me   "
+            print(s.strip())   # Both ends
+            print(s.rstrip())  # Right end
+            print(s.lstrip())  # Left end
+            """
+        )
+            
+        
+    with col2:
+        st.subheader("6. String Methods — startswith, endswith")
+        
+        st.markdown(
+            """
+            ##### To check the start or end of a string for specific text:
+            """
+        )
+        st.code(
+            """
+            s = "filename.txt"
+            print(s.startswith("file"))  # True
+            print(s.endswith(".txt"))    # True
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("7. String Methods — split, join")
+        
+        st.markdown(
+            """
+            ##### To split a string into a list or join a list into a string:
+            """
+        )
+        st.code(
+            """
+            s = "split,this,string"
+            words = s.split(",")        # Split string into list
+            joined = " ".join(words)    # Join list into string
+            print(words)
+            print(joined)         
+            """
+        )
+        
+        
+        
+        
+        st.subheader("8. String Methods — replace")
+        
+        st.markdown(
+            """
+            ##### To replace parts of a string with another string:
+            """
+        )
+        st.code(
+            """
+            s = "Hello world"
+            new_s = s.replace("world", "Python")
+            print(new_s)
+            """
+        )
+        
+        
+        st.subheader("9. String Methods — find, index")
+        
+        st.markdown(
+            """
+            ##### To find the position of a substring within a string:
+            """
+        )
+        st.code(
+            """
+            s = "look for a substring"
+            position = s.find("substring")  # Returns -1 if not found
+            index = s.index("substring")    # Raises ValueError if not found
+            print(position)
+            print(index)
+            """
+        )
+        
+        
+        
+        st.subheader("10. String Methods — Working with Characters")
+        
+        st.markdown(
+            """
+            ##### To process individual characters in a string:
+            """
+        )
+        st.code(
+            """
+            s = "characters"
+            for char in s:
+                print(char)  # Prints each character on a new line
+            """
+        )
+
+        st.subheader("11. String Methods — isdigit, isalpha, isalnum")
+        
+        st.markdown(
+            """
+            ##### To check if a string contains only digits, alphabetic characters, or alphanumeric characters:
+            """
+        )
+        st.code(
+            """
+            print("123".isdigit())   # True
+            print("abc".isalpha())   # True
+            print("abc123".isalnum())# True
+            """
+        )
+        
+        
+        st.subheader("12. String Slicing")
+        
+        st.markdown(
+            """
+            ##### To extract a substring using slicing:
+            """
+        )
+        st.code(
+            """
+            s = "slice me"
+            sub = s[2:7]  # From 3rd to 7th character
+            print(sub)
+            """
+        )
+        
+        
+        st.subheader("13. String Length with len")
+        
+        st.markdown(
+            """
+            ##### To get the length of a string:
+            """
+        )
+        st.code(
+            """
+            s = "length"
+            print(len(s))  # 6
+            """
+        )
+        
+        
+        st.subheader("14. Multiline Strings")
+        
+        st.markdown(
+            """
+            ##### To work with strings spanning multiple lines:
+            """
+        )
+        st.code(
+            """
+            multi = "Line one
+                Line two
+                Line three"
+                print(multi)
+            """
+        )
+        
+        
+        # st.subheader("15. Raw Strings")
+        
+        # st.markdown(
+        #     """
+        #     ##### To treat backslashes as literal characters, useful for regex patterns and file paths:
+        #     """
+        # )
+        # st.code(
+        #     '''
+        #     path = r"C:\User\name\folder"
+        #     print(path)
+        #     '''
+        #  )
+        
+        
+    
+
+
+
+
+
+def web_scraping():
+    st.header("Working With Web Scraping")
+    
+    
+    col1, col2 = st.columns([0.5, 0.5], gap="small")
+    
+    with col1:
+        st.subheader("1. Fetching Web Pages with requests")
+        
+        st.markdown(
+            """
+            ##### To retrieve the content of a web page:
+            """
+        )
+        st.code(
+            """
+            import requests
+
+            url = 'https://example.com'
+            response = requests.get(url)
+            html = response.text
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("2. Parsing HTML with BeautifulSoup")
+        
+        st.markdown(
+            """
+            ##### To parse HTML and extract data:
+            """
+        )
+        st.code(
+            """
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(html, 'html.parser')
+            print(soup.prettify())  # Pretty-print the HTML
+            """
+        )
+        
+        
+        
+        
+        st.subheader("3. Navigating the HTML Tree")
+        
+        st.markdown(
+            """
+            ##### To find elements using tags:
+            """
+        )
+        st.code(
+            """
+            title = soup.title.text  # Get the page title
+            headings = soup.find_all('h1')  # List of all <h1> tags
+            """
+        )
+        
+        
+        st.subheader("4. Using CSS Selectors")
+        
+        st.markdown(
+            """
+            ##### To select elements using CSS selectors:
+            """
+        )
+        st.code(
+            """
+            articles = soup.select('div.article')  # All elements with class 'article' inside a <div>
+            """
+        )
+        
+        
+        
+        st.subheader("5. Extracting Data from Tags")
+        
+        st.markdown(
+            """
+            ##### To extract text and attributes from HTML elements:
+            """
+        )
+        st.code(
+            """
+            for article in articles:
+                title = article.h2.text  # Text inside the <h2> tag
+                link = article.a['href']  # 'href' attribute of the <a> tag
+                print(title, link)
+            """
+        )
+            
+        
+    with col2:
+        st.subheader("6. Handling Relative URLs")
+        
+        st.markdown(
+            """
+            ##### To convert relative URLs to absolute URLs:
+            """
+        )
+        st.code(
+            """
+            from urllib.parse import urljoin
+            absolute_urls = [urljoin(url, link) for link in relative_urls]
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("7. Dealing with Pagination")
+        
+        st.markdown(
+            """
+            ##### To scrape content across multiple pages:
+            """
+        )
+        st.code(
+            """
+            base_url = "https://example.com/page/"
+            for page in range(1, 6):  # For 5 pages
+                page_url = base_url + str(page)
+                response = requests.get(page_url)
+                # Process each page's content         
+            """
+        )
+        
+        
+        
+        
+        st.subheader("8. Handling AJAX Requests")
+        
+        st.markdown(
+            """
+            ##### To scrape data loaded by AJAX requests:
+            """
+        )
+        st.code(
+            """
+            # Find the URL of the AJAX request (using browser's developer tools) and fetch it
+            ajax_url = 'https://example.com/ajax_endpoint'
+            data = requests.get(ajax_url).json()  # Assuming the response is JSON
+            """
+        )
+        
+        
+        st.subheader("9. Using Regular Expressions in Web Scraping")
+        
+        st.markdown(
+            """
+            ##### To extract data using regular expressions:
+            """
+        )
+        st.code(
+            """
+            import re
+            emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', html)
+            """
+        )
+        
+        
+        
+        st.subheader("10. Respecting robots.txt")
+        
+        st.markdown(
+            """
+            ##### To check robots.txt for scraping permissions:
+            """
+        )
+        st.code(
+            """
+            from urllib.robotparser import RobotFileParser
+
+            rp = RobotFileParser()
+            rp.set_url('https://example.com/robots.txt')
+            rp.read()
+            can_scrape = rp.can_fetch('*', url)
+            """
+        )
+        
+        
+        st.subheader("11. Using Sessions and Cookies")
+        
+        st.markdown(
+            """
+            ##### To maintain sessions and handle cookies:
+            """
+        )
+        st.code(
+            """
+            session = requests.Session()
+            session.get('https://example.com/login')
+            session.cookies.set('key', 'value')  # Set cookies, if needed
+            response = session.get('https://example.com/protected_page')
+            """
+        )
+        
+        st.subheader("12. Scraping with Browser Automation (selenium Library)")
+        
+        st.markdown(
+            """
+            ##### To scrape dynamic content rendered by JavaScript:
+            """
+        )
+        st.code(
+            """
+            from selenium import webdriver
+            browser = webdriver.Chrome()
+            browser.get('https://example.com')
+            content = browser.page_source
+            # Parse and extract data using BeautifulSoup, etc.
+            browser.quit()
+            """
+        )
+        
+        
+        st.subheader("13. Error Handling in Web Scraping")
+        
+        st.markdown(
+            """
+            ##### To handle errors and exceptions:
+            """
+        )
+        st.code(
+            """
+            try:
+                response = requests.get(url, timeout=5)
+                response.raise_for_status()  # Raises an error for bad status codes
+            except requests.exceptions.RequestException as e:
+                print(f"Error: {e}")
+            """
+        )
+        
+        
+        st.subheader("14. Asynchronous Web Scraping")
+        
+        st.markdown(
+            """
+            ##### To scrape websites asynchronously for faster data retrieval:
+            """
+        )
+        st.code(
+            """
+            import aiohttp
+            import asyncio
+
+            async def fetch(url):
+                async with aiohttp.ClientSession() as session:
+                    async with session.get(url) as response:
+                        return await response.text()
+
+            urls = ['https://example.com/page1', 'https://example.com/page2']
+            loop = asyncio.get_event_loop()
+            pages = loop.run_until_complete(asyncio.gather(*(fetch(url) for url in urls)))
+            """
+        )
+        
+        
+        st.subheader("15. Data Storage (CSV, Database)")
+        
+        st.markdown(
+            """
+            ##### To store scraped data in a CSV file or a database:
+            """
+        )
+        st.code(
+            """
+            import csv
+
+            with open('output.csv', 'w', newline='') as file:
+                writer = csv.writer(file)
+                writer.writerow(['Title', 'URL'])
+                for article in articles:
+                    writer.writerow([article['title'], article['url']])
+            """
+        )
+        
+
+
+
+
+
+
+
+def pip_():
+    st.header("Working With pip (Package Management)")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
@@ -3582,15 +4945,12 @@ def func():
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### 1. Installing a Package
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            pip install numpy
             """
         )
         
@@ -3598,103 +4958,76 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Listing Installed Packages")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To survey the compendium of libraries that reside within your realm, noting their versions and lineage:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            pip list
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Upgrading a Package")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To imbue an installed library with enhanced powers and capabilities, elevating it to its latest form:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            pip install --upgrade numpy
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Uninstalling a Package")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To uninstall a package:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            pip uninstall numpy
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Searching for Packages")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### Searching packages:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            pip search "data visualization"
             """
         )
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Installing Specific Versions of a Package")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To install a specific version:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            pip install numpy==1.18.5
             """
         )
         
@@ -3702,75 +5035,69 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Generating a Requirements File")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### Requirements file:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            pip freeze > requirements.txt      
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Installing Packages from a Requirements File")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To conjure a symphony of libraries in unison, each aligned with the notations in your tome of requirements:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            pip install -r requirements.txt
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Using Virtual Environments")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### Create virtual Environments to manage package conflicts:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            # Create a virtual environment named 'venv'
+            python -m venv venv
+
+            # Activate the virtual environment
+            # On Windows
+            .\venv\Scripts\activate
+
+            # On Unix or MacOS
+            source venv/bin/activate
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Checking Package Dependencies")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### Understanding Dependencies:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            pip show numpy
             """
         )
 
@@ -3778,27 +5105,24 @@ def func():
 
 
 
-
-def func():
-    st.header("Working With Simple HTTP APIs")
+def common_python():
+    st.header("Working With Common Built-in Functions and Packages")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. os - Operating System Interface")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To interact with the operating system:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import os
+            current_directory = os.getcwd()  # Get the current working directory
             """
         )
         
@@ -3806,103 +5130,436 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. sys - System-specific Parameters and Functions")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To access system-specific parameters and functions:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            import sys
+            sys.exit()  # Exit the script
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. datetime - Basic Date and Time Types")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To work with dates and times:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            from datetime import datetime
+            now = datetime.now()  # Current date and time
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. math - Mathematical Functions")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To perform mathematical operations:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            import math
+            result = math.sqrt(16)  # Square root
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. random - Generate Pseudo-random Numbers")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To generate pseudo-random numbers:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import random
+            number = random.randint(1, 10)  # Random integer between 1 and 10   
+            """
+        )
+        
+        
+        
+        st.subheader("6. json - JSON Encoder and Decoder")
+        
+        st.markdown(
+            """
+            ##### To parse and generate JSON data:
+            """
+        )
+        st.code(
+            """
+            import json
+            json_string = json.dumps({'name': 'Alice', 'age': 30})  # Dictionary to JSON string
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("7. re - Regular Expressions")
+        
+        st.markdown(
+            """
+            ##### To work with regular expressions:
+            """
+        )
+        st.code(
+            """
+            import re
+            match = re.search('Hello', 'Hello, world!')  # Search for 'Hello' in the string
+            """
+        )
+        
+        
+        
+        
+        st.subheader("8. urllib - URL Handling Modules")
+        
+        st.markdown(
+            """
+            ##### To work with URLs:
+            """
+        )
+        st.code(
+            """
+            from urllib.request import urlopen
+            content = urlopen('http://example.com').read()  # Fetch the content of a webpage
+            """
+        )
+        
+        
+        st.subheader("9. http - HTTP Modules")
+        
+        st.markdown(
+            """
+            ##### To create HTTP servers and work with HTTP requests:
+            """
+        )
+        st.code(
+            """
+            from http.server import HTTPServer, BaseHTTPRequestHandler
+            
+            class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+                def do_GET(self):
+                    self.send_response(200)
+                    self.send_header('Content-type', 'text/html')
+                    self.end_headers()
+                    self.wfile.write(b'<html><head><title>Python HTTP Server</title></head>')
+                    self.wfile.write(b'<body><h1>Hello from a simple Python HTTP server!</h1></body></html>')
+            def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler):
+                server_address = ('', 8000)  # Serve on all addresses, port 8000
+                httpd = server_class(server_address, handler_class)
+                print("Server starting on port 8000...")
+                httpd.serve_forever()
+            if __name__ == '__main__':
+                run()
+            """
+        )
+        
+        
+        
+        st.subheader("10. subprocess - Subprocess Management")
+        
+        st.markdown(
+            """
+            ##### To spawn new processes and connect to their input/output/error pipes:
+            """
+        )
+        st.code(
+            """
+            import subprocess
+            subprocess.run(['ls', '-l'])  # Run the 'ls -l' command
+            """
+        )
+        
+        
+        st.subheader("11. socket - Low-level Networking Interface")
+        
+        st.markdown(
+            """
+            ##### To create network clients and servers:
+            """
+        )
+        st.code(
+            """
+            import socket
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Create a TCP/IP socket
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("12. threading - Thread-based Parallelism")
+        
+        st.markdown(
+            """
+            ##### To manage concurrent execution of code:
+            """
+        )
+        st.code(
+            """
+            import threading
+            def worker():
+                print("Worker thread executing")
+            thread = threading.Thread(target=worker)
+            thread.start()
+            """
+        )
+        
+        
+        
+        
+        st.subheader("13. multiprocessing - Process-based Parallelism")
+        
+        st.markdown(
+            """
+            ##### To manage concurrent processes:
+            """
+        )
+        st.code(
+            """
+            from multiprocessing import Process
+            def worker():
+                print("Worker process")
+            p = Process(target=worker)
+            p.start()
+            """
+        )
+        
+        
+        st.subheader("14. argparse - Parser for Command-line Options, Arguments, and Sub-commands")
+        
+        st.markdown(
+            """
+            ##### To parse command-line arguments:
+            """
+        )
+        st.code(
+            """
+            import argparse
+            parser = argparse.ArgumentParser(description="Process some integers.")
+            args = parser.parse_args()
+            """
+        )
+        
+        
+        
+        st.subheader("15. logging - Logging Facility")
+        
+        st.markdown(
+            """
+            ##### To log messages (debug, info, warning, error, and critical):
+            """
+        )
+        st.code(
+            """
+            import logging
+            logging.warning('This is a warning message')
+            """
+        )
+        
+        
+        st.subheader("16. unittest - Unit Testing Framework")
+        
+        st.markdown(
+            """
+            ##### To create and run unit tests:
+            """
+        )
+        st.code(
+            """
+            import unittest
+            class TestStringMethods(unittest.TestCase):
+                def test_upper(self):
+                    self.assertEqual('foo'.upper(), 'FOO')
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("17. pathlib - Object-oriented Filesystem Paths")
+        
+        st.markdown(
+            """
+            ##### To work with filesystem paths in an object-oriented way:
+            """
+        )
+        st.code(
+            """
+            from pathlib import Path
+            p = Path('.')
+            """
+        )
+        
+        
+        
+        
+        st.subheader("18. functools - Higher-order Functions and Operations on Callable Objects")
+        
+        st.markdown(
+            """
+            ##### To use higher-order functions and operations on callable objects:
+            """
+        )
+        st.code(
+            """
+            from functools import lru_cache
+            @lru_cache(maxsize=None)
+            def fib(n):
+                if n < 2:
+                    return n
+                return fib(n-1) + fib(n-2)
+            """
+        )
+        
+        
+        st.subheader("19. collections - Container Data Types")
+        
+        st.markdown(
+            """
+            ##### To use specialized container data types (deque, Counter, OrderedDict, etc.):
+            """
+        )
+        st.code(
+            """
+            from collections import Counter
+            c = Counter('hello world')
+            """
+        )
+        
+        
+        
+        st.subheader("20. itertools - Functions Creating Iterators for Efficient Looping")
+        
+        st.markdown(
+            """
+            ##### To construct and use iterators for efficient looping:
+            """
+        )
+        st.code(
+            """
+            import itertools
+            for combination in itertools.combinations('ABCD', 2):
+                print(combination)
+            """
+        )
+        
+        st.subheader("21. hashlib - Secure Hash and Message Digest Algorithms")
+        
+        st.markdown(
+            """
+            ##### To hash data:
+            """
+        )
+        st.code(
+            """
+            import hashlib
+            hash_object = hashlib.sha256(b'Hello World')
+            hex_dig = hash_object.hexdigest()
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("22. csv - CSV File Reading and Writing")
+        
+        st.markdown(
+            """
+            ##### To read from and write to CSV files:
+            """
+        )
+        st.code(
+            """
+            import csv
+            with open('file.csv', mode='r') as infile:
+                reader = csv.reader(infile)
+            """
+        )
+        
+        
+        
+        
+        st.subheader("23. xml.etree.ElementTree - The ElementTree XML API")
+        
+        st.markdown(
+            """
+            ##### To parse and create XML data:
+            """
+        )
+        st.code(
+            """
+            import xml.etree.ElementTree as ET
+            tree = ET.parse('file.xml')
+            root = tree.getroot()
+            """
+        )
+        
+        
+        st.subheader("24. sqlite3 - DB-API 2.0 Interface for SQLite Databases")
+        
+        st.markdown(
+            """
+            ##### To interact with SQLite databases:
+            """
+        )
+        st.code(
+            """
+            import sqlite3
+            conn = sqlite3.connect('example.db')
+            """
+        )
+        
+        
+        
+        st.subheader("25. tkinter - GUI Toolkit")
+        
+        st.markdown(
+            """
+            ##### To create GUI applications:
+            """
+        )
+        st.code(
+            """
+            import tkinter as tk
+            root = tk.Tk()
             """
         )
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("26. pickle - Python Object Serialization")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To serialize and deserialize Python object structures:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            import pickle
+            serialized_obj = pickle.dumps(obj)
             """
         )
         
@@ -3910,102 +5567,79 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("27. io - Core Tools for Working with Streams")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To handle streams (file-like objects):
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            from io import StringIO
+            f = StringIO("some initial text data")        
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("28. time - Time Access and Conversions")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To access time-related functions:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            import time
+            time.sleep(1)  # Sleep for 1 second
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("29. calendar - General Calendar-related Functions")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To work with calendars:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            import calendar
+            print(calendar.month(2023, 1))  # Print the calendar for January 2023
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("30. queue - A Synchronized Queue Class")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To manage a queue, useful in multithreaded programming:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            from queue import Queue
+            q = Queue()
             """
         )
-
-
-
-
-
-def func():
-    st.header("Working With Simple HTTP APIs")
-    
-    
-    col1, col2 = st.columns([0.5, 0.5], gap="small")
-    
-    with col1:
-        st.subheader("Basic GET Request")
+        
+        st.subheader("31. shutil - High-level File Operations")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To perform high-level file operations, like copying and archiving:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import shutil
+            shutil.copyfile('source.txt', 'dest.txt')
             """
         )
         
@@ -4013,103 +5647,82 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("32. glob - Unix Style Pathname Pattern Expansion")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To find files matching a specified pattern:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            import glob
+            for file in glob.glob("*.txt"):
+                print(file)
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("33. tempfile - Generate Temporary Files and Directories")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To create temporary files and directories:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            import tempfile
+            temp = tempfile.TemporaryFile()
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("34. bz2 - Support for Bzip2 Compression")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To compress and decompress data using bzip2 compression:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            import bz2
+            compressed = bz2.compress(b'your data here')
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("35. gzip - Support for Gzip Compression")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To compress and decompress data using gzip compression:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import gzip
+            with gzip.open('file.txt.gz', 'wt') as f:
+                f.write('your data here')
             """
         )
-            
         
-    with col2:
-        st.subheader("POST Request with JSON Payload")
+        
+        st.subheader("36. ssl - TLS/SSL Wrapper for Socket Objects")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To handle TLS/SSL encryption and peer authentication for network sockets:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            import ssl
+            ssl.wrap_socket(sock)
             """
         )
         
@@ -4117,102 +5730,82 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("37. imaplib - IMAP4 Protocol Client")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To access and manipulate mail over IMAP4:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            import imaplib
+            mail = imaplib.IMAP4_SSL('imap.example.com')
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("38. smtplib - SMTP Protocol Client")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To send mail using the Simple Mail Transfer Protocol (SMTP):
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            import smtplib
+            server = smtplib.SMTP('smtp.example.com', 587)
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("39. email - Managing Email Messages")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To manage email messages, including MIME and other RFC 2822-based message documents:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            from email.message import EmailMessage
+            msg = EmailMessage()
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("40. base64 - Base16, Base32, Base64, Base85 Data Encodings")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To encode and decode data using Base64:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            import base64
+            encoded_data = base64.b64encode(b'data to encode')
             """
         )
-
-
-
-
-
-def func():
-    st.header("Working With Simple HTTP APIs")
-    
-    
-    col1, col2 = st.columns([0.5, 0.5], gap="small")
-    
-    with col1:
-        st.subheader("Basic GET Request")
+        
+        
+        st.subheader("41. difflib - Helpers for Computing Deltas")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To compare sequences and produce human-readable diffs:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import difflib
+            diff = difflib.ndiff('one\ntwo\nthree\n'.splitlines(keepends=True),
+                                'ore\ntree\nemu\n'.splitlines(keepends=True))
+            print(''.join(diff))
             """
         )
         
@@ -4220,103 +5813,79 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("42. gettext - Multilingual Internationalization Services")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To internationalize your Python programs:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            import gettext
+            gettext.install('myapp')
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("43. locale - Internationalization Services")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To access a database of culture-specific data formats:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            import locale
+            locale.setlocale(locale.LC_ALL, '')
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("44. secrets - Generate Secure Random Numbers for Managing Secrets")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To generate secure random numbers for managing secrets, such as tokens or passwords:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            import secrets
+            secure_token = secrets.token_hex(16)
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("45. uuid - UUID Objects According to RFC 4122")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To generate universally unique identifiers (UUIDs):
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import uuid
+            unique_id = uuid.uuid4()
             """
         )
-            
         
-    with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("46. html - HyperText Markup Language Support")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To handle and manipulate HTML entities:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            import html
+            escaped = html.escape('<a href="https://example.com">link</a>')
             """
         )
         
@@ -4324,702 +5893,39 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("47. ftplib - FTP Protocol Client")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To interact with and transfer files over the FTP protocol:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            from ftplib import FTP
+            ftp = FTP('ftp.example.com')
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("48. tarfile - Read and Write Tar Archive Files")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To work with tar archive files, allowing you to archive and compress/decompress:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            import tarfile
+            with tarfile.open('sample.tar.gz', 'w:gz') as tar:
+                tar.add('sample.txt')
             """
         )
         
         
-        st.subheader("Handling Redirects")
-        
-        st.markdown(
-            """
-            ##### To handle or disable redirects in requests:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
-            """
-        )
-        
-        
-        
-        st.subheader("Streaming Large Responses")
-        
-        st.markdown(
-            """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
-            """
-        )
-
-
-
-
-
-
-def func():
-    st.header("Working With Simple HTTP APIs")
-    
-    
-    col1, col2 = st.columns([0.5, 0.5], gap="small")
-    
-    with col1:
-        st.subheader("Basic GET Request")
-        
-        st.markdown(
-            """
-            ##### To fetch data from an API endpoint using a GET request:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
-            """
-        )
-        
-        # if st.toggle("Show `st.write` sample output"):
-        #     st.write("Did you know I have more then 101 Supreme apps like this?")
-        
-        
-        st.subheader("GET Request with Query Parameters")
-        
-        st.markdown(
-            """
-            ##### To send a GET request with query parameters:
-            """
-        )
-        st.code(
-            """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
-            """
-        )
-        
-        
-        
-        
-        st.subheader("Handling HTTP Errors")
-        
-        st.markdown(
-            """
-            ##### To handle possible HTTP errors gracefully:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
-            """
-        )
-        
-        
-        st.subheader("Setting Timeout for Requests")
-        
-        st.markdown(
-            """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
-            """
-        )
-        st.code(
-            """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
-            """
-        )
-        
-        
-        
-        st.subheader("Using Headers in Requests")
-        
-        st.markdown(
-            """
-            ##### To include headers in your request (e.g., for authorization):
-            """
-        )
-        st.code(
-            """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
-            """
-        )
-            
-        
-    with col2:
-        st.subheader("POST Request with JSON Payload")
-        
-        st.markdown(
-            """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
-            """
-        )
-        st.code(
-            """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
-            """
-        )
-        
-        # if st.toggle("Show `st.write` sample output"):
-        #     st.write("Did you know I have more then 101 Supreme apps like this?")
-        
-        
-        st.subheader("Handling Response Encoding")
-        
-        st.markdown(
-            """
-            ##### To handle the response encoding properly:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
-            """
-        )
-        
-        
-        
-        
-        st.subheader("Using Sessions with Requests")
-        
-        st.markdown(
-            """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
-            """
-        )
-        st.code(
-            """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
-            """
-        )
-        
-        
-        st.subheader("Handling Redirects")
-        
-        st.markdown(
-            """
-            ##### To handle or disable redirects in requests:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
-            """
-        )
-        
-        
-        
-        st.subheader("Streaming Large Responses")
-        
-        st.markdown(
-            """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
-            """
-        )
-
-
-
-
-
-
-
-def func():
-    st.header("Working With Simple HTTP APIs")
-    
-    
-    col1, col2 = st.columns([0.5, 0.5], gap="small")
-    
-    with col1:
-        st.subheader("Basic GET Request")
-        
-        st.markdown(
-            """
-            ##### To fetch data from an API endpoint using a GET request:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
-            """
-        )
-        
-        # if st.toggle("Show `st.write` sample output"):
-        #     st.write("Did you know I have more then 101 Supreme apps like this?")
-        
-        
-        st.subheader("GET Request with Query Parameters")
-        
-        st.markdown(
-            """
-            ##### To send a GET request with query parameters:
-            """
-        )
-        st.code(
-            """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
-            """
-        )
-        
-        
-        
-        
-        st.subheader("Handling HTTP Errors")
-        
-        st.markdown(
-            """
-            ##### To handle possible HTTP errors gracefully:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
-            """
-        )
-        
-        
-        st.subheader("Setting Timeout for Requests")
-        
-        st.markdown(
-            """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
-            """
-        )
-        st.code(
-            """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
-            """
-        )
-        
-        
-        
-        st.subheader("Using Headers in Requests")
-        
-        st.markdown(
-            """
-            ##### To include headers in your request (e.g., for authorization):
-            """
-        )
-        st.code(
-            """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
-            """
-        )
-            
-        
-    with col2:
-        st.subheader("POST Request with JSON Payload")
-        
-        st.markdown(
-            """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
-            """
-        )
-        st.code(
-            """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
-            """
-        )
-        
-        # if st.toggle("Show `st.write` sample output"):
-        #     st.write("Did you know I have more then 101 Supreme apps like this?")
-        
-        
-        st.subheader("Handling Response Encoding")
-        
-        st.markdown(
-            """
-            ##### To handle the response encoding properly:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
-            """
-        )
-        
-        
-        
-        
-        st.subheader("Using Sessions with Requests")
-        
-        st.markdown(
-            """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
-            """
-        )
-        st.code(
-            """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
-            """
-        )
-        
-        
-        st.subheader("Handling Redirects")
-        
-        st.markdown(
-            """
-            ##### To handle or disable redirects in requests:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
-            """
-        )
-        
-        
-        
-        st.subheader("Streaming Large Responses")
-        
-        st.markdown(
-            """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
-            """
-        )
-
-
-
-
-
-def func():
-    st.header("Working With Simple HTTP APIs")
-    
-    
-    col1, col2 = st.columns([0.5, 0.5], gap="small")
-    
-    with col1:
-        st.subheader("Basic GET Request")
-        
-        st.markdown(
-            """
-            ##### To fetch data from an API endpoint using a GET request:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
-            """
-        )
-        
-        # if st.toggle("Show `st.write` sample output"):
-        #     st.write("Did you know I have more then 101 Supreme apps like this?")
-        
-        
-        st.subheader("GET Request with Query Parameters")
-        
-        st.markdown(
-            """
-            ##### To send a GET request with query parameters:
-            """
-        )
-        st.code(
-            """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
-            """
-        )
-        
-        
-        
-        
-        st.subheader("Handling HTTP Errors")
-        
-        st.markdown(
-            """
-            ##### To handle possible HTTP errors gracefully:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
-            """
-        )
-        
-        
-        st.subheader("Setting Timeout for Requests")
-        
-        st.markdown(
-            """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
-            """
-        )
-        st.code(
-            """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
-            """
-        )
-        
-        
-        
-        st.subheader("Using Headers in Requests")
-        
-        st.markdown(
-            """
-            ##### To include headers in your request (e.g., for authorization):
-            """
-        )
-        st.code(
-            """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
-            """
-        )
-            
-        
-    with col2:
-        st.subheader("POST Request with JSON Payload")
-        
-        st.markdown(
-            """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
-            """
-        )
-        st.code(
-            """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
-            """
-        )
-        
-        # if st.toggle("Show `st.write` sample output"):
-        #     st.write("Did you know I have more then 101 Supreme apps like this?")
-        
-        
-        st.subheader("Handling Response Encoding")
-        
-        st.markdown(
-            """
-            ##### To handle the response encoding properly:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
-            """
-        )
-        
-        
-        
-        
-        st.subheader("Using Sessions with Requests")
-        
-        st.markdown(
-            """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
-            """
-        )
-        st.code(
-            """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
-            """
-        )
-        
-        
-        st.subheader("Handling Redirects")
-        
-        st.markdown(
-            """
-            ##### To handle or disable redirects in requests:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
-            """
-        )
-        
-        
-        
-        st.subheader("Streaming Large Responses")
-        
-        st.markdown(
-            """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
-            """
-        )
-        st.code(
-            """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
-            """
-        )
-
 
 
 

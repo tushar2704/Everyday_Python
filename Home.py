@@ -60,69 +60,95 @@ with st.sidebar:
  
 #######################
 #Body
-sheet1,sheet2,sheet3,sheet4,sheet5,sheet6,sheet7,sheet8,sheet9,sheet10,sheet11,sheet12,sheet13,sheet14,sheet15=st.tabs(
-    ["Files Handling","HTTP APIs","Lists","Dictionary","OS",
-     "CLI","Math","Databases","AsyncIO","Network","DataFrame","NumPy","Plots","Scikit-learn","Plotly"]
+sheet1,sheet2,sheet3,sheet4,sheet5,sheet6,sheet7,sheet8,sheet9,sheet10,sheet11,sheet12,sheet13,sheet14,sheet15,sheet16,sheet17,sheet18, sheet19, sheet20, sheet21, sheet22, sheet23, sheet24, sheet25=st.tabs(
+    ["Commons","Pip","OS","CLI","Files","Http","Lists","Dict",
+     "Math","DB","GraphQL","Regex","Strings","Scraping","Async","Network","DF","NP","Plots","SKL","Px",
+     "Time", "Adv","OOPs","Deco"]
     )
 
 
 with sheet1:
-    file_handling()
-
-
+    common_python()
 with sheet2:
-    http_apis()
-
-
+    pip_()
 with sheet3:
-    lists()
-
-
-with sheet4:
-    dict()
-
-
-with sheet5:
     os_()
-
-
-with sheet6:
+with sheet4:
     cli()
 
 
+with sheet5:
+    file_handling()
+
+
+with sheet6:
+    http_apis()
+
+
 with sheet7:
-    math()
+    list()
 
 
 with sheet8:
-    databases()
+    dict()
 
 
 with sheet9:
-    async_()
+    math()
 
 
 with sheet10:
-    network()
+    databases()
 
 
 with sheet11:
-    df_()
+    graphql()
 
 
 with sheet12:
-    numpy_()
+    re_()
 
 
 with sheet13:
-    plots()
+    strings()
 
 
 with sheet14:
-    scikit_()
+    web_scraping
 
 with sheet15:
+    async_()
+    
+with sheet16:
+    network()
+    
+with sheet17:
+    df_()
+    
+with sheet18:
+    numpy_()
+
+with sheet19:
+    plots()
+    
+with sheet20:
+    scikit_()
+    
+with sheet21:
     plotly_()
+    
+with sheet22:
+    time_()
+    
+with sheet23:
+    adv_()
+    
+with sheet24:
+    oop()
+    
+with sheet25:
+    deco_()
+    
 
 #######################################################################################################
 #End of Everyday_Python by github.com/tushar2704
