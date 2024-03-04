@@ -1998,20 +1998,18 @@ def network():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Creating a Listening Socket")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To open a socket that listens for incoming connections:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            serversocket.bind(('localhost', 8080))  # Bind to localhost on port 8080
+            serversocket.listen()  # Listen for incoming connections
             """
         )
         
@@ -2019,75 +2017,68 @@ def network():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Accepting Connections")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To accept and establish a network link:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            clientsocket, address = serversocket.accept()
+            print(f"Connection from {address} has been established.")       
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Non-blocking Socket Operations")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To set a socket’s mode to non-blocking:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            s.setblocking(False)
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Working with UDP Sockets")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To create a socket for UDP, a protocol for quicker, but less reliable communication:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            udp_socket.bind(('localhost', 8081))  # Bind UDP socket to localhost on port 8081
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Enumerating Network Interfaces")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To discover the names and addresses of the machine’s network interfaces:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            import socket
+            import netifaces
+            for interface in netifaces.interfaces():
+                addr = netifaces.ifaddresses(interface).get(netifaces.AF_INET)
+                if addr:
+                    print(f"Interface: {interface}, Address: {addr[0]['addr']}")
             """
         )
 
