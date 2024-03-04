@@ -3088,20 +3088,19 @@ def time_():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Comparing Dates and Times")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### Date and Times comparisons:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            if specific_time > now:
+                print("Specific time is in the future.")
+            else:
+                print("Specific time has passed.")
             """
         )
         
@@ -3109,75 +3108,77 @@ def time_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Extracting Components from a Date/Time")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To extract dates year, month, day, and more:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            year = now.year
+            month = now.month
+            day = now.day
+            hour = now.hour
+            minute = now.minute
+            second = now.second
+            print(f"Year: {year}, Month: {month}, Day: {day}, Hour: {hour}, Minute: {minute}, Second: {second}")         
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Working with Time Zones")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To work with time zones honoring the local time:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            from datetime import timezone, timedelta
+            utc_time = datetime.now(timezone.utc)
+            print(f"Current UTC time: {utc_time}")
+            # Adjusting to a specific timezone (e.g., EST)
+            est_time = utc_time - timedelta(hours=5)
+            print(f"Current EST time: {est_time}")
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Getting the Weekday")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To identify the day of the week:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            weekday = now.strftime("%A")
+            print(f"Today is: {weekday}")
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Working with Unix Timestamps")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To converse with the ancient epochs, translating their count from the dawn of Unix:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            timestamp = datetime.timestamp(now)
+            print(f"Current timestamp: {timestamp}")
+            # Converting a timestamp back to a datetime
+            date_from_timestamp = datetime.fromtimestamp(timestamp)
+            print(f"Date from timestamp: {date_from_timestamp}")
             """
         )
 
