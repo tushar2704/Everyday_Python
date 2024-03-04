@@ -5665,81 +5665,64 @@ def common_python():
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("33. tempfile - Generate Temporary Files and Directories")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To create temporary files and directories:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            import tempfile
+            temp = tempfile.TemporaryFile()
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("34. bz2 - Support for Bzip2 Compression")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To compress and decompress data using bzip2 compression:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            import bz2
+            compressed = bz2.compress(b'your data here')
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("35. gzip - Support for Gzip Compression")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To compress and decompress data using gzip compression:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import gzip
+            with gzip.open('file.txt.gz', 'wt') as f:
+                f.write('your data here')
             """
         )
         
         
-        st.subheader("Basic GET Request")
+        st.subheader("36. ssl - TLS/SSL Wrapper for Socket Objects")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To handle TLS/SSL encryption and peer authentication for network sockets:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import ssl
+            ssl.wrap_socket(sock)
             """
         )
         
@@ -5747,20 +5730,17 @@ def common_python():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("37. imaplib - IMAP4 Protocol Client")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To access and manipulate mail over IMAP4:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            import imaplib
+            mail = imaplib.IMAP4_SSL('imap.example.com')
             """
         )
         
