@@ -2341,20 +2341,20 @@ def numpy_():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Basic Array Operations")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To perform elemental manipulations upon the arrays:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            a = np.array([1, 2, 3])
+            b = np.array([4, 5, 6])
+            sum = a + b  # Element-wise addition
+            difference = b - a  # Element-wise subtraction
+            product = a * b  # Element-wise multiplication
             """
         )
         
@@ -2362,75 +2362,64 @@ def numpy_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Matrix Multiplication")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### Basic dot product Operation:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            result = np.dot(a.reshape(1, 3), b.reshape(3, 1))  # Dot product of a and b          
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Accessing Array Elements")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### Accessing array elements with useful syntax:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            element = a[2]  # Retrieve the third element of array 'a'
+            row = reshaped[1, :]  # Retrieve the second row of 'reshaped'
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Boolean Indexing")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To filter the elements of an array through the sieve of conditionals:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            filtered = a[a > 2]  # Elements of 'a' greater than 2
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Aggregations and Statistics")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### Statistical operations on np arrays:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            mean = np.mean(a)
+            maximum = np.max(a)
+            sum = np.sum(a)
             """
         )
 
