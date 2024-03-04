@@ -2175,20 +2175,16 @@ def df_():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Creating New Columns")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To create new columns in DataFrame derived from the data within:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            df['Length'] = df['Element'].apply(len)
             """
         )
         
@@ -2196,75 +2192,62 @@ def df_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Grouping and Aggregating Data")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To gather your data into groups and extract new data through aggregation:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            element_groups = df.groupby('Element').agg({'Length': 'mean'})          
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Merging DataFrames")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To weave together two DataFrames, joining them by a shared key:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            df2 = pd.DataFrame({'Element': ['Earth', 'Fire'], 'Quality': ['Solid', 'Plasma']})
+            merged_df = pd.merge(df, df2, on='Element')
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Handling Missing Data")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To clean your DataFrame, filling the voids where data is absent:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            df.fillna(value='Unknown', inplace=True)
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Pivoting and Reshaping Data")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To transmute the shape of your DataFrame, revealing hidden patterns and structures with a pivot operation:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            pivoted_df = df.pivot(index='Element', columns='Symbol', values='Length')
             """
         )
 
