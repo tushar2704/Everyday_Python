@@ -54,16 +54,16 @@ with st.sidebar:
     # st.page_link("pages/page2.py", label="Everyday Cheat Sheets", icon="🐍")
     # st.page_link("pages/page3.py", label="Data Structures", icon="🐍")
     
-    st.page_link("pages/page5.py", label="Pro Tips", icon="🐍")
+    st.page_link("pages/page5.py", label="Pro Python", icon="🐍")
     
 
  
 #######################
 #Body
-sheet1,sheet2,sheet3,sheet4,sheet5,sheet6,sheet7,sheet8,sheet9,sheet10,sheet11,sheet12,sheet13,sheet14,sheet15,sheet16,sheet17,sheet18, sheet19, sheet20, sheet21, sheet22, sheet23, sheet24=st.tabs(
+sheet1,sheet2,sheet3,sheet4,sheet5,sheet6,sheet7,sheet8,sheet9,sheet10,sheet11,sheet12,sheet13,sheet14,sheet15,sheet16,sheet17,sheet18, sheet19, sheet20, sheet21=st.tabs(
     ["Pip","OS","CLI","Files","Http","Lists","Dict",
      "Math","DB","GraphQL","Re","Str","Scrap","Async","Network","DF","NP","PLT","SKL","PX",
-     "Time", "Adv","OOPs","Deco"]
+     "Time"]
     )
 
 
@@ -139,14 +139,14 @@ with sheet20:
 with sheet21:
     time_()
     
-with sheet22:
-    adv_()
+# with sheet22:
+#     adv_()
     
-with sheet23:
-    oop()
+# with sheet23:
+#     oop()
     
-with sheet24:
-    deco_()
+# with sheet24:
+#     deco_()
     
 
 #######################################################################################################

@@ -56,19 +56,30 @@ with st.sidebar:
     
 
 
-pro1,pro2,pro3=st.tabs(["One Liner PYTHON","Interview Code Snippets","Advanced PYTHON"])
+pro1,pro2,pro3, pro4,pro5=st.tabs(["One Liner Py","Common Py","Advanced Py","Interview Code Snippets","Advanced PYTHON"])
 
 with pro1:
     one_liner_60()
     
 with pro2:
-    st.write("Interview Code Snippets upcoming...")
+    common_python()
     
     
 with pro3:
+    adv_()
+    st.divider()
+    oop()
+    st.divider()
+    deco_()
+    
+with pro4:
+    st.write("Interview Code Snippets upcoming...")
+    
+    
+with pro5:
     st.write("Advanced PYTHON upcoming...")
     
 
 footer()
-#write a streamlit function to display "Tushar Aggarwal"
+
 
