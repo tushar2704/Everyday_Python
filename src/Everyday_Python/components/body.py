@@ -2707,20 +2707,18 @@ def scikit_():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Using Cross-Validation")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To use Cross-Validation:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            from sklearn.model_selection import cross_val_score
+            scores = cross_val_score(model, X, y, cv=5)
+            print(f"Cross-validation scores: {scores}")
             """
         )
         
@@ -2728,75 +2726,76 @@ def scikit_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Feature Scaling")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To create the appropriate scales of your features, allowing the model to learn more effectively:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            from sklearn.preprocessing import StandardScaler
+            scaler = StandardScaler()
+            X_train_scaled = scaler.fit_transform(X_train)
+            X_test_scaled = scaler.transform(X_test)     
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Parameter Tuning with Grid Search")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To refine your model’s parameters, seeking the optimal combination:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            from sklearn.model_selection import GridSearchCV
+            param_grid = {'n_estimators': [10, 50, 100], 'max_depth': [None, 10, 20]}
+            grid_search = GridSearchCV(model, param_grid, cv=5)
+            grid_search.fit(X_train, y_train)
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Pipeline Creation")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To streamline your data processing and modeling steps, crafting a seamless flow:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            from sklearn.pipeline import Pipeline
+            pipeline = Pipeline([
+                ('scaler', StandardScaler()),
+                ('classifier', RandomForestClassifier())
+            ])
+            pipeline.fit(X_train, y_train)
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Saving and Loading a Model")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To preserve your model:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            import joblib
+            # Saving the model
+            joblib.dump(model, 'model.joblib')
+            # Loading the model
+            loaded_model = joblib.load('model.joblib')
             """
         )
 
