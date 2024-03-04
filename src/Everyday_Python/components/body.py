@@ -4831,96 +4831,99 @@ def web_scraping():
         )
         
         
-        st.subheader("10. Respecting robots.txt")
+        st.subheader("11. Using Sessions and Cookies")
         
         st.markdown(
             """
-            ##### To check robots.txt for scraping permissions:
+            ##### To maintain sessions and handle cookies:
             """
         )
         st.code(
             """
-            from urllib.robotparser import RobotFileParser
-
-            rp = RobotFileParser()
-            rp.set_url('https://example.com/robots.txt')
-            rp.read()
-            can_scrape = rp.can_fetch('*', url)
+            session = requests.Session()
+            session.get('https://example.com/login')
+            session.cookies.set('key', 'value')  # Set cookies, if needed
+            response = session.get('https://example.com/protected_page')
             """
         )
         
-        st.subheader("10. Respecting robots.txt")
+        st.subheader("12. Scraping with Browser Automation (selenium Library)")
         
         st.markdown(
             """
-            ##### To check robots.txt for scraping permissions:
+            ##### To scrape dynamic content rendered by JavaScript:
             """
         )
         st.code(
             """
-            from urllib.robotparser import RobotFileParser
-
-            rp = RobotFileParser()
-            rp.set_url('https://example.com/robots.txt')
-            rp.read()
-            can_scrape = rp.can_fetch('*', url)
+            from selenium import webdriver
+            browser = webdriver.Chrome()
+            browser.get('https://example.com')
+            content = browser.page_source
+            # Parse and extract data using BeautifulSoup, etc.
+            browser.quit()
             """
         )
         
         
-        st.subheader("10. Respecting robots.txt")
+        st.subheader("13. Error Handling in Web Scraping")
         
         st.markdown(
             """
-            ##### To check robots.txt for scraping permissions:
+            ##### To handle errors and exceptions:
             """
         )
         st.code(
             """
-            from urllib.robotparser import RobotFileParser
-
-            rp = RobotFileParser()
-            rp.set_url('https://example.com/robots.txt')
-            rp.read()
-            can_scrape = rp.can_fetch('*', url)
+            try:
+                response = requests.get(url, timeout=5)
+                response.raise_for_status()  # Raises an error for bad status codes
+            except requests.exceptions.RequestException as e:
+                print(f"Error: {e}")
             """
         )
         
         
-        st.subheader("10. Respecting robots.txt")
+        st.subheader("14. Asynchronous Web Scraping")
         
         st.markdown(
             """
-            ##### To check robots.txt for scraping permissions:
+            ##### To scrape websites asynchronously for faster data retrieval:
             """
         )
         st.code(
             """
-            from urllib.robotparser import RobotFileParser
+            import aiohttp
+            import asyncio
 
-            rp = RobotFileParser()
-            rp.set_url('https://example.com/robots.txt')
-            rp.read()
-            can_scrape = rp.can_fetch('*', url)
+            async def fetch(url):
+                async with aiohttp.ClientSession() as session:
+                    async with session.get(url) as response:
+                        return await response.text()
+
+            urls = ['https://example.com/page1', 'https://example.com/page2']
+            loop = asyncio.get_event_loop()
+            pages = loop.run_until_complete(asyncio.gather(*(fetch(url) for url in urls)))
             """
         )
         
         
-        st.subheader("10. Respecting robots.txt")
+        st.subheader("15. Data Storage (CSV, Database)")
         
         st.markdown(
             """
-            ##### To check robots.txt for scraping permissions:
+            ##### To store scraped data in a CSV file or a database:
             """
         )
         st.code(
             """
-            from urllib.robotparser import RobotFileParser
+            import csv
 
-            rp = RobotFileParser()
-            rp.set_url('https://example.com/robots.txt')
-            rp.read()
-            can_scrape = rp.can_fetch('*', url)
+            with open('output.csv', 'w', newline='') as file:
+                writer = csv.writer(file)
+                writer.writerow(['Title', 'URL'])
+                for article in articles:
+                    writer.writerow([article['title'], article['url']])
             """
         )
         
