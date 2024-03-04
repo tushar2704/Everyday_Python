@@ -3849,26 +3849,26 @@ def deco_():
 
 
 
-def func():
-    st.header("Working With Simple HTTP APIs")
+def graphql():
+    st.header("Working With GraphQL")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Setting Up a GraphQL Client")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To work with GraphQL:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            from gql import gql, Client
+            from gql.transport.requests import RequestsHTTPTransport
+            transport = RequestsHTTPTransport(url='https://your-graphql-endpoint.com/graphql')
+            client = Client(transport=transport, fetch_schema_from_transport=True)
             """
         )
         
@@ -3876,63 +3876,79 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Executing a Simple Query")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### Executing a Query:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            query = gql('''
+            {
+            allWizards {
+                id
+                name
+                power
+            }
+            }
+            ''')
+
+            result = client.execute(query)
+            print(result)
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Executing a Query with Variables")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### Query with Variables:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            query = gql('''
+            query GetWizards($element: String!) {
+            wizards(element: $element) {
+                id
+                name
+            }
+            }
+            ''')
+            params = {"element": "Fire"}
+            result = client.execute(query, variable_values=params)
+            print(result)
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Mutations")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To create and execute a mutation:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            mutation = gql('''
+            mutation CreateWizard($name: String!, $element: String!) {
+            createWizard(name: $name, element: $element) {
+                wizard {
+                id
+                name
+                }
+            }
+            }
+            ''')
+            params = {"name": "Gandalf", "element": "Light"}
+            result = client.execute(mutation, variable_values=params)
+            print(result)
             """
         )
         
