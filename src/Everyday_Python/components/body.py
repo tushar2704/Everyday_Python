@@ -3642,7 +3642,7 @@ def deco_():
             """
         )
         st.code(
-            """
+            '''
             from functools import wraps
 
             def my_decorator(func):
@@ -3659,7 +3659,7 @@ def deco_():
 
             print(greet.__name__)  # Outputs: 'greet'
             print(greet.__doc__)   # Outputs: 'Greet someone'
-            """
+            '''
         )
         
         
@@ -4627,19 +4627,19 @@ def strings():
         )
         
         
-        st.subheader("15. Raw Strings")
+        # st.subheader("15. Raw Strings")
         
-        st.markdown(
-            """
-            ##### To treat backslashes as literal characters, useful for regex patterns and file paths:
-            """
-        )
-        st.code(
-            """
-            path = r"C:\User\name\folder"
-            print(path)
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### To treat backslashes as literal characters, useful for regex patterns and file paths:
+        #     """
+        # )
+        # st.code(
+        #     '''
+        #     path = r"C:\User\name\folder"
+        #     print(path)
+        #     '''
+        #  )
         
         
     
