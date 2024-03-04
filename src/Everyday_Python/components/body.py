@@ -4934,8 +4934,8 @@ def web_scraping():
 
 
 
-def func():
-    st.header("Working With Simple HTTP APIs")
+def pip_():
+    st.header("Working With pip (Package Management)")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
@@ -4945,15 +4945,12 @@ def func():
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### 1. Installing a Package
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            pip install numpy
             """
         )
         
@@ -4961,84 +4958,61 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Listing Installed Packages")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To survey the compendium of libraries that reside within your realm, noting their versions and lineage:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            pip list
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Upgrading a Package")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To imbue an installed library with enhanced powers and capabilities, elevating it to its latest form:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            pip install --upgrade numpy
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Uninstalling a Package")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To uninstall a package:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            pip uninstall numpy
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Searching for Packages")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### Searching packages:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            pip search "data visualization"
             """
         )
             
