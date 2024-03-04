@@ -5018,20 +5018,16 @@ def pip_():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Installing Specific Versions of a Package")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To install a specific version:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            pip install numpy==1.18.5
             """
         )
         
@@ -5039,75 +5035,69 @@ def pip_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Generating a Requirements File")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### Requirements file:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            pip freeze > requirements.txt      
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Installing Packages from a Requirements File")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To conjure a symphony of libraries in unison, each aligned with the notations in your tome of requirements:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            pip install -r requirements.txt
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Using Virtual Environments")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### Create virtual Environments to manage package conflicts:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            # Create a virtual environment named 'venv'
+            python -m venv venv
+
+            # Activate the virtual environment
+            # On Windows
+            .\venv\Scripts\activate
+
+            # On Unix or MacOS
+            source venv/bin/activate
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Checking Package Dependencies")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### Understanding Dependencies:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            pip show numpy
             """
         )
 
