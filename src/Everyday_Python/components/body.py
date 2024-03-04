@@ -2995,26 +2995,25 @@ def plotly_():
 
 
 
-def func():
-    st.header("Working With Simple HTTP APIs")
+def time_():
+    st.header("Working With Dates and Times")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Getting the Current Date and Time")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To get the current data and time:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            from datetime import datetime
+            now = datetime.now()
+            print(f"Current date and time: {now}")
             """
         )
         
@@ -3022,84 +3021,68 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Creating Specific Date and Time")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To conjure a moment from the past or future, crafting it with precision:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            specific_time = datetime(2023, 1, 1, 12, 30)
+            print(f"Specific date and time: {specific_time}")
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Formatting Dates and Times")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### Formatting Dates and Times:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            formatted = now.strftime("%Y-%m-%d %H:%M:%S")
+            print(f"Formatted date and time: {formatted}")
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Parsing Dates and Times from Strings")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### Parsing Dates and Times from Strings:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            date_string = "2023-01-01 15:00:00"
+            parsed_date = datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S")
+            print(f"Parsed date and time: {parsed_date}")
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Working with Time Deltas")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To traverse the distances between moments, leaping forward or backward through time:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            from datetime import timedelta
+            delta = timedelta(days=7)
+            future_date = now + delta
+            print(f"Date after 7 days: {future_date}")
             """
         )
             
