@@ -5747,81 +5747,65 @@ def common_python():
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("38. smtplib - SMTP Protocol Client")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To send mail using the Simple Mail Transfer Protocol (SMTP):
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            import smtplib
+            server = smtplib.SMTP('smtp.example.com', 587)
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("39. email - Managing Email Messages")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To manage email messages, including MIME and other RFC 2822-based message documents:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            from email.message import EmailMessage
+            msg = EmailMessage()
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("40. base64 - Base16, Base32, Base64, Base85 Data Encodings")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To encode and decode data using Base64:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import base64
+            encoded_data = base64.b64encode(b'data to encode')
             """
         )
         
         
-        st.subheader("Basic GET Request")
+        st.subheader("41. difflib - Helpers for Computing Deltas")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To compare sequences and produce human-readable diffs:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import difflib
+            diff = difflib.ndiff('one\ntwo\nthree\n'.splitlines(keepends=True),
+                                'ore\ntree\nemu\n'.splitlines(keepends=True))
+            print(''.join(diff))
             """
         )
         
