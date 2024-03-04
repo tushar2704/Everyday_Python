@@ -4742,20 +4742,17 @@ def web_scraping():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Handling Relative URLs")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To convert relative URLs to absolute URLs:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            from urllib.parse import urljoin
+            absolute_urls = [urljoin(url, link) for link in relative_urls]
             """
         )
         
@@ -4763,77 +4760,170 @@ def web_scraping():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Dealing with Pagination")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To scrape content across multiple pages:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            base_url = "https://example.com/page/"
+            for page in range(1, 6):  # For 5 pages
+                page_url = base_url + str(page)
+                response = requests.get(page_url)
+                # Process each page's content         
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Handling AJAX Requests")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To scrape data loaded by AJAX requests:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            # Find the URL of the AJAX request (using browser's developer tools) and fetch it
+            ajax_url = 'https://example.com/ajax_endpoint'
+            data = requests.get(ajax_url).json()  # Assuming the response is JSON
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Using Regular Expressions in Web Scraping")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To extract data using regular expressions:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            import re
+            emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', html)
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Respecting robots.txt")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To check robots.txt for scraping permissions:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            from urllib.robotparser import RobotFileParser
+
+            rp = RobotFileParser()
+            rp.set_url('https://example.com/robots.txt')
+            rp.read()
+            can_scrape = rp.can_fetch('*', url)
             """
         )
+        
+        
+        st.subheader("10. Respecting robots.txt")
+        
+        st.markdown(
+            """
+            ##### To check robots.txt for scraping permissions:
+            """
+        )
+        st.code(
+            """
+            from urllib.robotparser import RobotFileParser
+
+            rp = RobotFileParser()
+            rp.set_url('https://example.com/robots.txt')
+            rp.read()
+            can_scrape = rp.can_fetch('*', url)
+            """
+        )
+        
+        st.subheader("10. Respecting robots.txt")
+        
+        st.markdown(
+            """
+            ##### To check robots.txt for scraping permissions:
+            """
+        )
+        st.code(
+            """
+            from urllib.robotparser import RobotFileParser
+
+            rp = RobotFileParser()
+            rp.set_url('https://example.com/robots.txt')
+            rp.read()
+            can_scrape = rp.can_fetch('*', url)
+            """
+        )
+        
+        
+        st.subheader("10. Respecting robots.txt")
+        
+        st.markdown(
+            """
+            ##### To check robots.txt for scraping permissions:
+            """
+        )
+        st.code(
+            """
+            from urllib.robotparser import RobotFileParser
+
+            rp = RobotFileParser()
+            rp.set_url('https://example.com/robots.txt')
+            rp.read()
+            can_scrape = rp.can_fetch('*', url)
+            """
+        )
+        
+        
+        st.subheader("10. Respecting robots.txt")
+        
+        st.markdown(
+            """
+            ##### To check robots.txt for scraping permissions:
+            """
+        )
+        st.code(
+            """
+            from urllib.robotparser import RobotFileParser
+
+            rp = RobotFileParser()
+            rp.set_url('https://example.com/robots.txt')
+            rp.read()
+            can_scrape = rp.can_fetch('*', url)
+            """
+        )
+        
+        
+        st.subheader("10. Respecting robots.txt")
+        
+        st.markdown(
+            """
+            ##### To check robots.txt for scraping permissions:
+            """
+        )
+        st.code(
+            """
+            from urllib.robotparser import RobotFileParser
+
+            rp = RobotFileParser()
+            rp.set_url('https://example.com/robots.txt')
+            rp.read()
+            can_scrape = rp.can_fetch('*', url)
+            """
+        )
+        
 
 
 
