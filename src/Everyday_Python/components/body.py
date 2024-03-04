@@ -3187,26 +3187,24 @@ def time_():
 
 
 
-def func():
-    st.header("Working With Simple HTTP APIs")
+def adv_():
+    st.header("Working With More Advanced List Comprehensions and Lambda Functions")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Nested List Comprehensions")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To work with nested list Comprehensions:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            matrix = [[j for j in range(5)] for i in range(3)]
+            print(matrix)  # Creates a 3x5 matrix
             """
         )
         
@@ -3214,84 +3212,65 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Conditional List Comprehensions")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To filter elements that meet your criteria:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            filtered = [x for x in range(10) if x % 2 == 0]
+            print(filtered)  # Even numbers from 0 to 9
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. List Comprehensions with Multiple Iterables")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To merge and transform elements from multiple sources in a single dance:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            pairs = [(x, y) for x in [1, 2, 3] for y in [3, 1, 4] if x != y]
+            print(pairs)  # Pairs of non-equal elements
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Using Lambda Functions")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To summon anonymous functions, ephemeral and concise, for a single act of magic:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            square = lambda x: x**2
+            print(square(5))  # Returns 25
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Lambda Functions in List Comprehensionss")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To employ lambda functions within your list comprehensions:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            squared = [(lambda x: x**2)(x) for x in range(5)]
+            print(squared)  # Squares of numbers from 0 to 4
             """
         )
             
