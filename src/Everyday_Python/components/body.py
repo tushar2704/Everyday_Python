@@ -4563,82 +4563,81 @@ def strings():
             """
         )
 
-        st.subheader("10. String Methods — Working with Characters")
+        st.subheader("11. String Methods — isdigit, isalpha, isalnum")
         
         st.markdown(
             """
-            ##### To process individual characters in a string:
+            ##### To check if a string contains only digits, alphabetic characters, or alphanumeric characters:
             """
         )
         st.code(
             """
-            s = "characters"
-            for char in s:
-                print(char)  # Prints each character on a new line
+            print("123".isdigit())   # True
+            print("abc".isalpha())   # True
+            print("abc123".isalnum())# True
             """
         )
         
         
-        st.subheader("10. String Methods — Working with Characters")
+        st.subheader("12. String Slicing")
         
         st.markdown(
             """
-            ##### To process individual characters in a string:
+            ##### To extract a substring using slicing:
             """
         )
         st.code(
             """
-            s = "characters"
-            for char in s:
-                print(char)  # Prints each character on a new line
+            s = "slice me"
+            sub = s[2:7]  # From 3rd to 7th character
+            print(sub)
             """
         )
         
         
-        st.subheader("10. String Methods — Working with Characters")
+        st.subheader("13. String Length with len")
         
         st.markdown(
             """
-            ##### To process individual characters in a string:
+            ##### To get the length of a string:
             """
         )
         st.code(
             """
-            s = "characters"
-            for char in s:
-                print(char)  # Prints each character on a new line
+            s = "length"
+            print(len(s))  # 6
             """
         )
         
         
-        st.subheader("10. String Methods — Working with Characters")
+        st.subheader("14. Multiline Strings")
         
         st.markdown(
             """
-            ##### To process individual characters in a string:
+            ##### To work with strings spanning multiple lines:
             """
         )
         st.code(
             """
-            s = "characters"
-            for char in s:
-                print(char)  # Prints each character on a new line
+            multi = "Line one
+                Line two
+                Line three"
+                print(multi)
             """
         )
         
         
-        st.subheader("10. String Methods — Working with Characters")
+        st.subheader("15. Raw Strings")
         
         st.markdown(
             """
-            ##### To process individual characters in a string:
+            ##### To treat backslashes as literal characters, useful for regex patterns and file paths:
             """
         )
         st.code(
             """
-            s = "characters"
-            for char in s:
-                print(char)  # Prints each character on a new line
+            path = r"C:\User\name\folder"
+            print(path)
             """
         )
         
