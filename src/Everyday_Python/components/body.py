@@ -3276,20 +3276,18 @@ def adv_():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. List Comprehensions for Flattening Lists")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To flatten a nested list, spreading its elements into a single dimension:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            nested = [[1, 2, 3], [4, 5], [6, 7]]
+            flattened = [x for sublist in nested for x in sublist]
+            print(flattened)
             """
         )
         
@@ -3297,75 +3295,68 @@ def adv_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Applying Functions to Elements")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To apply a transformation function to each element:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            import math
+            transformed = [math.sqrt(x) for x in range(1, 6)]
+            print(transformed)  # Square roots of numbers from 1 to 5  
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Using Lambda with Map and Filter")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To map and filter lists:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            mapped = list(map(lambda x: x**2, range(5)))
+            filtered = list(filter(lambda x: x > 5, mapped))
+            print(mapped)    # Squares of numbers from 0 to 4
+            print(filtered)  # Elements greater than 5
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. List Comprehensions with Conditional Expressions")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### List Comprehensions with Condidtional Expressions:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            conditional = [x if x > 2 else x**2 for x in range(5)]
+            print(conditional)  # Squares numbers less than or equal to 2, passes others unchanged
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Complex Transformations with Lambda")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To conduct intricate transformations, using lambda functions:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            complex_transformation = list(map(lambda x: x**2 if x % 2 == 0 else x + 5, range(5)))
+            print(complex_transformation)  # Applies different transformations based on even-odd condition
             """
         )
 
