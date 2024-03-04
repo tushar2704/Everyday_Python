@@ -4642,45 +4642,33 @@ def strings():
         )
         
         
-        st.subheader("10. String Methods — Working with Characters")
-        
-        st.markdown(
-            """
-            ##### To process individual characters in a string:
-            """
-        )
-        st.code(
-            """
-            s = "characters"
-            for char in s:
-                print(char)  # Prints each character on a new line
-            """
-        )
+    
 
 
 
 
 
-def func():
-    st.header("Working With Simple HTTP APIs")
+def web_scraping():
+    st.header("Working With Web Scraping")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Fetching Web Pages with requests")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To retrieve the content of a web page:
             """
         )
         st.code(
             """
             import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+
+            url = 'https://example.com'
+            response = requests.get(url)
+            html = response.text
             """
         )
         
@@ -4688,84 +4676,67 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Parsing HTML with BeautifulSoup")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To parse HTML and extract data:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(html, 'html.parser')
+            print(soup.prettify())  # Pretty-print the HTML
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Navigating the HTML Tree")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To find elements using tags:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            title = soup.title.text  # Get the page title
+            headings = soup.find_all('h1')  # List of all <h1> tags
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Using CSS Selectors")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To select elements using CSS selectors:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            articles = soup.select('div.article')  # All elements with class 'article' inside a <div>
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Extracting Data from Tags")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To extract text and attributes from HTML elements:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            for article in articles:
+                title = article.h2.text  # Text inside the <h2> tag
+                link = article.a['href']  # 'href' attribute of the <a> tag
+                print(title, link)
             """
         )
             
