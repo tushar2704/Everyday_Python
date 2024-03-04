@@ -3365,26 +3365,28 @@ def adv_():
 
 
 
-def func():
-    st.header("Working With Simple HTTP APIs")
+def oop():
+    st.header("Working With Object Oriented Programming")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Defining a Class")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### Creating a class:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            class Wizard:
+                def __init__(self, name, power):
+                    self.name = name
+                    self.power = power
+                def cast_spell(self):
+                        print(f"{self.name} casts a spell with power {self.power}!")
             """
         )
         
@@ -3392,84 +3394,68 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Creating an Instance")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To create an instance of your class:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            merlin = Wizard("Merlin", 100)
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Invoking Methods")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To call methods on instance of class:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            merlin.cast_spell()
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Inheritance")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### Subclassing:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            class ArchWizard(Wizard):
+                def __init__(self, name, power, realm):
+                    super().__init__(name, power)
+                    self.realm = realm
+                def summon_familiar(self):
+                    print(f"{self.name} summons a familiar from the {self.realm} realm.")
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Overriding Methods")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To overide base classes:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            class Sorcerer(Wizard):
+                def cast_spell(self):
+                    print(f"{self.name} casts a powerful dark spell!")
             """
         )
             
