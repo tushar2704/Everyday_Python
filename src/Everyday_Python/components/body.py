@@ -4474,20 +4474,18 @@ def strings():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. String Methods — startswith, endswith")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To check the start or end of a string for specific text:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            s = "filename.txt"
+            print(s.startswith("file"))  # True
+            print(s.endswith(".txt"))    # True
             """
         )
         
@@ -4495,78 +4493,170 @@ def strings():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. String Methods — split, join")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To split a string into a list or join a list into a string:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            s = "split,this,string"
+            words = s.split(",")        # Split string into list
+            joined = " ".join(words)    # Join list into string
+            print(words)
+            print(joined)         
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. String Methods — replace")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To replace parts of a string with another string:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            s = "Hello world"
+            new_s = s.replace("world", "Python")
+            print(new_s)
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. String Methods — find, index")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To find the position of a substring within a string:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            s = "look for a substring"
+            position = s.find("substring")  # Returns -1 if not found
+            index = s.index("substring")    # Raises ValueError if not found
+            print(position)
+            print(index)
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. String Methods — Working with Characters")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To process individual characters in a string:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            s = "characters"
+            for char in s:
+                print(char)  # Prints each character on a new line
             """
         )
 
+        st.subheader("10. String Methods — Working with Characters")
+        
+        st.markdown(
+            """
+            ##### To process individual characters in a string:
+            """
+        )
+        st.code(
+            """
+            s = "characters"
+            for char in s:
+                print(char)  # Prints each character on a new line
+            """
+        )
+        
+        
+        st.subheader("10. String Methods — Working with Characters")
+        
+        st.markdown(
+            """
+            ##### To process individual characters in a string:
+            """
+        )
+        st.code(
+            """
+            s = "characters"
+            for char in s:
+                print(char)  # Prints each character on a new line
+            """
+        )
+        
+        
+        st.subheader("10. String Methods — Working with Characters")
+        
+        st.markdown(
+            """
+            ##### To process individual characters in a string:
+            """
+        )
+        st.code(
+            """
+            s = "characters"
+            for char in s:
+                print(char)  # Prints each character on a new line
+            """
+        )
+        
+        
+        st.subheader("10. String Methods — Working with Characters")
+        
+        st.markdown(
+            """
+            ##### To process individual characters in a string:
+            """
+        )
+        st.code(
+            """
+            s = "characters"
+            for char in s:
+                print(char)  # Prints each character on a new line
+            """
+        )
+        
+        
+        st.subheader("10. String Methods — Working with Characters")
+        
+        st.markdown(
+            """
+            ##### To process individual characters in a string:
+            """
+        )
+        st.code(
+            """
+            s = "characters"
+            for char in s:
+                print(char)  # Prints each character on a new line
+            """
+        )
+        
+        
+        st.subheader("10. String Methods — Working with Characters")
+        
+        st.markdown(
+            """
+            ##### To process individual characters in a string:
+            """
+        )
+        st.code(
+            """
+            s = "characters"
+            for char in s:
+                print(char)  # Prints each character on a new line
+            """
+        )
 
 
 
