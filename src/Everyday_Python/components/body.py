@@ -5549,20 +5549,17 @@ def common_python():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("26. pickle - Python Object Serialization")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To serialize and deserialize Python object structures:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            import pickle
+            serialized_obj = pickle.dumps(obj)
             """
         )
         
@@ -5570,91 +5567,79 @@ def common_python():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("27. io - Core Tools for Working with Streams")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To handle streams (file-like objects):
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            from io import StringIO
+            f = StringIO("some initial text data")        
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("28. time - Time Access and Conversions")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To access time-related functions:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            import time
+            time.sleep(1)  # Sleep for 1 second
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("29. calendar - General Calendar-related Functions")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To work with calendars:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            import calendar
+            print(calendar.month(2023, 1))  # Print the calendar for January 2023
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("30. queue - A Synchronized Queue Class")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To manage a queue, useful in multithreaded programming:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            from queue import Queue
+            q = Queue()
             """
         )
         
-        st.subheader("Basic GET Request")
+        st.subheader("31. shutil - High-level File Operations")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To perform high-level file operations, like copying and archiving:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import shutil
+            shutil.copyfile('source.txt', 'dest.txt')
             """
         )
         
@@ -5662,20 +5647,18 @@ def common_python():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("32. glob - Unix Style Pathname Pattern Expansion")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To find files matching a specified pattern:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            import glob
+            for file in glob.glob("*.txt"):
+                print(file)
             """
         )
         
