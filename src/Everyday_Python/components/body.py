@@ -3571,26 +3571,34 @@ def oop():
 
 
 
-def func():
-    st.header("Working With Simple HTTP APIs")
+def deco_():
+    st.header("Working With Decorators")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Basic Decorator")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To create a simple decorator that wraps a function:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            def my_decorator(func):
+                def wrapper():
+                    print("Something is happening before the function is called.")
+                    func()
+                    print("Something is happening after the function is called.")
+                return wrapper
+
+            @my_decorator
+            def say_hello():
+                print("Hello!")
+
+            say_hello()
             """
         )
         
@@ -3598,84 +3606,113 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Decorator with Arguments")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To pass arguments to the function within a decorator:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            def my_decorator(func):
+                def wrapper(*args, **kwargs):
+                    print("Before call")
+                    result = func(*args, **kwargs)
+                    print("After call")
+                    return result
+                return wrapper
+
+            @my_decorator
+            def greet(name):
+                print(f"Hello {name}")
+
+            greet("Alice")
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Using functools.wraps")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To preserve the metadata of the original function when decorating:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            from functools import wraps
+
+            def my_decorator(func):
+                @wraps(func)
+                def wrapper(*args, **kwargs):
+                    """Wrapper function"""
+                    return func(*args, **kwargs)
+                return wrapper
+
+            @my_decorator
+            def greet(name):
+                """Greet someone"""
+                print(f"Hello {name}")
+
+            print(greet.__name__)  # Outputs: 'greet'
+            print(greet.__doc__)   # Outputs: 'Greet someone'
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Class Decorator")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To create a decorator using a class:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            class MyDecorator:
+                def __init__(self, func):
+                    self.func = func
+            def __call__(self, *args, **kwargs):
+                    print("Before call")
+                    self.func(*args, **kwargs)
+                    print("After call")
+
+            @MyDecorator
+            def greet(name):
+                print(f"Hello {name}")
+
+            greet("Alice")
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Decorator with Arguments")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To create a decorator that accepts its own arguments:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            def repeat(times):
+                def decorator(func):
+                    @wraps(func)
+                    def wrapper(*args, **kwargs):
+                        for _ in range(times):
+                            func(*args, **kwargs)
+                    return wrapper
+                return decorator
+
+            @repeat(3)
+            def say_hello():
+                print("Hello")
+
+            say_hello()
             """
         )
             
