@@ -5813,100 +5813,79 @@ def common_python():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("42. gettext - Multilingual Internationalization Services")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To internationalize your Python programs:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            import gettext
+            gettext.install('myapp')
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("43. locale - Internationalization Services")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To access a database of culture-specific data formats:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            import locale
+            locale.setlocale(locale.LC_ALL, '')
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("44. secrets - Generate Secure Random Numbers for Managing Secrets")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To generate secure random numbers for managing secrets, such as tokens or passwords:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            import secrets
+            secure_token = secrets.token_hex(16)
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("45. uuid - UUID Objects According to RFC 4122")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To generate universally unique identifiers (UUIDs):
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import uuid
+            unique_id = uuid.uuid4()
             """
         )
         
-        st.subheader("Basic GET Request")
+        st.subheader("46. html - HyperText Markup Language Support")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To handle and manipulate HTML entities:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import html
+            escaped = html.escape('<a href="https://example.com">link</a>')
             """
         )
         
@@ -5914,87 +5893,39 @@ def common_python():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("47. ftplib - FTP Protocol Client")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To interact with and transfer files over the FTP protocol:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            from ftplib import FTP
+            ftp = FTP('ftp.example.com')
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("48. tarfile - Read and Write Tar Archive Files")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To work with tar archive files, allowing you to archive and compress/decompress:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            import tarfile
+            with tarfile.open('sample.tar.gz', 'w:gz') as tar:
+                tar.add('sample.txt')
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
-        
-        st.markdown(
-            """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
-            """
-        )
-        st.code(
-            """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
-            """
-        )
-        
-        
-        
-        st.subheader("Using Headers in Requests")
-        
-        st.markdown(
-            """
-            ##### To include headers in your request (e.g., for authorization):
-            """
-        )
-        st.code(
-            """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
-            """
-        )
-
 
 
 
