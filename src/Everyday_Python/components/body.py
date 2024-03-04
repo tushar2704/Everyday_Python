@@ -4292,97 +4292,86 @@ def re_():
             """
         )
         
-        st.subheader("10. Lookahead and Lookbehind Assertions")
+        st.subheader("11. Flags to Modify Pattern Matching Behavior")
         
         st.markdown(
             """
-            ##### To match a pattern based on what comes before or after it without including it in the result:
+            ##### To use flags like re.IGNORECASE to change how patterns are matched:
             """
         )
         st.code(
             """
-            lookahead = re.search(r"\b\w+(?= string)", text)  # Word before ' string'
-            lookbehind = re.search(r"(?<=Search )\w+", text)  # Word after 'Search '
-            if lookahead:
-                print(lookahead.group())
-            if lookbehind:
-                print(lookbehind.group())
+            case_insensitive = re.findall(r"search", text, re.IGNORECASE)
+            print(case_insensitive)
             """
         )
         
         
-        st.subheader("10. Lookahead and Lookbehind Assertions")
+        st.subheader("12. Using Named Groups")
         
         st.markdown(
             """
-            ##### To match a pattern based on what comes before or after it without including it in the result:
+            ##### To assign names to groups and reference them by name:
             """
         )
         st.code(
             """
-            lookahead = re.search(r"\b\w+(?= string)", text)  # Word before ' string'
-            lookbehind = re.search(r"(?<=Search )\w+", text)  # Word after 'Search '
-            if lookahead:
-                print(lookahead.group())
-            if lookbehind:
-                print(lookbehind.group())
+            match = re.search(r"(?P<first>\w+) (?P<second>\w+)", text)
+            if match:
+                print(match.group('first'))
+                print(match.group('second'))
             """
         )
         
-        st.subheader("10. Lookahead and Lookbehind Assertions")
+        st.subheader("13. Matching Across Multiple Lines")
         
         st.markdown(
             """
-            ##### To match a pattern based on what comes before or after it without including it in the result:
+            ##### To match patterns over multiple lines using the re.MULTILINE flag:
             """
         )
         st.code(
             """
-            lookahead = re.search(r"\b\w+(?= string)", text)  # Word before ' string'
-            lookbehind = re.search(r"(?<=Search )\w+", text)  # Word after 'Search '
-            if lookahead:
-                print(lookahead.group())
-            if lookbehind:
-                print(lookbehind.group())
+            multi_line_text = "Start\nmiddle end"
+            matches = re.findall(r"^m\w+", multi_line_text, re.MULTILINE)
+            print(matches)
             """
         )
         
         
-        st.subheader("10. Lookahead and Lookbehind Assertions")
+        st.subheader("14. Lazy Quantifiers")
         
         st.markdown(
             """
-            ##### To match a pattern based on what comes before or after it without including it in the result:
+            ##### To match as few characters as possible using lazy quantifiers (*?, +?, ??):
             """
         )
         st.code(
             """
-            lookahead = re.search(r"\b\w+(?= string)", text)  # Word before ' string'
-            lookbehind = re.search(r"(?<=Search )\w+", text)  # Word after 'Search '
-            if lookahead:
-                print(lookahead.group())
-            if lookbehind:
-                print(lookbehind.group())
+            html = "<body><h1>Title</h1></body>"
+            match = re.search(r"<.*?>", html)
+            if match:
+                print(match.group())  # Matches '<body>'
             """
         )
         
         
         
-        st.subheader("10. Lookahead and Lookbehind Assertions")
+        st.subheader("15. Verbose Regular Expressions")
         
         st.markdown(
             """
-            ##### To match a pattern based on what comes before or after it without including it in the result:
+            ##### To use re.VERBOSE for more readable regular expressions:
             """
         )
         st.code(
             """
-            lookahead = re.search(r"\b\w+(?= string)", text)  # Word before ' string'
-            lookbehind = re.search(r"(?<=Search )\w+", text)  # Word after 'Search '
-            if lookahead:
-                print(lookahead.group())
-            if lookbehind:
-                print(lookbehind.group())
+            pattern = re.compile(r"
+                \b      # Word boundary
+                \w+     # One or more word characters
+                \s      # Space
+                ", re.VERBOSE)
+            match = pattern.search(text)
             """
         )
 
