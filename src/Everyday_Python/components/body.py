@@ -4205,20 +4205,17 @@ def re_():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Splitting a String")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To split a string by occurrences of a pattern:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            words = re.split(r"\s+", text)  # Split on one or more spaces
+            print(words)
             """
         )
         
@@ -4226,75 +4223,166 @@ def re_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Escaping Special Characters")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To match special characters literally, escape them:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            escaped = re.search(r"\bfor\b", text)  # \b is a word boundary        
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Grouping and Capturing")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To group parts of a pattern and extract their values:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
+            match = re.search(r"(\w+) (\w+)", text)
+            if match:
+                print(match.group())  # The whole match
+                print(match.group(1)) # The first group
                 
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Non-Capturing Groups")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To define groups without capturing them:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            match = re.search(r"(?:\w+) (\w+)", text)
+            if match:
+                print(match.group(1))  # The first (and only) group
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Lookahead and Lookbehind Assertions")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To match a pattern based on what comes before or after it without including it in the result:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            lookahead = re.search(r"\b\w+(?= string)", text)  # Word before ' string'
+            lookbehind = re.search(r"(?<=Search )\w+", text)  # Word after 'Search '
+            if lookahead:
+                print(lookahead.group())
+            if lookbehind:
+                print(lookbehind.group())
+            """
+        )
+        
+        st.subheader("10. Lookahead and Lookbehind Assertions")
+        
+        st.markdown(
+            """
+            ##### To match a pattern based on what comes before or after it without including it in the result:
+            """
+        )
+        st.code(
+            """
+            lookahead = re.search(r"\b\w+(?= string)", text)  # Word before ' string'
+            lookbehind = re.search(r"(?<=Search )\w+", text)  # Word after 'Search '
+            if lookahead:
+                print(lookahead.group())
+            if lookbehind:
+                print(lookbehind.group())
+            """
+        )
+        
+        
+        st.subheader("10. Lookahead and Lookbehind Assertions")
+        
+        st.markdown(
+            """
+            ##### To match a pattern based on what comes before or after it without including it in the result:
+            """
+        )
+        st.code(
+            """
+            lookahead = re.search(r"\b\w+(?= string)", text)  # Word before ' string'
+            lookbehind = re.search(r"(?<=Search )\w+", text)  # Word after 'Search '
+            if lookahead:
+                print(lookahead.group())
+            if lookbehind:
+                print(lookbehind.group())
+            """
+        )
+        
+        st.subheader("10. Lookahead and Lookbehind Assertions")
+        
+        st.markdown(
+            """
+            ##### To match a pattern based on what comes before or after it without including it in the result:
+            """
+        )
+        st.code(
+            """
+            lookahead = re.search(r"\b\w+(?= string)", text)  # Word before ' string'
+            lookbehind = re.search(r"(?<=Search )\w+", text)  # Word after 'Search '
+            if lookahead:
+                print(lookahead.group())
+            if lookbehind:
+                print(lookbehind.group())
+            """
+        )
+        
+        
+        st.subheader("10. Lookahead and Lookbehind Assertions")
+        
+        st.markdown(
+            """
+            ##### To match a pattern based on what comes before or after it without including it in the result:
+            """
+        )
+        st.code(
+            """
+            lookahead = re.search(r"\b\w+(?= string)", text)  # Word before ' string'
+            lookbehind = re.search(r"(?<=Search )\w+", text)  # Word after 'Search '
+            if lookahead:
+                print(lookahead.group())
+            if lookbehind:
+                print(lookbehind.group())
+            """
+        )
+        
+        
+        
+        st.subheader("10. Lookahead and Lookbehind Assertions")
+        
+        st.markdown(
+            """
+            ##### To match a pattern based on what comes before or after it without including it in the result:
+            """
+        )
+        st.code(
+            """
+            lookahead = re.search(r"\b\w+(?= string)", text)  # Word before ' string'
+            lookbehind = re.search(r"(?<=Search )\w+", text)  # Word after 'Search '
+            if lookahead:
+                print(lookahead.group())
+            if lookbehind:
+                print(lookbehind.group())
             """
         )
 
