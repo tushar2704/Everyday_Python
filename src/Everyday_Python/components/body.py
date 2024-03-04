@@ -4379,26 +4379,26 @@ def re_():
 
 
 
-def func():
-    st.header("Working With Simple HTTP APIs")
+def strings():
+    st.header("Working With Strings")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Concatenating Strings")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To join strings together:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            greeting = "Hello"
+            name = "Alice"
+            message = greeting + ", " + name + "!"
+            print(message)
             """
         )
         
@@ -4406,84 +4406,69 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. String Formatting with str.format")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To insert values into a string template:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            message = "{}, {}. Welcome!".format(greeting, name)
+            print(message)
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Formatted String Literals (f-strings)")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To embed expressions inside string literals (Python 3.6+):
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            message = f"{greeting}, {name}. Welcome!"
+            print(message)
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. String Methods — Case Conversion")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To change the case of a string:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            s = "Python"
+            print(s.upper())  # Uppercase
+            print(s.lower())  # Lowercase
+            print(s.title())  # Title Case
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. String Methods — strip, rstrip, lstrip")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To remove whitespace or specific characters from the ends of a string:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            s = "   trim me   "
+            print(s.strip())   # Both ends
+            print(s.rstrip())  # Right end
+            print(s.lstrip())  # Left end
             """
         )
             
