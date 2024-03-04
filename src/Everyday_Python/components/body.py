@@ -4111,26 +4111,27 @@ def graphql():
 
 
 
-def func():
-    st.header("Working With Simple HTTP APIs")
+def re_():
+    st.header("Working With Regular Expressions")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Basic Pattern Matching")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To find a match for a pattern within a string:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import re
+            text = "Search this string for patterns."
+            match = re.search(r"patterns", text)
+            if match:
+                print("Pattern found!")
             """
         )
         
@@ -4138,84 +4139,67 @@ def func():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Compiling Regular Expressions")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To compile a regular expression for repeated use:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            pattern = re.compile(r"patterns")
+            match = pattern.search(text)
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Matching at the Beginning or End")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To check if a string starts or ends with a pattern:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            if re.match(r"^Search", text):
+                print("Starts with 'Search'")
+            if re.search(r"patterns.$", text):
+                print("Ends with 'patterns.'")
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Finding All Matches")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To find all occurrences of a pattern in a string:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            all_matches = re.findall(r"t\w+", text)  # Finds words starting with 't'
+            print(all_matches)
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Search and Replace (Substitution)")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To replace occurrences of a pattern within a string:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            replaced_text = re.sub(r"string", "sentence", text)
+            print(replaced_text)
             """
         )
             
