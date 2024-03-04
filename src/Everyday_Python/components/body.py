@@ -3718,20 +3718,29 @@ def deco_():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Method Decorator")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To apply a decorator to a method within a class:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            def method_decorator(func):
+                @wraps(func)
+                def wrapper(self, *args, **kwargs):
+                    print("Method Decorator")
+                    return func(self, *args, **kwargs)
+                return wrapper
+
+            class MyClass:
+                @method_decorator
+                def greet(self, name):
+                    print(f"Hello {name}")
+
+            obj = MyClass()
+            obj.greet("Alice")
             """
         )
         
@@ -3739,75 +3748,99 @@ def deco_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Stacking Decorators")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To apply multiple decorators to a single function:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            @my_decorator
+            @repeat(2)
+            def greet(name):
+                print(f"Hello {name}")
+
+            greet("Alice")      
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Decorator with Optional Arguments")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### Creating a decorator that works with or without arguments:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+           def smart_decorator(arg=None):
+                def decorator(func):
+                    @wraps(func)
+                    def wrapper(*args, **kwargs):
+                        if arg:
+                            print(f"Argument: {arg}")
+                        return func(*args, **kwargs)
+                    return wrapper
+                if callable(arg):
+                    return decorator(arg)
+                return decorator
+
+            @smart_decorator
+            def no_args():
+                print("No args")
+
+            @smart_decorator("With args")
+            def with_args():
+                print("With args")
+
+            no_args()
+            with_args()
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Class Method Decorator")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To decorate a class method:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            class MyClass:
+                @classmethod
+                @my_decorator
+                def class_method(cls):
+                    print("Class method called")
+
+            MyClass.class_method()
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Decorator for Static Method")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To decorate a static method:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            class MyClass:
+                @staticmethod
+                @my_decorator
+                def static_method():
+                    print("Static method called")
+
+            MyClass.static_method()
             """
         )
 
