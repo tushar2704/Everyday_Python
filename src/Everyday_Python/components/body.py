@@ -2087,25 +2087,27 @@ def network():
 
 
 def df_():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With Pandas Library (Dataframes)")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Creating a DataFrame")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To create a DataFrame with your own columns and data:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import pandas as pd
+            data = {
+                'Element': ['Earth', 'Water', 'Fire', 'Air'],
+                'Symbol': ['🜃', '🜄', '🜂', '🜁']
+            }
+            df = pd.DataFrame(data)
             """
         )
         
@@ -2113,84 +2115,61 @@ def df_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Reading Data from a CSV File")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To read data from a CSV file, transforming it into a DataFrame:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            df = pd.read_csv('elements.csv')
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Inspecting the First Few Rows")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To get first rows from dataframe:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            print(df.head())
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Selecting Columns")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To select specific columns from dataframe:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            symbols = df['Symbol']
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Filtering Rows")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To sift through the DataFrame, selecting rows that meet your criteria:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            fire_elements = df[df['Element'] == 'Fire']
             """
         )
             
