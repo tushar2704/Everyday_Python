@@ -3461,20 +3461,19 @@ def oop():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Polymorphism")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To interact with different forms through a common interface:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            def unleash_magic(wizard):
+                wizard.cast_spell()
+            unleash_magic(merlin)
+            unleash_magic(Sorcerer("Voldemort", 90))
             """
         )
         
@@ -3482,75 +3481,88 @@ def oop():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Encapsulation")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To use information hiding:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            class Alchemist:
+                def __init__(self, secret_ingredient):
+                    self.__secret = secret_ingredient
+                def reveal_secret(self):
+                    print(f"The secret ingredient is {self.__secret}")       
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Composition")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To assemble Objects from simpler ones:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            class Spellbook:
+                def __init__(self, spells):
+                    self.spells = spells
+            class Mage:
+                def __init__(self, name, spellbook):
+                    self.name = name
+                    self.spellbook = spellbook
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Class Methods and Static Methods")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To bind actions to the class itself or liberate them from the instance, serving broader purposes:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            class Enchanter:
+                @staticmethod
+                def enchant(item):
+                    print(f"{item} is enchanted!")
+                @classmethod
+                def summon(cls):
+                    print("A new enchanter is summoned.")
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Properties and Setters")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To elegantly manage access to an entity’s attributes, guiding their use and protection:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            class Elementalist:
+                def __init__(self, element):
+                    self._element = element
+                @property
+                def element(self):
+                    return self._element
+                @element.setter
+                    def element(self, value):
+                        if value in ["Fire", "Water", "Earth", "Air"]:
+                            self._element = value
+                        else:
+                            print("Invalid element!")
             """
         )
 
