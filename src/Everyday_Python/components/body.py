@@ -5377,19 +5377,19 @@ def common_python():
         )
         
         
-        st.subheader("Basic GET Request")
+        st.subheader("16. unittest - Unit Testing Framework")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To create and run unit tests:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import unittest
+            class TestStringMethods(unittest.TestCase):
+                def test_upper(self):
+                    self.assertEqual('foo'.upper(), 'FOO')
             """
         )
         
@@ -5397,84 +5397,70 @@ def common_python():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("17. pathlib - Object-oriented Filesystem Paths")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To work with filesystem paths in an object-oriented way:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            from pathlib import Path
+            p = Path('.')
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("18. functools - Higher-order Functions and Operations on Callable Objects")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To use higher-order functions and operations on callable objects:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            from functools import lru_cache
+            @lru_cache(maxsize=None)
+            def fib(n):
+                if n < 2:
+                    return n
+                return fib(n-1) + fib(n-2)
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("19. collections - Container Data Types")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To use specialized container data types (deque, Counter, OrderedDict, etc.):
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            from collections import Counter
+            c = Counter('hello world')
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("20. itertools - Functions Creating Iterators for Efficient Looping")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To construct and use iterators for efficient looping:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import itertools
+            for combination in itertools.combinations('ABCD', 2):
+                print(combination)
             """
         )
         
