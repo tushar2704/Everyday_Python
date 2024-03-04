@@ -60,93 +60,92 @@ with st.sidebar:
  
 #######################
 #Body
-sheet1,sheet2,sheet3,sheet4,sheet5,sheet6,sheet7,sheet8,sheet9,sheet10,sheet11,sheet12,sheet13,sheet14,sheet15,sheet16,sheet17,sheet18, sheet19, sheet20, sheet21, sheet22, sheet23, sheet24, sheet25=st.tabs(
-    ["Commons","Pip","OS","CLI","Files","Http","Lists","Dict",
-     "Math","DB","GraphQL","Regex","Strings","Scraping","Async","Network","DF","NP","Plots","SKL","Px",
+sheet1,sheet2,sheet3,sheet4,sheet5,sheet6,sheet7,sheet8,sheet9,sheet10,sheet11,sheet12,sheet13,sheet14,sheet15,sheet16,sheet17,sheet18, sheet19, sheet20, sheet21, sheet22, sheet23, sheet24=st.tabs(
+    ["Pip","OS","CLI","Files","Http","Lists","Dict",
+     "Math","DB","GraphQL","Re","Str","Scrap","Async","Network","DF","NP","PLT","SKL","PX",
      "Time", "Adv","OOPs","Deco"]
     )
 
 
+
 with sheet1:
-    common_python()
-with sheet2:
     pip_()
-with sheet3:
+with sheet2:
     os_()
-with sheet4:
+with sheet3:
     cli()
 
 
-with sheet5:
+with sheet4:
     file_handling()
 
 
-with sheet6:
+with sheet5:
     http_apis()
 
 
+with sheet6:
+    lists()
+
+
 with sheet7:
-    list()
-
-
-with sheet8:
     dict()
 
 
-with sheet9:
+with sheet8:
     math()
 
 
-with sheet10:
+with sheet9:
     databases()
 
 
-with sheet11:
+with sheet10:
     graphql()
 
 
-with sheet12:
+with sheet11:
     re_()
 
 
-with sheet13:
+with sheet12:
     strings()
 
 
-with sheet14:
-    web_scraping
+with sheet13:
+    web_scraping()
 
-with sheet15:
+with sheet14:
     async_()
     
-with sheet16:
+with sheet15:
     network()
     
-with sheet17:
+with sheet16:
     df_()
     
-with sheet18:
+with sheet17:
     numpy_()
 
-with sheet19:
+with sheet18:
     plots()
     
-with sheet20:
+with sheet19:
     scikit_()
     
-with sheet21:
+with sheet20:
     plotly_()
     
-with sheet22:
+with sheet21:
     time_()
     
-with sheet23:
+with sheet22:
     adv_()
     
-with sheet24:
+with sheet23:
     oop()
     
-with sheet25:
+with sheet24:
     deco_()
     
 
