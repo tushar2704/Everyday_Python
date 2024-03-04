@@ -2429,25 +2429,26 @@ def numpy_():
 
 
 def plots():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With Matplotlib Library (Data Visualization)")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Creating a Basic Plot")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To create a plot visualization:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import matplotlib.pyplot as plt
+            x = [1, 2, 3, 4, 5]
+            y = [1, 4, 9, 16, 25]
+            plt.plot(x, y)
+            plt.show()
             """
         )
         
@@ -2455,84 +2456,70 @@ def plots():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Adding Titles and Labels")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To create names for axes and title your plot to give better context:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            plt.plot(x, y)
+            plt.title('Growth Over Time')
+            plt.xlabel('Time')
+            plt.ylabel('Growth')
+            plt.show()
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Creating a Scatter Plot")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### Creating a scatter plot:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            plt.scatter(x, y)
+            plt.show()
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Customizing Line Styles and Markers")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To add symbols into your plot, enriching its usefulness:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            plt.plot(x, y, linestyle='--', marker='o', color='b')
+            plt.show()
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Creating Multiple Plots on the Same Axes")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### Creating Multiple Plots on the Same Axes:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            z = [2, 3, 4, 5, 6]
+            plt.plot(x, y)
+            plt.plot(x, z)
+            plt.show()
             """
         )
             
