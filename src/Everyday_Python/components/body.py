@@ -5194,19 +5194,17 @@ def common_python():
         
         
         
-        st.subheader("Basic GET Request")
+        st.subheader("6. json - JSON Encoder and Decoder")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To parse and generate JSON data:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import json
+            json_string = json.dumps({'name': 'Alice', 'age': 30})  # Dictionary to JSON string
             """
         )
         
@@ -5214,84 +5212,79 @@ def common_python():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("7. re - Regular Expressions")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To work with regular expressions:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            import re
+            match = re.search('Hello', 'Hello, world!')  # Search for 'Hello' in the string
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("8. urllib - URL Handling Modules")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To work with URLs:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            from urllib.request import urlopen
+            content = urlopen('http://example.com').read()  # Fetch the content of a webpage
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("9. http - HTTP Modules")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To create HTTP servers and work with HTTP requests:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            from http.server import HTTPServer, BaseHTTPRequestHandler
+            
+            class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+                def do_GET(self):
+                    self.send_response(200)
+                    self.send_header('Content-type', 'text/html')
+                    self.end_headers()
+                    self.wfile.write(b'<html><head><title>Python HTTP Server</title></head>')
+                    self.wfile.write(b'<body><h1>Hello from a simple Python HTTP server!</h1></body></html>')
+            def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler):
+                server_address = ('', 8000)  # Serve on all addresses, port 8000
+                httpd = server_class(server_address, handler_class)
+                print("Server starting on port 8000...")
+                httpd.serve_forever()
+            if __name__ == '__main__':
+                run()
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("10. subprocess - Subprocess Management")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To spawn new processes and connect to their input/output/error pipes:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import subprocess
+            subprocess.run(['ls', '-l'])  # Run the 'ls -l' command
             """
         )
         
