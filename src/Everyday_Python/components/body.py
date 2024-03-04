@@ -2617,25 +2617,24 @@ def plots():
 
 
 def scikit_():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With Scikit-Learn Library (Machine Learning)")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Loading a Dataset")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To work with datasets for your ML experiments
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            from sklearn import datasets
+            iris = datasets.load_iris()
+            X, y = iris.data, iris.target
             """
         )
         
@@ -2643,84 +2642,66 @@ def scikit_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Splitting Data into Training and Test Sets")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To divide your data, dedicating portions to training and evaluation:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            from sklearn.model_selection import train_test_split
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Training a Model")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### Training a ML Model using RandomForestClassifier:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            from sklearn.ensemble import RandomForestClassifier
+            model = RandomForestClassifier()
+            model.fit(X_train, y_train)
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Making Predictions")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To access the model predictions:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            predictions = model.predict(X_test)
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Evaluating Model Performance")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To evaluate your model, measuring its accuracy in prediction:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            from sklearn.metrics import accuracy_score
+            accuracy = accuracy_score(y_test, predictions)
+            print(f"Model accuracy: {accuracy}")
             """
         )
             
