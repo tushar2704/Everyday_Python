@@ -5464,19 +5464,18 @@ def common_python():
             """
         )
         
-        st.subheader("Basic GET Request")
+        st.subheader("21. hashlib - Secure Hash and Message Digest Algorithms")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To hash data:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import hashlib
+            hash_object = hashlib.sha256(b'Hello World')
+            hex_dig = hash_object.hexdigest()
             """
         )
         
@@ -5484,84 +5483,67 @@ def common_python():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("22. csv - CSV File Reading and Writing")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To read from and write to CSV files:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            import csv
+            with open('file.csv', mode='r') as infile:
+                reader = csv.reader(infile)
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("23. xml.etree.ElementTree - The ElementTree XML API")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To parse and create XML data:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            import xml.etree.ElementTree as ET
+            tree = ET.parse('file.xml')
+            root = tree.getroot()
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("24. sqlite3 - DB-API 2.0 Interface for SQLite Databases")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To interact with SQLite databases:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            import sqlite3
+            conn = sqlite3.connect('example.db')
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("25. tkinter - GUI Toolkit")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To create GUI applications:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import tkinter as tk
+            root = tk.Tk()
             """
         )
             
