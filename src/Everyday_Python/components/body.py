@@ -5289,19 +5289,17 @@ def common_python():
         )
         
         
-        st.subheader("Basic GET Request")
+        st.subheader("11. socket - Low-level Networking Interface")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To create network clients and servers:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import socket
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Create a TCP/IP socket
             """
         )
         
@@ -5309,84 +5307,72 @@ def common_python():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("12. threading - Thread-based Parallelism")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To manage concurrent execution of code:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            import threading
+            def worker():
+                print("Worker thread executing")
+            thread = threading.Thread(target=worker)
+            thread.start()
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("13. multiprocessing - Process-based Parallelism")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To manage concurrent processes:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            from multiprocessing import Process
+            def worker():
+                print("Worker process")
+            p = Process(target=worker)
+            p.start()
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("14. argparse - Parser for Command-line Options, Arguments, and Sub-commands")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To parse command-line arguments:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            import argparse
+            parser = argparse.ArgumentParser(description="Process some integers.")
+            args = parser.parse_args()
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("15. logging - Logging Facility")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To log messages (debug, info, warning, error, and critical):
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            import logging
+            logging.warning('This is a warning message')
             """
         )
         
