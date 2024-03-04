@@ -5105,13 +5105,400 @@ def pip_():
 
 
 
-def func():
-    st.header("Working With Simple HTTP APIs")
+def common_python():
+    st.header("Working With Common Built-in Functions and Packages")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
+        st.subheader("1. os - Operating System Interface")
+        
+        st.markdown(
+            """
+            ##### To interact with the operating system:
+            """
+        )
+        st.code(
+            """
+            import os
+            current_directory = os.getcwd()  # Get the current working directory
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("2. sys - System-specific Parameters and Functions")
+        
+        st.markdown(
+            """
+            ##### To access system-specific parameters and functions:
+            """
+        )
+        st.code(
+            """
+            import sys
+            sys.exit()  # Exit the script
+            """
+        )
+        
+        
+        
+        
+        st.subheader("3. datetime - Basic Date and Time Types")
+        
+        st.markdown(
+            """
+            ##### To work with dates and times:
+            """
+        )
+        st.code(
+            """
+            from datetime import datetime
+            now = datetime.now()  # Current date and time
+            """
+        )
+        
+        
+        st.subheader("4. math - Mathematical Functions")
+        
+        st.markdown(
+            """
+            ##### To perform mathematical operations:
+            """
+        )
+        st.code(
+            """
+            import math
+            result = math.sqrt(16)  # Square root
+            """
+        )
+        
+        
+        
+        st.subheader("5. random - Generate Pseudo-random Numbers")
+        
+        st.markdown(
+            """
+            ##### To generate pseudo-random numbers:
+            """
+        )
+        st.code(
+            """
+            import random
+            number = random.randint(1, 10)  # Random integer between 1 and 10   
+            """
+        )
+        
+        
+        
+        st.subheader("Basic GET Request")
+        
+        st.markdown(
+            """
+            ##### To fetch data from an API endpoint using a GET request:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            data = response.json() # Convert the response to JSON
+            print(data)
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("GET Request with Query Parameters")
+        
+        st.markdown(
+            """
+            ##### To send a GET request with query parameters:
+            """
+        )
+        st.code(
+            """
+            import requests
+            params = {'page': 2}
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
+            data = response.json()
+            print(data)
+            """
+        )
+        
+        
+        
+        
+        st.subheader("Handling HTTP Errors")
+        
+        st.markdown(
+            """
+            ##### To handle possible HTTP errors gracefully:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            try:
+                response.raise_for_status()
+                data = response.json()
+                print(data)
+            except requests.exceptions.HTTPError as err:
+                print(f'HTTP Error:{err}')
+            """
+        )
+        
+        
+        st.subheader("Setting Timeout for Requests")
+        
+        st.markdown(
+            """
+            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            """
+        )
+        st.code(
+            """
+            import requests
+            try:
+                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
+                data = response.json()
+                print(data)
+            except requests.exceptions.Timeout:
+                print('The request timed out, Please try again')
+            """
+        )
+        
+        
+        
+        st.subheader("Using Headers in Requests")
+        
+        st.markdown(
+            """
+            ##### To include headers in your request (e.g., for authorization):
+            """
+        )
+        st.code(
+            """
+            import requests
+            headers = {
+                'Authorization': 'YOUR_API_KEY'
+            }
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
+            data = response.json()
+            print(data)
+            """
+        )
+        
+        
+        st.subheader("Basic GET Request")
+        
+        st.markdown(
+            """
+            ##### To fetch data from an API endpoint using a GET request:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            data = response.json() # Convert the response to JSON
+            print(data)
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("GET Request with Query Parameters")
+        
+        st.markdown(
+            """
+            ##### To send a GET request with query parameters:
+            """
+        )
+        st.code(
+            """
+            import requests
+            params = {'page': 2}
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
+            data = response.json()
+            print(data)
+            """
+        )
+        
+        
+        
+        
+        st.subheader("Handling HTTP Errors")
+        
+        st.markdown(
+            """
+            ##### To handle possible HTTP errors gracefully:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            try:
+                response.raise_for_status()
+                data = response.json()
+                print(data)
+            except requests.exceptions.HTTPError as err:
+                print(f'HTTP Error:{err}')
+            """
+        )
+        
+        
+        st.subheader("Setting Timeout for Requests")
+        
+        st.markdown(
+            """
+            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            """
+        )
+        st.code(
+            """
+            import requests
+            try:
+                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
+                data = response.json()
+                print(data)
+            except requests.exceptions.Timeout:
+                print('The request timed out, Please try again')
+            """
+        )
+        
+        
+        
+        st.subheader("Using Headers in Requests")
+        
+        st.markdown(
+            """
+            ##### To include headers in your request (e.g., for authorization):
+            """
+        )
+        st.code(
+            """
+            import requests
+            headers = {
+                'Authorization': 'YOUR_API_KEY'
+            }
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
+            data = response.json()
+            print(data)
+            """
+        )
+        
+        
+        st.subheader("Basic GET Request")
+        
+        st.markdown(
+            """
+            ##### To fetch data from an API endpoint using a GET request:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            data = response.json() # Convert the response to JSON
+            print(data)
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("GET Request with Query Parameters")
+        
+        st.markdown(
+            """
+            ##### To send a GET request with query parameters:
+            """
+        )
+        st.code(
+            """
+            import requests
+            params = {'page': 2}
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
+            data = response.json()
+            print(data)
+            """
+        )
+        
+        
+        
+        
+        st.subheader("Handling HTTP Errors")
+        
+        st.markdown(
+            """
+            ##### To handle possible HTTP errors gracefully:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            try:
+                response.raise_for_status()
+                data = response.json()
+                print(data)
+            except requests.exceptions.HTTPError as err:
+                print(f'HTTP Error:{err}')
+            """
+        )
+        
+        
+        st.subheader("Setting Timeout for Requests")
+        
+        st.markdown(
+            """
+            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            """
+        )
+        st.code(
+            """
+            import requests
+            try:
+                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
+                data = response.json()
+                print(data)
+            except requests.exceptions.Timeout:
+                print('The request timed out, Please try again')
+            """
+        )
+        
+        
+        
+        st.subheader("Using Headers in Requests")
+        
+        st.markdown(
+            """
+            ##### To include headers in your request (e.g., for authorization):
+            """
+        )
+        st.code(
+            """
+            import requests
+            headers = {
+                'Authorization': 'YOUR_API_KEY'
+            }
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
+            data = response.json()
+            print(data)
+            """
+        )
+        
         st.subheader("Basic GET Request")
         
         st.markdown(
@@ -5305,6 +5692,412 @@ def func():
             response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
             for chunk in response.iter_content(chunk_size=1024):
                 process_chunk(chunk) #replace 'process' with your own function
+            """
+        )
+        
+        st.subheader("Basic GET Request")
+        
+        st.markdown(
+            """
+            ##### To fetch data from an API endpoint using a GET request:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            data = response.json() # Convert the response to JSON
+            print(data)
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("GET Request with Query Parameters")
+        
+        st.markdown(
+            """
+            ##### To send a GET request with query parameters:
+            """
+        )
+        st.code(
+            """
+            import requests
+            params = {'page': 2}
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
+            data = response.json()
+            print(data)
+            """
+        )
+        
+        
+        
+        
+        st.subheader("Handling HTTP Errors")
+        
+        st.markdown(
+            """
+            ##### To handle possible HTTP errors gracefully:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            try:
+                response.raise_for_status()
+                data = response.json()
+                print(data)
+            except requests.exceptions.HTTPError as err:
+                print(f'HTTP Error:{err}')
+            """
+        )
+        
+        
+        st.subheader("Setting Timeout for Requests")
+        
+        st.markdown(
+            """
+            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            """
+        )
+        st.code(
+            """
+            import requests
+            try:
+                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
+                data = response.json()
+                print(data)
+            except requests.exceptions.Timeout:
+                print('The request timed out, Please try again')
+            """
+        )
+        
+        
+        
+        st.subheader("Using Headers in Requests")
+        
+        st.markdown(
+            """
+            ##### To include headers in your request (e.g., for authorization):
+            """
+        )
+        st.code(
+            """
+            import requests
+            headers = {
+                'Authorization': 'YOUR_API_KEY'
+            }
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
+            data = response.json()
+            print(data)
+            """
+        )
+        
+        
+        st.subheader("Basic GET Request")
+        
+        st.markdown(
+            """
+            ##### To fetch data from an API endpoint using a GET request:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            data = response.json() # Convert the response to JSON
+            print(data)
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("GET Request with Query Parameters")
+        
+        st.markdown(
+            """
+            ##### To send a GET request with query parameters:
+            """
+        )
+        st.code(
+            """
+            import requests
+            params = {'page': 2}
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
+            data = response.json()
+            print(data)
+            """
+        )
+        
+        
+        
+        
+        st.subheader("Handling HTTP Errors")
+        
+        st.markdown(
+            """
+            ##### To handle possible HTTP errors gracefully:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            try:
+                response.raise_for_status()
+                data = response.json()
+                print(data)
+            except requests.exceptions.HTTPError as err:
+                print(f'HTTP Error:{err}')
+            """
+        )
+        
+        
+        st.subheader("Setting Timeout for Requests")
+        
+        st.markdown(
+            """
+            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            """
+        )
+        st.code(
+            """
+            import requests
+            try:
+                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
+                data = response.json()
+                print(data)
+            except requests.exceptions.Timeout:
+                print('The request timed out, Please try again')
+            """
+        )
+        
+        
+        
+        st.subheader("Using Headers in Requests")
+        
+        st.markdown(
+            """
+            ##### To include headers in your request (e.g., for authorization):
+            """
+        )
+        st.code(
+            """
+            import requests
+            headers = {
+                'Authorization': 'YOUR_API_KEY'
+            }
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
+            data = response.json()
+            print(data)
+            """
+        )
+        
+        
+        st.subheader("Basic GET Request")
+        
+        st.markdown(
+            """
+            ##### To fetch data from an API endpoint using a GET request:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            data = response.json() # Convert the response to JSON
+            print(data)
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("GET Request with Query Parameters")
+        
+        st.markdown(
+            """
+            ##### To send a GET request with query parameters:
+            """
+        )
+        st.code(
+            """
+            import requests
+            params = {'page': 2}
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
+            data = response.json()
+            print(data)
+            """
+        )
+        
+        
+        
+        
+        st.subheader("Handling HTTP Errors")
+        
+        st.markdown(
+            """
+            ##### To handle possible HTTP errors gracefully:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            try:
+                response.raise_for_status()
+                data = response.json()
+                print(data)
+            except requests.exceptions.HTTPError as err:
+                print(f'HTTP Error:{err}')
+            """
+        )
+        
+        
+        st.subheader("Setting Timeout for Requests")
+        
+        st.markdown(
+            """
+            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            """
+        )
+        st.code(
+            """
+            import requests
+            try:
+                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
+                data = response.json()
+                print(data)
+            except requests.exceptions.Timeout:
+                print('The request timed out, Please try again')
+            """
+        )
+        
+        
+        
+        st.subheader("Using Headers in Requests")
+        
+        st.markdown(
+            """
+            ##### To include headers in your request (e.g., for authorization):
+            """
+        )
+        st.code(
+            """
+            import requests
+            headers = {
+                'Authorization': 'YOUR_API_KEY'
+            }
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
+            data = response.json()
+            print(data)
+            """
+        )
+        
+        st.subheader("Basic GET Request")
+        
+        st.markdown(
+            """
+            ##### To fetch data from an API endpoint using a GET request:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            data = response.json() # Convert the response to JSON
+            print(data)
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("GET Request with Query Parameters")
+        
+        st.markdown(
+            """
+            ##### To send a GET request with query parameters:
+            """
+        )
+        st.code(
+            """
+            import requests
+            params = {'page': 2}
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
+            data = response.json()
+            print(data)
+            """
+        )
+        
+        
+        
+        
+        st.subheader("Handling HTTP Errors")
+        
+        st.markdown(
+            """
+            ##### To handle possible HTTP errors gracefully:
+            """
+        )
+        st.code(
+            """
+            import requests
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
+            try:
+                response.raise_for_status()
+                data = response.json()
+                print(data)
+            except requests.exceptions.HTTPError as err:
+                print(f'HTTP Error:{err}')
+            """
+        )
+        
+        
+        st.subheader("Setting Timeout for Requests")
+        
+        st.markdown(
+            """
+            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            """
+        )
+        st.code(
+            """
+            import requests
+            try:
+                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
+                data = response.json()
+                print(data)
+            except requests.exceptions.Timeout:
+                print('The request timed out, Please try again')
+            """
+        )
+        
+        
+        
+        st.subheader("Using Headers in Requests")
+        
+        st.markdown(
+            """
+            ##### To include headers in your request (e.g., for authorization):
+            """
+        )
+        st.code(
+            """
+            import requests
+            headers = {
+                'Authorization': 'YOUR_API_KEY'
+            }
+            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
+            data = response.json()
+            print(data)
             """
         )
 
