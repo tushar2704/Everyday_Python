@@ -2901,20 +2901,18 @@ def plotly_():
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Creating Box Plots")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### To create a Box Plot:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            data = [1, 2, 2, 3, 4, 4, 4, 5, 5, 6]
+            fig = go.Figure(data=go.Box(y=data))
+            pio.show(fig)
             """
         )
         
@@ -2922,75 +2920,74 @@ def plotly_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Creating Heatmaps")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### To create a heatmap:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            import numpy as np
+            z = np.random.rand(10, 10)  # Generate random data
+            fig = go.Figure(data=go.Heatmap(z=z))
+            pio.show(fig)         
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Creating 3D Surface Plots")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To create a 3D Surface Plot:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            z = np.random.rand(20, 20)  # Generate random data
+            fig = go.Figure(data=go.Surface(z=z))
+            pio.show(fig)
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Creating Subplots")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To create a subplot:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            from plotly.subplots import make_subplots
+            fig = make_subplots(rows=1, cols=2)
+            fig.add_trace(go.Scatter(x=x, y=y, mode='lines'), row=1, col=1)
+            fig.add_trace(go.Bar(x=categories, y=values), row=1, col=2)
+            pio.show(fig)
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Creating Interactive Time Series")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To work with Time Series:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            import pandas as pd
+            dates = pd.date_range('20230101', periods=5)
+            values = [10, 11, 12, 13, 14]
+            fig = go.Figure(data=go.Scatter(x=dates, y=values, mode='lines+markers'))
+            pio.show(fig)
             """
         )
 
