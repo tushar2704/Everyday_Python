@@ -2804,25 +2804,27 @@ def scikit_():
 
 
 def plotly_():
-    st.header("Working With Simple HTTP APIs")
+    st.header("Working With Plotly Library (Interactive Data Visualization)")
     
     
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Basic GET Request")
+        st.subheader("1. Creating a Basic Line Chart")
         
         st.markdown(
             """
-            ##### To fetch data from an API endpoint using a GET request:
+            ##### To create a line chart:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            data = response.json() # Convert the response to JSON
-            print(data)
+            import plotly.graph_objs as go
+            import plotly.io as pio
+            x = [1, 2, 3, 4, 5]
+            y = [1, 4, 9, 16, 25]
+            fig = go.Figure(data=go.Scatter(x=x, y=y, mode='lines'))
+            pio.show(fig)
             """
         )
         
@@ -2830,84 +2832,70 @@ def plotly_():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("GET Request with Query Parameters")
+        st.subheader("2. Creating a Scatter Plot")
         
         st.markdown(
             """
-            ##### To send a GET request with query parameters:
+            ##### To create a scatter plot:
             """
         )
         st.code(
             """
-            import requests
-            params = {'page': 2}
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', params={'page': 2})
-            data = response.json()
-            print(data)
+            fig = go.Figure(data=go.Scatter(x=x, y=y, mode='markers'))
+            pio.show(fig)
             """
         )
         
         
         
         
-        st.subheader("Handling HTTP Errors")
+        st.subheader("3. Creating a Bar Chart")
         
         st.markdown(
             """
-            ##### To handle possible HTTP errors gracefully:
+            ##### To Create a Bar Chart:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            try:
-                response.raise_for_status()
-                data = response.json()
-                print(data)
-            except requests.exceptions.HTTPError as err:
-                print(f'HTTP Error:{err}')
+            categories = ['A', 'B', 'C', 'D', 'E']
+            values = [10, 20, 15, 30, 25]
+            fig = go.Figure(data=go.Bar(x=categories, y=values))
+            pio.show(fig)
             """
         )
         
         
-        st.subheader("Setting Timeout for Requests")
+        st.subheader("4. Creating a Pie Chart")
         
         st.markdown(
             """
-            ##### To set a timeout for API requests to avoid hanging indefinitely:
+            ##### To create a Pie Chart:
             """
         )
         st.code(
             """
-            import requests
-            try:
-                response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', timeout=5)
-                data = response.json()
-                print(data)
-            except requests.exceptions.Timeout:
-                print('The request timed out, Please try again')
+            labels = ['Earth', 'Water', 'Fire', 'Air']
+            sizes = [25, 35, 20, 20]
+            fig = go.Figure(data=go.Pie(labels=labels, values=sizes))
+            pio.show(fig)
             """
         )
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Creating a Histogram")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### To create a Histogram:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            data = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+            fig = go.Figure(data=go.Histogram(x=data))
+            pio.show(fig)
             """
         )
             
