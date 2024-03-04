@@ -3954,41 +3954,46 @@ def graphql():
         
         
         
-        st.subheader("Using Headers in Requests")
+        st.subheader("5. Handling Errors")
         
         st.markdown(
             """
-            ##### To include headers in your request (e.g., for authorization):
+            ##### Error handling:
             """
         )
         st.code(
             """
-            import requests
-            headers = {
-                'Authorization': 'YOUR_API_KEY'
-            }
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', headers=headers)
-            data = response.json()
-            print(data)
+            from gql import gql, Client
+            from gql.transport.exceptions import TransportQueryError
+            try:
+                result = client.execute(query)
+            except TransportQueryError as e:
+                print(f"GraphQL Query Error: {e}")
             """
         )
             
         
     with col2:
-        st.subheader("POST Request with JSON Payload")
+        st.subheader("6. Subscriptions")
         
         st.markdown(
             """
-            ##### To send data to an API endpoint using a POST request with a JSON payload:
+            ##### Working with Subscriptions:
             """
         )
         st.code(
             """
-            import requests
-            payload = {'key1': 'value1', 'key2': 'value2'}
-            headers = {'Content-type': 'application/json'}
-            response = requests.post('https://httpbin.org/post', data=json.dumps(payload), headers=headers)
-            print(response.json())
+            subscription = gql('''
+            subscription {
+            wizardUpdated {
+                id
+                name
+                power
+            }
+            }
+            ''')
+            for result in client.subscribe(subscription):
+                print(result)
             """
         )
         
@@ -3996,75 +4001,109 @@ def graphql():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Handling Response Encoding")
+        st.subheader("7. Fragments")
         
         st.markdown(
             """
-            ##### To handle the response encoding properly:
+            ##### Working with Fragments:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec')
-            response.encoding = 'utf-8'
-            data = response.text
-            print(data)          
+            query = gql('''
+            fragment WizardDetails on Wizard {
+            name
+            power
+            }
+            query {
+            allWizards {
+                ...WizardDetails
+            }
+            }
+            ''')
+            result = client.execute(query)
+            print(result)          
             """
         )
         
         
         
         
-        st.subheader("Using Sessions with Requests")
+        st.subheader("8. Inline Fragments")
         
         st.markdown(
             """
-            ##### To use a session object for making multiple requests to the same host, whichcan improve performance:
+            ##### To tailor the response based on the type of the object returned:
             """
         )
         st.code(
             """
-            import requests
-            with requests.Session() as session:
-                session.headers.update({'Authorization': 'YOUR_API_KEY'})
-                response = session.get('https://api.github.com/users/tushar-aggarwalinseec')
-                print(response.json())
-                
+            query = gql('''
+            {
+            search(text: "magic") {
+                __typename
+                ... on Wizard {
+                name
+                power
+                }
+                ... on Spell {
+                name
+                effect
+                }
+            }
+            }
+            ''')
+            result = client.execute(query)
+            print(result)
             """
         )
         
         
-        st.subheader("Handling Redirects")
+        st.subheader("9. Using Directives")
         
         st.markdown(
             """
-            ##### To handle or disable redirects in requests:
+            ##### To dynamically include or skip fields in your queries based on conditions:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', allow_redirects=False)
-            print(response.status_code)
+            query = gql('''
+            query GetWizards($withPower: Boolean!) {
+            allWizards {
+                name
+                power @include(if: $withPower)
+            }
+            }
+            ''')
+            params = {"withPower": True}
+            result = client.execute(query, variable_values=params)
+            print(result)
             """
         )
         
         
         
-        st.subheader("Streaming Large Responses")
+        st.subheader("10. Batching Requests")
         
         st.markdown(
             """
-            ##### To stream a large response to process it in chunks, rather than loading it all into memory:
+            ##### To combine multiple operations into a single request, reducing network overhead:
             """
         )
         st.code(
             """
-            import requests
-            response = requests.get('https://api.github.com/users/tushar-aggarwalinseec', stream=True)
-            for chunk in response.iter_content(chunk_size=1024):
-                process_chunk(chunk) #replace 'process' with your own function
+            from gql import gql, Client
+            from gql.transport.requests import RequestsHTTPTransport
+
+            transport = RequestsHTTPTransport(url='https://your-graphql-endpoint.com/graphql', use_json=True)
+            client = Client(transport=transport, fetch_schema_from_transport=True)
+
+            query1 = gql('query { wizard(id: "1") { name } }')
+            query2 = gql('query { allSpells { name } }')
+
+            results = client.execute([query1, query2])
+            print(results)
             """
         )
 
