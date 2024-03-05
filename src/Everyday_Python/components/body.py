@@ -6825,7 +6825,898 @@ def one_liner_60():
         )
         
         
+def concepts_50():
+    st.header("50 Python Concepts")
     
+    
+    col1, col2 = st.columns([0.5, 0.5], gap="small")
+    
+    with col1:
+        st.subheader("1) Variables and Data Types")
+        st.markdown(
+            """
+            ##### 1) Print the systems’s hostname:
+            """
+        )
+        st.code(
+            """
+            from socket import gethostname; print gethostname()
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("2) Operations & Expressions")
+        st.markdown(
+            """
+            ##### 2) Decode string written in Hex:
+            """
+        )
+        st.code(
+            """
+            python -c "print ''.join(chr(int(''.join(i), 16)) for i in zip(*[iter('\\x01\\x02\\x03\\x04\\x05\\x06\\x07\\x08\\x09\\x0a\\x0b\\x0c\\x0d\\x0e\\x0f\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1a\\x1b\\x1c\\x1d\\x1e\\x1f')] * 16))"
+            """
+        )
+        
+        
+        st.subheader("3) Control Flow")
+        st.markdown(
+            """
+            ##### 3) Read Lines from a File:
+            """
+        )
+        st.code(
+            """
+            lines = [line.strip() for line in open ('example.txt')]
+            """
+        )
+        
+        
+        st.subheader("4) Functions & Scope")
+        
+        st.markdown(
+            """
+            ##### 4) Count Lines in a File:
+            """
+        )
+        st.code(
+            """
+            line_count = sum(1 for line in open('example.txt'))
+            """
+        )
+        
+        st.subheader("5) Modules & Packages")
+        
+        st.markdown(
+            """
+            ##### 5) Extract Digits from a String:
+            """
+        )
+        st.code(
+            """
+            digits = ''.join(filter(str.isdigit, mystring))
+            """
+        )
+        
+        
+        st.subheader("6) List")
+        
+        st.markdown(
+            """
+            ##### 6) List Comprehension with Conditional:
+            """
+        )
+        st.code(
+            """
+            filtered_list = [x for x in my_list if x > 0]
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        st.subheader("6) Tuples")
+        st.markdown(
+            """
+            ##### 7) Remove Duplicates from a List:
+            """
+        )
+        st.code(
+            """
+            unique_list = list(set(original_list))
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 8) Calculate Average of a List:
+            """
+        )
+        st.code(
+            """
+            average = sum(my_list) / len(my_list) if len(my_list) > 0 else 0
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 9) Generate Fibonacci Sequence:
+            """
+        )
+        st.code(
+            """
+            fibonacci = lambda n: n if n <= 1 else fibonacci(n-1) + fibonacci(n-2)
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 10) Conditional Value Assignment:
+            """
+        )
+        st.code(
+            """
+            result = x if condition else y
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 11) One-Liner For Loop:
+            """
+        )
+        st.code(
+            """
+            squares = [x**2 for x in range(10)]
+            """
+        )
+        
+        squares = [x**2 for x in range(10)]
+        if st.toggle("Show sample output",):
+            st.write(squares)
+        
+        
+        
+        st.markdown(
+            """
+            ##### 12) Handle Zero Division Error:
+            """
+        )
+        st.code(
+            """
+            result = numerator / denominator if denominator != 0 else 0
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 13) One-Liner Try-Except Block:
+            """
+        )
+        st.code(
+            """
+            result = try_block() if success else except_block()
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 14) Object Initialization with Default Values:
+            """
+        )
+        st.code(
+            """
+            my_object = MyClass(**kwargs) if kwargs else MyClass()
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 15) Fetch HTML Content with Requests:
+            """
+        )
+        st.code(
+            """
+            import requests; html_content = requests.get('https://example.com').text
+            """
+        )
+        
+        
+       
+        
+        st.markdown(
+            """
+            ##### 16) Pandas DataFrame Initialization:
+            """
+        )
+        st.code(
+            """
+            import pandas as pd; df = pd.DataFrame(data, columns=['col1', 'col2'])
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 17. Filter DataFrame Rows with Pandas:
+            """
+        )
+        st.code(
+            """
+            filtered_df = df[df['column'] > value]
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 18. Generating a list of leap years using list comprehension:
+            """
+        )
+        st.code(
+            """
+            leap_years = [year for year in range(2000, 2051) if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)]
+            """
+        )
+        
+    
+        
+        st.markdown(
+            """
+            ##### 19. Retrieve Public IP Address:
+            """
+        )
+        st.code(
+            """
+            public_ip = requests.get('https://api64.ipify.org?format=json').json()['ip']
+            """
+        )
+        
+    
+        
+        st.markdown(
+            """
+            ##### 20. Create Basic Tkinter Window:
+            """
+        )
+        st.code(
+            """
+            import tkinter.messagebox as mb; mb.showinfo('Title', 'Message')
+            """
+        )
+        
+        
+       
+        st.markdown(
+            """
+            ##### 21. Display Message Box with Tkinter:
+            """
+        )
+        st.code(
+            """
+            import tkinter.messagebox as mb; mb.showinfo('Title', 'Message')
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 22. Multithreading with threading Module:
+            """
+        )
+        st.code(
+            """
+            import threading; threading.Thread(target=my_function).start()
+            """
+        )
+        
+        
+        
+    
+        
+        st.markdown(
+            """
+            ##### 23. Hashing with hashlib:
+            """
+        )
+        st.code(
+            """
+            import hashlib; hashed_password = hashlib.sha256(password.encode()).hexdigest()
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 24. Check if all elements in a list are equal:
+            """
+        )
+        st.code(
+            """
+            are_equal = all(x == [1, 1, 1, 1])
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 25. Find the second largest number in a list:
+            """
+        )
+        st.code(
+            """
+            second_largest = sorted([3, 1, 4, 1, 5, 9])[-2]
+            """
+        )
+        
+        
+        
+       
+        
+        st.markdown(
+            """
+            ##### 26. Check if a number is prime:
+            """
+        )
+        st.code(
+            """
+            is_prime = all(7 % i != 0 for i in range(2, 7))
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 27. Find the most common element in a list:
+            """
+        )
+        st.code(
+            """
+            most_common = max(set([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]), key=[1, 2, 2, 3, 3, 3, 4, 4, 4, 4].count)
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 28. Find the most common word in a list:
+            """
+        )
+        st.code(
+            """
+            most_common_word = max(words, key=words.count)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 29. Filter a list of numbers to get only even numbers:
+            """
+        )
+        st.code(
+            """
+            even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 30. Merge two dictionaries:
+            """
+        )
+        st.code(
+            """
+            merged_dict = {**dict1, **dict2}
+            """
+        )
+            
+        
+    with col2:
+        
+        
+        st.markdown(
+            """
+            ##### 31. Find the index of the first occurrence of an item in a list:
+            """
+        )
+        st.code(
+            """
+            index = next((i for i, v in enumerate(my_list) if v == 1), None)
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+       
+        
+        st.markdown(
+            """
+            ##### 32. Remove vowels from a string:
+            """
+        )
+        st.code(
+            """
+            without_vowels = ''.join(char for char in my_string if char.lower() not in 'aeiou')       
+            """
+        )
+        
+        
+        
+        
+       
+        
+        st.markdown(
+            """
+            ##### 33. Transpose a matrix using zip:
+            """
+        )
+        st.code(
+            """
+            transposed = list(zip(*matrix))
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 34. Check if a key exists in a dictionary:
+            """
+        )
+        st.code(
+            """
+            is_present = 'key' in {'key': 'value'}
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 35. Check if a number is odd:
+            """
+        )
+        st.code(
+            """
+            is_odd = num % 2 != 0
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 36. Check if a number is even:
+            """
+        )
+        st.code(
+            """
+            is_even = num % 2 == 0
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 37. Check if a number is a perfect square:
+            """
+        )
+        st.code(
+            """
+            is_perfect_square = lambda n: n**0.5 == int(n**0.5)          
+            """
+        )
+        
+        
+        
+        
+    
+        st.markdown(
+            """
+            ##### 38. Check if a number is a power of two:
+            """
+        )
+        st.code(
+            """
+            is_power_of_two = lambda n: (n & (n - 1)) == 0 and n != 0
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39. Check if a year is a leap year:
+            """
+        )
+        st.code(
+            """
+            is_leap_year = lambda year: (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 40. Extracting domain from an email address using regex:
+            """
+        )
+        st.code(
+            """
+            import re
+            domain = re.search(r'@(\w+\.\w+)', 'user@example.com').group(1)
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 41. Leveraging the zip() function for parallel iteration:
+            """
+        )
+        st.code(
+            """
+            pairs = list(zip([1, 2, 3], ['a', 'b', 'c']))
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        
+        st.markdown(
+            """
+            ##### 42. The any() and all() functions for boolean checks:
+            """
+        )
+        st.code(
+            """
+            has_positive = any(x > 0 for x in [1, -2, 3, -4])
+            all_positive = all(x > 0 for x in [1, 2, 3, 4])        
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 43. Removing duplicates from a list while preserving order:
+            """
+        )
+        st.code(
+            """
+            unique_list = list(dict.fromkeys([1, 2, 2, 3, 4]))
+            """
+        )
+        
+        
+       
+        
+        st.markdown(
+            """
+            ##### 44. Removing whitespace from the beginning and end of a string:
+            """
+        )
+        st.code(
+            """
+            trimmed_str = '  hello world  '.strip()
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 45. Parsing and extracting information from a string using regular expressions:
+            """
+        )
+        st.code(
+            """
+            import re
+            extracted_digits = re.findall(r'\d+', 'abc123def456')
+            """
+        )
+        
+        
+       
+        
+        st.markdown(
+            """
+            ##### 46. Swapping case in a string using a list comprehension:
+            """
+        )
+        st.code(
+            """
+            swapped_case = ''.join([char.upper() if char.islower() else char.lower() for char in 'Hello World'])
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 47. Checking if a number is prime using all() and range:
+            """
+        )
+        st.code(
+            """
+            is_prime = lambda num: num > 1 and all(num % i != 0 for i in range(2, int(num**0.5) + 1))       
+            """
+        )
+        
+        
+       
+        st.markdown(
+            """
+            ##### 48. Finding the longest word in a sentence using max() and split:
+            """
+        )
+        st.code(
+            """
+            longest_word = max("Hello World example sentence".split(), key=len)
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 49. Converting a binary string to an integer:
+            """
+        )
+        st.code(
+            """
+            binary_to_int = int('1101', 2)
+            """
+        )
+        
+        
+        
+
+        
+        st.markdown(
+            """
+            ##### 50. Filtering out non-positive numbers from a list:
+            """
+        )
+        st.code(
+            """
+            positive_numbers = list(filter(lambda x: x > 0, [-2, 0, 3, -1, 5]))
+            """
+        )
+        
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 51. Extract all email addresses from text:
+            """
+        )
+        st.code(
+            """
+            emails = re.findall(r"\b[\w.+-]+@[\w-]+\.[\w.-]+\b", text)
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 52.Validate a phone number format:
+            """
+        )
+        st.code(
+            """
+            pattern = re.compile(r"^\+?[\d\s]{7,}$")
+            phone = pattern.match(phone_number)         
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 53. Download a file from a URL:
+            """
+        )
+        st.code(
+            """
+            urllib.request.urlretrieve("https://example.com/file.zip", "downloaded_file.zip")
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 54. Check website status efficiently:
+            """
+        )
+        st.code(
+            """
+            response = requests.get("https://example.com").status_code
+            """
+        )
+        
+        
+        
+    
+        
+        st.markdown(
+            """
+            ##### 55. List files in a directory:
+            """
+        )
+        st.code(
+            """
+            files = [f for f in os.listdir("path/to/dir") if os.path.isfile(os.path.join("path/to/dir", f))]
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 56. Cache function results for efficiency:
+            """
+        )
+        st.code(
+            """
+            @cache def expensive_calculation(): ...
+            """
+        )
+        
+        # if st.toggle("Show `st.write` sample output"):
+        #     st.write("Did you know I have more then 101 Supreme apps like this?")
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 57. Safely open and close a file:
+            """
+        )
+        st.code(
+            """
+            with open("file.txt", "r") as f: data = f.readlines()          
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 58. Lock a resource to prevent concurrency issues:
+            """
+        )
+        st.code(
+            """
+            with threading.Lock(): shared_data += 1
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 59. Use Selenium to interact with webpages:
+            """
+        )
+        st.code(
+            """
+            driver.find_element_by_id("button").click()
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 60. Get system information like CPU usage:
+            """
+        )
+        st.code(
+            """
+            os.cpu_count(), psutil.cpu_percent()
+            """
+        ) 
         
         
     
