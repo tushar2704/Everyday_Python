@@ -6918,7 +6918,7 @@ def concepts_50():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("6) Tuples")
+        st.subheader("7) Tuples")
         st.markdown(
             """
             ##### 7) Remove Duplicates from a List:
@@ -6931,7 +6931,7 @@ def concepts_50():
         )
         
         
-        
+        st.subheader("8) Dictionaries")
         
         
         st.markdown(
@@ -6946,7 +6946,7 @@ def concepts_50():
         )
         
         
-        
+        st.subheader("9) Sets")
         
         st.markdown(
             """
@@ -6959,7 +6959,7 @@ def concepts_50():
             """
         )
         
-        
+        st.subheader("10) Strings")
         
         
         st.markdown(
@@ -6973,7 +6973,7 @@ def concepts_50():
             """
         )
         
-        
+        st.subheader("11) Collection Module")
         
         st.markdown(
             """
@@ -6990,7 +6990,7 @@ def concepts_50():
         if st.toggle("Show sample output",):
             st.write(squares)
         
-        
+        st.subheader("12) Classes & Objects")
         
         st.markdown(
             """
@@ -7005,7 +7005,7 @@ def concepts_50():
         
         
         
-        
+        st.subheader("13) Inheritance & Polymorphism")
         
         st.markdown(
             """
@@ -7019,7 +7019,7 @@ def concepts_50():
         )
         
         
-        
+        st.subheader("14) Encapsulation & Abstraction")
         
         st.markdown(
             """
@@ -7034,7 +7034,7 @@ def concepts_50():
         
         
         
-        
+        st.subheader("15) Method Resolution Order (MRO)")
         
         st.markdown(
             """
@@ -7048,7 +7048,7 @@ def concepts_50():
         )
         
         
-       
+        st.subheader("16) Reading & Writing Files")
         
         st.markdown(
             """
@@ -7065,7 +7065,7 @@ def concepts_50():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        
+        st.subheader("""17) Working with files""")
         
         st.markdown(
             """
@@ -7078,7 +7078,7 @@ def concepts_50():
             """
         )
         
-        
+        st.subheader("18) File Handling")
         
         st.markdown(
             """
@@ -7091,7 +7091,7 @@ def concepts_50():
             """
         )
         
-    
+        st.subheader("19) Try-Except Blocks")
         
         st.markdown(
             """
@@ -7105,7 +7105,7 @@ def concepts_50():
         )
         
     
-        
+        st.subheader("20) Handling Multiple Exceptions")
         st.markdown(
             """
             ##### 20. Create Basic Tkinter Window:
@@ -7118,7 +7118,7 @@ def concepts_50():
         )
         
         
-       
+        st.subheader("21) Custom Exceptions")
         st.markdown(
             """
             ##### 21. Display Message Box with Tkinter:
@@ -7134,7 +7134,7 @@ def concepts_50():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        
+        st.subheader("22) Lambda Functions")
         
         st.markdown(
             """
@@ -7150,7 +7150,7 @@ def concepts_50():
         
         
     
-        
+        st.subheader("23) Map, Filter & Reduce")
         st.markdown(
             """
             ##### 23. Hashing with hashlib:
@@ -7164,7 +7164,7 @@ def concepts_50():
         
         
         
-        
+        st.subheader("24) List comprehensions & Generator Expressions")
         st.markdown(
             """
             ##### 24. Check if all elements in a list are equal:
@@ -7177,7 +7177,7 @@ def concepts_50():
         )
         
         
-        
+        st.subheader("25) Decorators")
         st.markdown(
             """
             ##### 25. Find the second largest number in a list:
@@ -7191,7 +7191,7 @@ def concepts_50():
         
         
         
-       
+        st.subheader("26) Regular Expressions")
         
         st.markdown(
             """
@@ -7209,7 +7209,7 @@ def concepts_50():
         
         
         
-        
+        st.subheader("27) Syntax & Patterns")
         st.markdown(
             """
             ##### 27. Find the most common element in a list:
@@ -7224,7 +7224,7 @@ def concepts_50():
         
         
         
-        
+        st.subheader("28) Matching & Searching")
         st.markdown(
             """
             ##### 28. Find the most common word in a list:
