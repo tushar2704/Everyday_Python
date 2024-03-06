@@ -59,24 +59,30 @@ import os
 #######################################################################################################
 
 def interview_question():
-    st.header("File Handling")
+    st.header("Top 500 Python Interview Problems and Solutions")
     
     # Create a two-column layout
     col1, col2 = st.columns([0.5, 0.5], gap="small")
     
     with col1:
-        st.subheader("Reading a File")
+        st.subheader("Common Problems")
         
         st.markdown(
             """
-            ##### To read the entire content of a file:
+            ##### 1) Write a Python function to check whether a givennumber is prime or not.
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'r') as file:
-                content = file.read()
-                print(content)
+            #Proposed Solution
+            def is_prime(num):
+                if num > 1:
+                    for i in range(2, num):
+                        if (num % i) == 0:
+                            return False
+                        else:
+                            return True
+                            
            
             """
         )
