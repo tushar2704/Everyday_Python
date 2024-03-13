@@ -256,24 +256,17 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 8) Write a Python function to check whether a given string is a palindrome or not.
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
+            def is_palindrome(s):
+                return s == s[::-1]
+                
+            print(is_palindrome('racecar')) # Output: True
+            print(is_palindrome('hello')) # Output: False
             """
         )
         
