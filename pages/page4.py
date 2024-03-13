@@ -196,24 +196,26 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 6) What is the purpose of the 'yield' keyword in Python? Provide an example.
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
+            #The 'yield' keyword is used in a function to defi ne a generator that
+            # can be iterated over using a 'for' loop. When the 'yield' keyword is
+            # encountered in the function, the current state of the function is
+            # saved and the yielded value is returned to the caller. The next time
+            # the function is called, execution resumes from where it left off , with
+            # the saved state restored. Here's an example:
             
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            # define a generator function that yields a sequence of squares
+            def squares(n):
+                for i in range(n):
+                    yield i**2
+                    
+            # use the generator to print the first 5 squares
+            for quare in squares(5):
+                print(square)
             """
         )
         
