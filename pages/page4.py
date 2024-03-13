@@ -95,15 +95,24 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 2) Write a Python function to fi nd the largestcontinuous sum in a given list of integers.
+            ##### 2) Write a Python function to find the largest continuous sum in a given list of integers.
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'w') as file:
-                content= file.write("www.tushar-aggarwal.com")
-                print(content)
-           
+            #Proposed Solution
+            def largest_continuous_sum(numbers):
+                max_sum = 0
+                current_sum = 0
+                for number in numbers:
+                    current_sum += number
+                    if current_sum < 0:
+                        current_sum = 0
+                    if current_sum > max_sum:
+                        max_sum = current_sum
+                return max_sum
+            
+            print(largest_continuous_sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))
             """
         )
         
