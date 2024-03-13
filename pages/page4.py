@@ -223,24 +223,31 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 7) What is the diff erence between a list
+            ##### comprehension and a generator expression in Python?Provide an example of each.
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
+            #A list comprehension is a concise way to create a new list by
+            # applying an expression to each element of an existing list oriterable. 
+            # A generator expression is similar, but instead of creating a
+            # new list, it creates a generator object that can be iterated over. The
+            # key diff erence is that a list comprehension creates the entire list in
+            # memory all at once, whereas a generator expression generatesvalues on-the-fly 
+            # as they are needed. Here are examples of each:
             
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
+            # create a new list using a list comprehension
+            list1 = [1, 2, 3, 4, 5]
+            squared_list = [x**2 for x in list1]
+            print(squared_list)
             
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
+            # create a generator expression
+            generator = (x**2 for x in list1)
             
-            # print the resulting list of tuples
-            print(combined_list)
+            # iterate over the generator to print the squared numbers
+            for square in generator:
+                print(square)
             """
         )
         
