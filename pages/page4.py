@@ -296,24 +296,17 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 10) Write a Python function to count the number of vowels in a given string.
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
+            #Proposed Solution
+            def count_vowels(s):
+                return sum(1 for c s.lower() if c in 'aeiou')
             
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            # Example usage:
+            print(count_vowels('hello world')) # Output: 3
             """
         )
         
