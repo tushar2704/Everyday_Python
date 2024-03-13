@@ -167,19 +167,28 @@ def interview_question():
         
         
         
-        st.subheader("Iterating Over Each Line in a File")
+        
         
         st.markdown(
             """
-            ##### To process each line in a file:
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'a') as file:
-                for line in file:
-                    print(line.strip())
-           
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
             """
         )
             
