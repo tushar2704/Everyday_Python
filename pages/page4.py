@@ -511,24 +511,12 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 26) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
             """
         )
         
@@ -536,48 +524,24 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 27) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
             """
         )
         
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 28) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
             """
         )
         
@@ -585,24 +549,12 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 29) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
             """
         )
         
@@ -610,48 +562,24 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 30) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
             """
         )
         
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 31) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
             """
         )
         
@@ -659,24 +587,12 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 32) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
             """
         )
         
@@ -684,24 +600,12 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 33) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
             """
         )
         
@@ -709,24 +613,12 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 34) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
             """
         )
         
@@ -735,24 +627,12 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 35) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
             """
         )
         
@@ -761,24 +641,12 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 36) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
             """
         )
         
@@ -788,47 +656,23 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 37) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
             """
         )
         
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 38) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
             """
         )
             
@@ -836,24 +680,350 @@ def interview_question():
     with col2:
         st.markdown(
             """
-            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            ##### 39) 
             """
         )
         st.code(
             """
-            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
-            # into a single iterable that produces tuples of corresponding elements from 
-            # each of the input iterables. Here's anexample:
-            
-            # create two lists:
-            list1=[1,2,3]
-            list2=[4,5,6]
-            
-            # use the 'zip' function to combine the lists combined_list
-            combined_list =list(zip(list1, list2))
-            
-            # print the resulting list of tuples
-            print(combined_list)
+            #Proposed Solution
+            """
+        )
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        st.markdown(
+            """
+            ##### 39) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
             """
         )
 
