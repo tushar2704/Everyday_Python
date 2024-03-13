@@ -691,7 +691,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 40) 
             """
         )
         st.code(
@@ -702,7 +702,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 41) 
             """
         )
         st.code(
@@ -713,19 +713,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        st.markdown(
-            """
-            ##### 39) 
+            ##### 42) 
             """
         )
         st.code(
@@ -737,7 +725,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 43) 
             """
         )
         st.code(
@@ -747,10 +735,9 @@ def interview_question():
         )
         
         
-        
         st.markdown(
             """
-            ##### 39) 
+            ##### 44) 
             """
         )
         st.code(
@@ -763,7 +750,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 45) 
             """
         )
         st.code(
@@ -776,7 +763,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 46) 
             """
         )
         st.code(
@@ -789,7 +776,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 47) 
             """
         )
         st.code(
@@ -802,7 +789,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 48) 
             """
         )
         st.code(
@@ -815,7 +802,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 49) 
             """
         )
         st.code(
@@ -828,7 +815,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 50) 
             """
         )
         st.code(
@@ -841,7 +828,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 51) 
             """
         )
         st.code(
@@ -854,7 +841,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 52) 
             """
         )
         st.code(
@@ -867,7 +854,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 53) 
             """
         )
         st.code(
@@ -880,7 +867,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 54) 
             """
         )
         st.code(
@@ -893,7 +880,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 55) 
             """
         )
         st.code(
@@ -906,7 +893,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 56) 
             """
         )
         st.code(
@@ -919,7 +906,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 57) 
             """
         )
         st.code(
@@ -932,7 +919,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 58) 
             """
         )
         st.code(
@@ -945,18 +932,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        st.markdown(
-            """
-            ##### 39) 
+            ##### 59) 
             """
         )
         st.code(
@@ -969,7 +945,18 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 60) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        st.markdown(
+            """
+            ##### 61) 
             """
         )
         st.code(
@@ -982,7 +969,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 62) 
             """
         )
         st.code(
@@ -995,7 +982,20 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 63) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 64) 
             """
         )
         st.code(
@@ -1007,7 +1007,7 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 65) 
             """
         )
         st.code(
@@ -1018,7 +1018,43 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 39) 
+            ##### 66) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 67) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+
+        st.markdown(
+            """
+            ##### 68) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        st.markdown(
+            """
+            ##### 69) 
             """
         )
         st.code(
@@ -1028,8 +1064,77 @@ def interview_question():
         )
 
 
+        st.markdown(
+            """
+            ##### 70) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 71) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
 
 
+        st.markdown(
+            """
+            ##### 72) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        st.markdown(
+            """
+            ##### 73) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        st.markdown(
+            """
+            ##### 74) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
+        
+        
+        st.markdown(
+            """
+            ##### 75) 
+            """
+        )
+        st.code(
+            """
+            #Proposed Solution
+            """
+        )
 
 
 
