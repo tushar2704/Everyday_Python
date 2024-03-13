@@ -91,38 +91,56 @@ def interview_question():
         #     st.write("Did you know I have more then 101 Supreme apps like this?")
         
         
-        st.subheader("Writing to a File")
+        
         
         st.markdown(
             """
-            ##### To write text to a file, overwriting existing content:
+            ##### 2) Write a Python function to find the largest continuous sum in a given list of integers.
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'w') as file:
-                content= file.write("www.tushar-aggarwal.com")
-                print(content)
-           
+            #Proposed Solution
+            def largest_continuous_sum(numbers):
+                max_sum = 0
+                current_sum = 0
+                for number in numbers:
+                    current_sum += number
+                    if current_sum < 0:
+                        current_sum = 0
+                    if current_sum > max_sum:
+                        max_sum = current_sum
+                return max_sum
+            
+            print(largest_continuous_sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))
             """
         )
         
         
         
         
-        st.subheader("Appending to a File")
+        
         
         st.markdown(
             """
-            ##### To add text to the end of an existing file:
+            ##### 3) What is the difference erence between 'is' and '==' inPython?
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'a') as file:
-                content = file.write("\n https://www.linkedin.com/in/tusharaggarwalinseec/")
-                print(content)
-           
+            #The 'is' operator in Python checks if two objects are the sameobject 
+            # (i.e., they have the same memory address), whereas the'==' operator checks 
+            # if two objects have the same value. Here's anexample:
+
+            # create two different lists with the same elements
+            list1 = [1, 2, 3]
+            list2 = [1, 2, 3]
+            
+            # use 'is' to check if they are the same object
+            print(list1 is list2) # prints 'False'
+            
+            # use '==' to check if they have the same value
+            print(list1 == list2)# Output: True
             """
         )
         
