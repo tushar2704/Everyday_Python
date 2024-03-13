@@ -119,19 +119,28 @@ def interview_question():
         
         
         
-        st.subheader("Appending to a File")
+        
         
         st.markdown(
             """
-            ##### To add text to the end of an existing file:
+            ##### 3) What is the difference erence between 'is' and '==' inPython?
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'a') as file:
-                content = file.write("\n https://www.linkedin.com/in/tusharaggarwalinseec/")
-                print(content)
-           
+            #The 'is' operator in Python checks if two objects are the sameobject 
+            # (i.e., they have the same memory address), whereas the'==' operator checks 
+            # if two objects have the same value. Here's anexample:
+
+            # create two different lists with the same elements
+            list1 = [1, 2, 3]
+            list2 = [1, 2, 3]
+            
+            # use 'is' to check if they are the same object
+            print(list1 is list2) # prints 'False'
+            
+            # use '==' to check if they have the same value
+            print(list1 == list2)# Output: True
             """
         )
         
