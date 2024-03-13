@@ -191,102 +191,867 @@ def interview_question():
             print(combined_list)
             """
         )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 6) What is the purpose of the 'yield' keyword in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'yield' keyword is used in a function to defi ne a generator that
+            # can be iterated over using a 'for' loop. When the 'yield' keyword is
+            # encountered in the function, the current state of the function is
+            # saved and the yielded value is returned to the caller. The next time
+            # the function is called, execution resumes from where it left off , with
+            # the saved state restored. Here's an example:
+            
+            # define a generator function that yields a sequence of squares
+            def squares(n):
+                for i in range(n):
+                    yield i**2
+                    
+            # use the generator to print the first 5 squares
+            for quare in squares(5):
+                print(square)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 7) What is the diff erence between a list
+            ##### comprehension and a generator expression in Python?Provide an example of each.
+            """
+        )
+        st.code(
+            """
+            #A list comprehension is a concise way to create a new list by
+            # applying an expression to each element of an existing list oriterable. 
+            # A generator expression is similar, but instead of creating a
+            # new list, it creates a generator object that can be iterated over. The
+            # key diff erence is that a list comprehension creates the entire list in
+            # memory all at once, whereas a generator expression generatesvalues on-the-fly 
+            # as they are needed. Here are examples of each:
+            
+            # create a new list using a list comprehension
+            list1 = [1, 2, 3, 4, 5]
+            squared_list = [x**2 for x in list1]
+            print(squared_list)
+            
+            # create a generator expression
+            generator = (x**2 for x in list1)
+            
+            # iterate over the generator to print the squared numbers
+            for square in generator:
+                print(square)
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        
+        
+        
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
+        
+        st.markdown(
+            """
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
+            """
+        )
+        st.code(
+            """
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
+            """
+        )
             
         
     with col2:
-        st.subheader("Checking If a File Exists")
-        
         st.markdown(
             """
-            ##### To check if a file exists before performing file operations:
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
             """
         )
         st.code(
             """
-            import os
-            if os.path.exists("Tushar.txt"):
-                print("File exists.")
-            else:
-                print("File does not exists.")
-            """
-        )
-        
-        # if st.toggle("Show `st.write` sample output"):
-        #     st.write("Did you know I have more then 101 Supreme apps like this?")
-        
-        
-        st.subheader("Writing Lists to a File")
-        
-        st.markdown(
-            """
-            ##### To write each element of a list to a new line in a file:
-            """
-        )
-        st.code(
-            """
-            lines = ['First line', 'Second line', 'Third line']
-            with open("Tushar.txt","w") as file:
-                for line in lines:
-                    file.write(f'{file}\n')           
-            """
-        )
-        
-        
-        
-        
-        st.subheader("Using With Blocks for Multiple Files")
-        
-        st.markdown(
-            """
-            ##### To work with multiple files simultaneously using `with` blocks:
-            """
-        )
-        st.code(
-            """
-            with open("source.txt","r") as source,
-                open("destination.txt","w") as destination
-                
-                content = source.read()
-                destination.write(content)
-            """
-        )
-        
-        
-        st.subheader("Deleting a File")
-        
-        st.markdown(
-            """
-            ##### To safely delete a file if it exists:
-            """
-        )
-        st.code(
-            """
-            import os
-            if os.path.exists("Tushar.txt"):
-                os.remove("Tushar.txt")
-                print("File deleted.")
-            else:
-                print("File does not exist.")
-            """
-        )
-        
-        
-        
-        st.subheader("Reading and Writing Binary Files")
-        
-        st.markdown(
-            """
-            ##### To read from and write to a file in binary mode (useful for images, videos,etc.):
-            """
-        )
-        st.code(
-            """
-            # Reading a binary file
-            with open('image.jpg','rb') as file:
-                content = file.read()
-            #Writing to a binary file
-            with open('copy.jpg','wb') as file:
-                file.write(content)
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
             """
         )
 
