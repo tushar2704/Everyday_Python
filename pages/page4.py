@@ -129,8 +129,8 @@ def interview_question():
         st.code(
             """
             #The 'is' operator in Python checks if two objects are the sameobject 
-            # (i.e., they have the same memory address), whereas the'==' operator checks 
-            # if two objects have the same value. Here's anexample:
+            #(i.e., they have the same memory address), whereas the'==' operator checks 
+            #if two objects have the same value. Here's anexample:
 
             # create two different lists with the same elements
             list1 = [1, 2, 3]
@@ -145,19 +145,23 @@ def interview_question():
         )
         
         
-        st.subheader("Reading Lines into a List")
+        
         
         st.markdown(
             """
-            ##### To read a file line by line into a list:
+            ##### 4) What is the purpose of the 'enumerate' function in Python? Provide an example.
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'r') as file:
-                content = file.readlines()
-                print(content)
-           
+            #The 'enumerate' function in Python is used to iterate over aniterable 
+            #(such as a list) and return a tuple for each element thatincludes the 
+            #index of the element and the element itself. Here's anexample:
+
+            my_list = ['a','b','c']
+            
+            for i, value in enumerate(my_list):
+                print(f"Index: {i}, Value: {value})
             """
         )
         
