@@ -129,8 +129,8 @@ def interview_question():
         st.code(
             """
             #The 'is' operator in Python checks if two objects are the sameobject 
-            # (i.e., they have the same memory address), whereas the'==' operator checks 
-            # if two objects have the same value. Here's anexample:
+            #(i.e., they have the same memory address), whereas the'==' operator checks 
+            #if two objects have the same value. Here's anexample:
 
             # create two different lists with the same elements
             list1 = [1, 2, 3]
@@ -145,37 +145,50 @@ def interview_question():
         )
         
         
-        st.subheader("Reading Lines into a List")
+        
         
         st.markdown(
             """
-            ##### To read a file line by line into a list:
+            ##### 4) What is the purpose of the 'enumerate' function in Python? Provide an example.
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'r') as file:
-                content = file.readlines()
-                print(content)
-           
+            #The 'enumerate' function in Python is used to iterate over aniterable 
+            #(such as a list) and return a tuple for each element thatincludes the 
+            #index of the element and the element itself. Here's anexample:
+
+            my_list = ['a','b','c']
+            
+            for i, value in enumerate(my_list):
+                print(f"Index: {i}, Value: {value})
             """
         )
         
         
         
-        st.subheader("Iterating Over Each Line in a File")
+        
         
         st.markdown(
             """
-            ##### To process each line in a file:
+            ##### 5) What is the purpose of the 'zip' function in Python? Provide an example.
             """
         )
         st.code(
             """
-            with open('Tushar.txt', 'a') as file:
-                for line in file:
-                    print(line.strip())
-           
+            #The 'zip' function in Python is used to combine multiple iterables(such as lists) 
+            # into a single iterable that produces tuples of corresponding elements from 
+            # each of the input iterables. Here's anexample:
+            
+            # create two lists:
+            list1=[1,2,3]
+            list2=[4,5,6]
+            
+            # use the 'zip' function to combine the lists combined_list
+            combined_list =list(zip(list1, list2))
+            
+            # print the resulting list of tuples
+            print(combined_list)
             """
         )
             
