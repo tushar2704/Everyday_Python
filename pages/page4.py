@@ -333,12 +333,21 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 12)
+            ##### 12) Write a Python function to reverse a linked list.
             """
         )
         st.code(
             """
             #Proposed Solution
+            def reverse_linked_list(head):
+                prev = None
+                while head:
+                    next = head.next
+                    head.next = prev
+                    prev = head
+                    head = next
+                return prev
+        
             """
         )
         
