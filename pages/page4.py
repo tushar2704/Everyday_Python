@@ -381,12 +381,25 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 14) 
+            ##### 14) Write a Python function to fi nd the intersection of two sorted lists. 
             """
         )
         st.code(
             """
             #Proposed Solution
+            def intersection(list1, list2):
+                i, j =0,0
+                result = []
+                while i < len(list1) and j < len(list2):
+                    if list1[i] < list2[j]:
+                        i += 1
+                    elif list1[i] > list2[j]:
+                        j += 1
+                    else:
+                        result.append(list1[i])
+                        i += 1
+                        j += 1
+                return result
             """
         )
         
