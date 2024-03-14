@@ -356,12 +356,23 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 13)
+            ##### 13) Write a Python function to fi nd the shortest pathbetween two nodes in a graph.
             """
         )
         st.code(
             """
             #Proposed Solution
+            from collections import deque
+            def shortest_path(graph, start, end):
+                queue = deque([(start, [start])])
+                while queue:
+                    node, path = queue.popleft()
+                    if node == end:
+                        return path
+                    for next_node in graph[node] - set(path):
+                        queue.append((next_node, path + [next_node]))
+                return None
+                
             """
         )
         
@@ -370,12 +381,25 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 14) 
+            ##### 14) Write a Python function to fi nd the intersection of two sorted lists. 
             """
         )
         st.code(
             """
             #Proposed Solution
+            def intersection(list1, list2):
+                i, j =0,0
+                result = []
+                while i < len(list1) and j < len(list2):
+                    if list1[i] < list2[j]:
+                        i += 1
+                    elif list1[i] > list2[j]:
+                        j += 1
+                    else:
+                        result.append(list1[i])
+                        i += 1
+                        j += 1
+                return result
             """
         )
         
@@ -384,12 +408,21 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 15)
+            ##### 15) Write a Python function to fi nd the longest common prefix among a list of strings.
             """
         )
         st.code(
             """
             #Proposed Solution
+            def longest_common_prefix(strings):
+                if not strings:
+                    return ""
+                shortest = min(strings, key=len)
+                for i, char in enumerate(shortest):
+                    for string in strings:
+                        if string[i] != char:
+                            return shortest[:i]
+                return shortest
             """
         )
         
