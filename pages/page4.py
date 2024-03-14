@@ -356,12 +356,23 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 13)
+            ##### 13) Write a Python function to fi nd the shortest pathbetween two nodes in a graph.
             """
         )
         st.code(
             """
             #Proposed Solution
+            from collections import deque
+            def shortest_path(graph, start, end):
+                queue = deque([(start, [start])])
+                while queue:
+                    node, path = queue.popleft()
+                    if node == end:
+                        return path
+                    for next_node in graph[node] - set(path):
+                        queue.append((next_node, path + [next_node]))
+                return None
+                
             """
         )
         
