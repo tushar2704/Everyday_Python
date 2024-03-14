@@ -408,12 +408,21 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 15)
+            ##### 15) Write a Python function to fi nd the longest common prefix among a list of strings.
             """
         )
         st.code(
             """
             #Proposed Solution
+            def longest_common_prefix(strings):
+                if not strings:
+                    return ""
+                shortest = min(strings, key=len)
+                for i, char in enumerate(shortest):
+                    for string in strings:
+                        if string[i] != char:
+                            return shortest[:i]
+                return shortest
             """
         )
         
