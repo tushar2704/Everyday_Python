@@ -456,12 +456,25 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 17) 
+            ##### 17) Write a Python function to fi nd the maximum sum
+            # of a contiguous subarray with a size of k in a given list
+            # of integers. 
             """
         )
         st.code(
             """
             #Proposed Solution
+            def max_sum_subarray(numbers, k):
+                max_sum = 0
+                current_sum = 0
+                start = 0
+                for end in range(len(numbers)):
+                    current_sum += numbers[end]
+                    if end - start + 1 == k:
+                        max_sum = max(max_sum, current_sum)
+                        current_sum -= numbers[start]
+                        start += 1
+                return max_sum
             """
         )
         
