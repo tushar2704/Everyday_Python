@@ -430,12 +430,24 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 16) 
+            ##### 16) Write a Python function to perform a binary search on a sorted list.
             """
         )
         st.code(
             """
             #Proposed Solution
+            def binary_search(numbers, target):
+                low = 0
+                high = len(numbers) - 1
+                while low <= high:
+                    mid = (low + high) // 2
+                    if numbers[mid] == target:
+                        return mid
+                    elif numbers[mid] < target:
+                        low = mid + 1
+                    else:
+                        high = mid - 1
+                return -1
             """
         )
         
@@ -444,12 +456,25 @@ def interview_question():
         
         st.markdown(
             """
-            ##### 17) 
+            ##### 17) Write a Python function to fi nd the maximum sum
+            # of a contiguous subarray with a size of k in a given list
+            # of integers. 
             """
         )
         st.code(
             """
             #Proposed Solution
+            def max_sum_subarray(numbers, k):
+                max_sum = 0
+                current_sum = 0
+                start = 0
+                for end in range(len(numbers)):
+                    current_sum += numbers[end]
+                    if end - start + 1 == k:
+                        max_sum = max(max_sum, current_sum)
+                        current_sum -= numbers[start]
+                        start += 1
+                return max_sum
             """
         )
         
