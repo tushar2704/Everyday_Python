@@ -34,7 +34,7 @@ from src.Everyday_Python.components.test import *
 
 def main_title():
     st.set_page_config(page_title="Everday Python Sheets",
-                   page_icon=":🤝:",
+                   page_icon=":🖥️:",
                     layout='wide')
     # ---- HIDE STREAMLIT STYLE ----
     hide_st_style = """
@@ -69,7 +69,7 @@ def page_header(header):
     #         """
             
     # st.markdown(custom_css, unsafe_allow_html=True)
-    st.title("🌐🤝Everyday Python Sheets🌐🤝")
+    st.title("🖥️🐍Everyday Python Sheets🖥️🐍")
     st.markdown('''
             <style>
                 div.block-container{padding-top:0px;}
