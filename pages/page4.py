@@ -457,8 +457,8 @@ def interview_question():
         st.markdown(
             """
             ##### 17) Write a Python function to fi nd the maximum sum
-            # of a contiguous subarray with a size of k in a given list
-            # of integers. 
+            ##### of a contiguous subarray with a size of k in a given list
+            ##### of integers. 
             """
         )
         st.code(
@@ -479,734 +479,734 @@ def interview_question():
         )
         
         
-        st.markdown(
-            """
-            ##### 18) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 18) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
         
-        st.markdown(
-            """
-            ##### 19) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 19) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
         
-        st.markdown(
-            """
-            ##### 20) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 20) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
         
         
-        st.markdown(
-            """
-            ##### 21) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 21) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
         
-        st.markdown(
-            """
-            ##### 22) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 22) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
         
-        st.markdown(
-            """
-            ##### 23) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 23) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
-        st.markdown(
-            """
-            ##### 24) 
-            """
-        )
-        st.code(
-            """
+        # st.markdown(
+        #     """
+        #     ##### 24) 
+        #     """
+        # )
+        # st.code(
+        #     """
             
-            """
-        )
+        #     """
+        # )
         
         
-        st.markdown(
-            """
-            ##### 25) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 25) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
-        st.markdown(
-            """
-            ##### 26) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 27) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        st.markdown(
-            """
-            ##### 28) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 26) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
         
-        st.markdown(
-            """
-            ##### 29) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 27) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
+        
+        
+        # st.markdown(
+        #     """
+        #     ##### 28) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
         
-        st.markdown(
-            """
-            ##### 30) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        st.markdown(
-            """
-            ##### 31) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 29) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
         
-        st.markdown(
-            """
-            ##### 32) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 30) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
+        
+        
+        # st.markdown(
+        #     """
+        #     ##### 31) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
         
-        st.markdown(
-            """
-            ##### 33) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 32) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
         
-        st.markdown(
-            """
-            ##### 34) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 33) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
         
-        
-        st.markdown(
-            """
-            ##### 35) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 34) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
         
         
-        st.markdown(
-            """
-            ##### 36) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 35) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
+        
+        
+        
+        
+        # st.markdown(
+        #     """
+        #     ##### 36) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
         
         
         
         
-        st.markdown(
-            """
-            ##### 37) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 37) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
         
-        st.markdown(
-            """
-            ##### 38) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        # st.markdown(
+        #     """
+        #     ##### 38) 
+        #     """
+        # )
+        # st.code(
+        #     """
+        #     #Proposed Solution
+        #     """
+        # )
             
         
-    with col2:
-        st.markdown(
-            """
-            ##### 39) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        st.markdown(
-            """
-            ##### 40) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        st.markdown(
-            """
-            ##### 41) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        st.markdown(
-            """
-            ##### 42) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        st.markdown(
-            """
-            ##### 43) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        st.markdown(
-            """
-            ##### 44) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 45) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 46) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 47) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 48) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 49) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 50) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 51) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 52) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 53) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 54) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 55) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 56) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 57) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 58) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 59) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 60) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        st.markdown(
-            """
-            ##### 61) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 62) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 63) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 64) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        st.markdown(
-            """
-            ##### 65) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        st.markdown(
-            """
-            ##### 66) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 67) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+    # with col2:
+    #     st.markdown(
+    #         """
+    #         ##### 39) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+    #     st.markdown(
+    #         """
+    #         ##### 40) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+    #     st.markdown(
+    #         """
+    #         ##### 41) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+    #     st.markdown(
+    #         """
+    #         ##### 42) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 43) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 44) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 45) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 46) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 47) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 48) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 49) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 50) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 51) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 52) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 53) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 54) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 55) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 56) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 57) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 58) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 59) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 60) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+    #     st.markdown(
+    #         """
+    #         ##### 61) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 62) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 63) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 64) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 65) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+    #     st.markdown(
+    #         """
+    #         ##### 66) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 67) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
 
-        st.markdown(
-            """
-            ##### 68) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+    #     st.markdown(
+    #         """
+    #         ##### 68) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
         
         
-        st.markdown(
-            """
-            ##### 69) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-
-
-        st.markdown(
-            """
-            ##### 70) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
-        
-        
-        
-        st.markdown(
-            """
-            ##### 71) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+    #     st.markdown(
+    #         """
+    #         ##### 69) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
 
 
-        st.markdown(
-            """
-            ##### 72) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+    #     st.markdown(
+    #         """
+    #         ##### 70) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
         
         
-        st.markdown(
-            """
-            ##### 73) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+        
+    #     st.markdown(
+    #         """
+    #         ##### 71) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+
+
+    #     st.markdown(
+    #         """
+    #         ##### 72) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
         
         
-        st.markdown(
-            """
-            ##### 74) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+    #     st.markdown(
+    #         """
+    #         ##### 73) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
         
         
-        st.markdown(
-            """
-            ##### 75) 
-            """
-        )
-        st.code(
-            """
-            #Proposed Solution
-            """
-        )
+    #     st.markdown(
+    #         """
+    #         ##### 74) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
+        
+        
+    #     st.markdown(
+    #         """
+    #         ##### 75) 
+    #         """
+    #     )
+    #     st.code(
+    #         """
+    #         #Proposed Solution
+    #         """
+    #     )
         
 
 
