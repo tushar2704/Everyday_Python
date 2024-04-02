@@ -1,6 +1,9 @@
 # Everyday Python Cheat Sheets
 ## [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://everyday-python.streamlit.app/)
 
+![Untitled design1](https://github.com/tushar2704/Everyday_Python/assets/66141195/66cdd8ee-99f6-4c45-8336-5d346b9535ae)
+
+
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B.svg?style=for-the-badge&logo=Streamlit&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white)
@@ -26,6 +29,7 @@ Discover expert tips and tricks to enhance your Python coding skills and product
 ## Interview Questions
 
 Prepare for Python interviews with a curated collection of frequently asked questions and their solutions. These interview questions cover a wide range of topics, including data structures, algorithms, object-oriented programming, and more. By familiarizing yourself with these questions and solutions, you'll be better equipped to tackle technical interviews with confidence.
+![chrome_bP2aP8RVwO](https://github.com/tushar2704/Everyday_Python/assets/66141195/dc6886fe-d8cc-4c70-9dad-be31e425d695)
 
 ## Python One-liners
 
