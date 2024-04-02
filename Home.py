@@ -55,6 +55,7 @@ with st.sidebar:
     # st.page_link("pages/page3.py", label="Data Structures", icon="🐍")
     
     st.page_link("pages/page5.py", label="Pro Python", icon="🐍")
+    st.page_link("pages/page4.py", label="500 Interview Solutions", icon="🐍")
     
 
  
